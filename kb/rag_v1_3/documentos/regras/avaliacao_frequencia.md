@@ -1,0 +1,5 @@
+# Avaliação e frequência
+
+**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `04_regras_academicas.md`.
+
+Cada disciplina publica plano de ensino com avaliações, pesos e critérios no início do semestre. A média parcial **MP** é calculada de 0 a 10 segundo esse plano e registrada com uma casa decimal. A aprovação direta exige **MP ≥ 7,0** e **frequência ≥ 75%** das aulas. Com frequência inferior a 75%, o estudante é reprovado por frequência, independentemente da nota. Com frequência suficiente e **2,5 ≤ MP < 7,0**, pode fazer prova final. A média após a final é **MF = (2 × MP + PF) / 3**, em que PF é a nota da prova final; a aprovação exige **MF ≥ 5,0**, calculada sem arredondar o resultado para decidir aprovação. Com MP < 2,5, há reprovação sem prova final. A nota mínima necessária na prova final é **PF mínima = 15 − 2 × MP**. Consulte a tabela completa em `04a_tabela_prova_final.md`. TCC e ACEx seguem critérios próprios descritos em `06_extensao_tcc_estagio.md`.

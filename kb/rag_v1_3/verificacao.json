@@ -1,0 +1,36 @@
+{
+  "disciplines": 63,
+  "scheduled_positions": 48,
+  "semester_matrix_chunks": 8,
+  "calendar_period_chunks": 2,
+  "manifest_entries": 89,
+  "chunk_counts": {
+    "percurso": 3,
+    "apoio": 1,
+    "regras": 4,
+    "atividades": 1,
+    "calendario": 2,
+    "curso": 1,
+    "ementas": 63,
+    "matriz": 8,
+    "optativas": 5,
+    "avaliacao": 1
+  },
+  "examples": {
+    "IA_day_professor": {
+      "semester": "VI",
+      "day": "Quinta-feira",
+      "professor": "Prof.ª Beatriz Farias",
+      "name": "Inteligência Artificial"
+    },
+    "optative_reference": {
+      "semester": "VII",
+      "day": "Sábado",
+      "professor": "Prof.ª Helena Duarte",
+      "name": "Comércio Eletrônico"
+    },
+    "trancamento_2027_1": "27/04/2027",
+    "trancamento_2027_2": "28/09/2027",
+    "PF_for_MP_4_5": "6,0"
+  }
+}

@@ -1,0 +1,5 @@
+# Trabalho de Conclusão de Curso
+
+**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `06_extensao_tcc_estagio.md`.
+
+TCC I (SUP42, 30 h, VII semestre) requer **1.920 horas curriculares já integralizadas** em disciplinas obrigatórias, optativas e ACEx; Atividades Complementares e os próprios TCCs não contam para esse limiar. TCC II (SUP48, 30 h, VIII semestre) requer aprovação em TCC I. O TCC I produz projeto de pesquisa ou desenvolvimento em Sistemas de Informação, aprovado pelo docente da disciplina. O TCC II produz monografia ou artigo e apresentação oral pública perante banca de três membros, incluindo o orientador. O estudante escolhe orientador docente da área de Computação com aceite formal. A banca atribui nota de 0 a 10; aprovação exige nota **≥ 6,0** e entrega da versão final no prazo registrado pela Coordenação. A apresentação pode ser presencial ou online, conforme agendamento da Coordenação. Trabalhos com participantes humanos exigem aprovação ética prévia quando aplicável. Não é exigida publicação do artigo.

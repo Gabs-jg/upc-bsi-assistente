@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "InvocarLambdaDeBusca",
+      "Effect": "Allow",
+      "Action": "lambda:InvokeFunction",
+      "Resource": "arn:aws:lambda:us-east-2:276996007591:function:upc-bsi-busca-kb-v13"
+    },
+    {
+      "Sid": "InvocarHarnessUPC",
+      "Effect": "Allow",
+      "Action": "bedrock-agentcore:InvokeHarness",
+      "Resource": "arn:aws:bedrock-agentcore:us-east-2:276996007591:harness/upc_bsi_assistente_v13-xWH7Nkzzk1"
+    },
+    {
+      "Sid": "InvocarRuntimeDoHarnessUPC",
+      "Effect": "Allow",
+      "Action": "bedrock-agentcore:InvokeAgentRuntime",
+      "Resource": "arn:aws:bedrock-agentcore:us-east-2:276996007591:harness/upc_bsi_assistente_v13-xWH7Nkzzk1"
+    }
+  ]
+}

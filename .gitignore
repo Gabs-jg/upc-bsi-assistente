@@ -1,0 +1,22 @@
+# Ambientes e caches locais
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.deepeval/
+
+# Credenciais e configuração pessoal
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.aws/
+
+# Saídas temporárias de avaliações
+evals/resultados/
+*.log
+
+# VS Code local
+.vscode/
