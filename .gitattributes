@@ -1,0 +1,3 @@
+kb/rag_v1_3/documentos/**/*.md text eol=lf
+kb/rag_v1_3/manifesto.jsonl text eol=lf
+evals/**/*.json text eol=lf

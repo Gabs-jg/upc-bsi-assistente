@@ -158,4 +158,7 @@ $env:ALLOW_SAME_JUDGE = "true"
 ### Governança Orçamentária
 O projeto operou em estrita observância ao teto financeiro fixado pelo Edital do Desafio 2, respeitando o limite orçamentário mandatório de **US$ 20,00**.
 
-Para detalhes minuciosos de cada caso de teste e fundamentos teóricos, consulte o [**`Relatorio_Final.md`**](Relatorio_Final.md).
+Para detalhes minuciosos de cada caso de teste e fundamentos teóricos, consulte o [**`Relatorio_Final.md`**](Relatorio_Final.md) ou a versão oficial diagramada em PDF [**`Relatorio_Final_UPC.pdf`**](output/pdf/Relatorio_Final_UPC.pdf).
+
+### Agradecimentos especiais:
+Essa seção eu quero agradecer a todos meus colegas sem exceção, mas especialmente as colegas: Camille, Fernanda (do meu squad) e Mary por todo conhecimento e ajuda transmitida. Foram de grande ajuda as experiências relatadas com problemas encontrados e como foi resolvido. Obrigado a todos.
