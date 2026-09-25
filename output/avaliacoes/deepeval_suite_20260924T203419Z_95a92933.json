@@ -1,0 +1,45 @@
+{
+  "tipo": "deepeval_suite_captura_real",
+  "captura": "C:\\Users\\Gabriel\\Documents\\Codex\\upc-bsi-assistente\\output\\capturas\\harness_20260924T153740Z.json",
+  "capture_sha256": "bd12e8281a8b6e51165e94a99d9d622b90842044e420f18b40883cf45baf1b0f",
+  "modelo_agente": "qwen.qwen3-next-80b-a3b",
+  "casos": {
+    "GOLD-001": {
+      "id": "GOLD-001",
+      "categoria": "consulta_direta",
+      "input": "Quantas vagas a UPC oferece por entrada e quantas entradas há por ano?",
+      "resposta": "A Universidade de Pedra Clara (UPC) oferece 40 vagas por entrada, com duas entradas por ano. \n\nFonte: `01_curso_e_ingresso.md`",
+      "trechos_recuperados": 5,
+      "busca_obrigatoria_atendida": true,
+      "contexto_obrigatorio_presente": true,
+      "fonte_citada": true,
+      "metricas": {
+        "Answer Relevancy": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because the response is fully relevant and contains no irrelevant statements, directly addressing the question about UPC's admission slots and entry cycles.",
+          "success": true,
+          "threshold": 0.7,
+          "classe": "AnswerRelevancyMetric",
+          "erro": null
+        },
+        "Faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context, indicating perfect faithfulness.",
+          "success": true,
+          "threshold": 0.8,
+          "classe": "FaithfulnessMetric",
+          "erro": null
+        },
+        "Conformidade UPC": {
+          "score": 1.0,
+          "reason": "A resposta está totalmente alinhada com o contexto recuperado, citando exatamente os dados presentes no trecho `01_curso_e_ingresso.md`: 40 vagas por entrada e duas entradas por ano. Não há inventiva de informações, datas, prazos ou critérios não mencionados, e a resposta respeita o escopo da pergunta sem extrapolar para outros aspectos do curso.",
+          "success": true,
+          "threshold": 0.8,
+          "classe": "GEval",
+          "erro": null
+        }
+      },
+      "erro": null
+    }
+  }
+}

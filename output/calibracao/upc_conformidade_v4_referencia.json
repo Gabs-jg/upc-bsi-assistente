@@ -1,0 +1,30 @@
+{
+  "rubrica": "upc_conformidade_v4_referencia",
+  "captura": "C:\\Users\\Gabriel\\Documents\\Codex\\upc-bsi-assistente\\output\\capturas\\harness_20260924T153740Z.json",
+  "resultados": [
+    {
+      "id": "GOLD-001",
+      "aprovacao_esperada": true,
+      "score": 1.0,
+      "aprovacao_observada": true,
+      "acerto_calibracao": true,
+      "motivo": "A resposta corretamente afirma que a UPC oferece 40 vagas por entrada e duas entradas por ano, exatamente como descrito no trecho recuperado da fonte `curso_ingresso.md`. A fonte citada na resposta (`01_curso_e_ingresso.md`) corresponde à fonte canônica mencionada no contexto, e não há erro de fato, cálculo, período ou procedimento. A resposta não extrapola, não inventa informações e alinha-se perfeitamente ao Expected Output, mesmo com leve variação de formatação, o que é aceitável conforme a regra de avaliação."
+    },
+    {
+      "id": "GOLD-002",
+      "aprovacao_esperada": false,
+      "score": 0.2,
+      "aprovacao_observada": false,
+      "acerto_calibracao": true,
+      "motivo": "A resposta incorreta afirma que MAT10 é 'Matemática Aplicada à Computação', enquanto o contexto e a saída esperada indicam que MAT10 é 'Matemática Discreta II'. Além disso, a resposta invoca uma fonte não retornada (`02_matriz_curricular.md`) como conhecimento institucional padrão, violando a regra de não inferir fatos fora dos trechos recuperados. O semestre de CCO33 (VI) está correto, mas a afirmação material sobre o nome da disciplina pré-requisito é factualmente errada e não sustentada pelos contextos fornecidos."
+    },
+    {
+      "id": "GOLD-014",
+      "aprovacao_esperada": false,
+      "score": 0.2,
+      "aprovacao_observada": false,
+      "acerto_calibracao": true,
+      "motivo": "A resposta incorretamente aplica regras de aproveitamento de estudos (equivalência de disciplinas) como exigência para transferência externa, quando o contexto não menciona qualquer requisito de equivalência para ingresso por transferência. O Expected Output corretamente aponta que transferência depende de edital, vagas e classificação — informações ausentes na resposta, que inventa uma condição não sustentada pelos trechos recuperados. A fonte citada (`04_regras_academicas.md`) é válida, mas o conteúdo usado para justificar a recusa é extrapolação material, configurando erro de procedimento e aplicação errônea de regra."
+    }
+  ]
+}

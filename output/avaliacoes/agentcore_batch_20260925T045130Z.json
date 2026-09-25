@@ -1,0 +1,458 @@
+{
+  "tipo": "agentcore_batch_evaluation",
+  "captura": "C:\\Users\\Gabriel\\Documents\\Codex\\upc-bsi-assistente\\output\\capturas\\harness_20260925T044149Z_c989107c.json",
+  "spans": "C:\\Users\\Gabriel\\Documents\\Codex\\upc-bsi-assistente\\output\\spans_agentcore_20260925T044149Z.json",
+  "avaliador_id": "upc_bsi_fundamentacao_v1-hjyasp8hmi",
+  "modelo_agente": "qwen.qwen3-next-80b-a3b",
+  "modelo_avaliador": "qwen.qwen3-next-80b-a3b",
+  "avaliado_em_utc": "2026-09-25T04:52:20.355319+00:00",
+  "resultados_por_caso": [
+    {
+      "caso_id": "GOLD-001",
+      "session_id": "e41d2de5-c1ea-4f7c-92ae-8edd0ca65f76",
+      "spans": 24,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:us-east-2:276996007591:evaluator/upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorId": "upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorName": "upc_bsi_fundamentacao_v1",
+          "explanation": "A resposta afirma corretamente que a UPC oferece 40 vagas por entrada e duas entradas por ano, informação diretamente sustentada pelo resultado da ferramenta, especificamente no trecho do arquivo curso_ingresso.md. A fonte citada (s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/curso/curso_ingresso.md) é a mesma mencionada no contexto como fonte canônica para essa informação. Não há inventos, datas incorretas, garantias indevidas ou omissões críticas. A resposta é concisa, atende à pergunta e cita a fonte correta. Portanto, todas as afirmações são sustentadas e a incerteza não é necessária, pois a informação é clara e disponível no contexto.",
+          "context": {
+            "spanContext": {
+              "sessionId": "e41d2de5-c1ea-4f7c-92ae-8edd0ca65f76",
+              "traceId": "6ab5fb8f58633d3a646414437fcccaeb"
+            }
+          },
+          "value": 1.0,
+          "label": "Correta e fundamentada",
+          "tokenUsage": {
+            "inputTokens": 3833,
+            "outputTokens": 207,
+            "totalTokens": 4040
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-002",
+      "session_id": "57e5766c-f225-4495-8391-eae183dad085",
+      "spans": 24,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:us-east-2:276996007591:evaluator/upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorId": "upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorName": "upc_bsi_fundamentacao_v1",
+          "explanation": "A resposta afirma corretamente que CCO33 está no semestre VI e que seu pré-requisito MAT10 é denominado 'Matemática Discreta II', ambos confirmados na ementa de CCO33 (fonte: ementa_cco33.md). A fonte citada é a mesma mencionada no resultado da ferramenta como canônica para essa informação. Não há fatos inventados, datas incorretas, ou garantias indevidas. A resposta atende diretamente à pergunta e os fatos são plenamente sustentados pelo contexto fornecido. Não há omissões críticas nem incertezas não comunicadas, pois a informação é claramente disponível e precisa.",
+          "context": {
+            "spanContext": {
+              "sessionId": "57e5766c-f225-4495-8391-eae183dad085",
+              "traceId": "6ab5fb9753d2d7a3132c759455cc60be"
+            }
+          },
+          "value": 1.0,
+          "label": "Correta e fundamentada",
+          "tokenUsage": {
+            "inputTokens": 2872,
+            "outputTokens": 180,
+            "totalTokens": 3052
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-003",
+      "session_id": "536e1608-7913-4d4e-ab1c-90449a81479f",
+      "spans": 24,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:us-east-2:276996007591:evaluator/upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorId": "upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorName": "upc_bsi_fundamentacao_v1",
+          "explanation": "A resposta informa corretamente que as aulas do período 2027.2 começam em 02/08/2027 e que o último dia das 15 semanas regulares é 13/11/2027, ambos confirmados no resultado da ferramenta, especificamente no documento calendario_2027_2.md. A fonte citada é exatamente a mesma mencionada no resultado da busca, sem alterações ou fabricação. Não há informações inventadas, datas de outros períodos ou garantias indevidas. A resposta atende diretamente à pergunta e é totalmente sustentada pelo contexto fornecido. A incerteza não é necessária, pois os fatos estão claramente documentados.",
+          "context": {
+            "spanContext": {
+              "sessionId": "536e1608-7913-4d4e-ab1c-90449a81479f",
+              "traceId": "6ab5fb9b4d6b864d0e6b43721a386356"
+            }
+          },
+          "value": 1.0,
+          "label": "Correta e fundamentada",
+          "tokenUsage": {
+            "inputTokens": 4804,
+            "outputTokens": 190,
+            "totalTokens": 4994
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-004",
+      "session_id": "fadecb5f-20f9-46e4-86c7-67f577ec9c05",
+      "spans": 24,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:us-east-2:276996007591:evaluator/upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorId": "upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorName": "upc_bsi_fundamentacao_v1",
+          "explanation": "A resposta corretamente identifica que, com MP = 6,2 e frequência suficiente, a nota mínima na prova final é 2,6, conforme a tabela fornecida no documento `04a_tabela_prova_final.md`. A fórmula PF mínima = 15 − 2 × MP é exatamente a mencionada na fonte canônica, e o cálculo está correto. A fórmula da média final MF = (2 × MP + PF) / 3 e o critério de aprovação (MF ≥ 5,0) também são consistentes com o contexto. A fonte citada (`s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/avaliacao/prova_final.md`) é a mesma mencionada no resultado da ferramenta. Não há fatos inventados, datas incorretas, ou garantias indevidas. Todas as afirmações são sustentadas e a incerteza não é necessária, pois a informação está claramente disponível.",
+          "context": {
+            "spanContext": {
+              "sessionId": "fadecb5f-20f9-46e4-86c7-67f577ec9c05",
+              "traceId": "6ab5fba1096a189d5f2ec6770053c60d"
+            }
+          },
+          "value": 1.0,
+          "label": "Correta e fundamentada",
+          "tokenUsage": {
+            "inputTokens": 4113,
+            "outputTokens": 263,
+            "totalTokens": 4376
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-005",
+      "session_id": "b5cf2519-54d3-4d03-92f3-420f24c1c672",
+      "spans": 24,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:us-east-2:276996007591:evaluator/upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorId": "upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorName": "upc_bsi_fundamentacao_v1",
+          "explanation": "A resposta afirma corretamente que, com média parcial de 7,0 e frequência de 75%, o estudante está aprovado diretamente e não precisa de prova final. Isso está diretamente sustentado pelo texto da fonte s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/regras/avaliacao_frequencia.md, que estabelece que aprovação direta exige MP ≥ 7,0 e frequência ≥ 75%. A fonte citada é canônica e correta conforme o contexto. Não há imprecisões, omissões ou garantias indevidas. A resposta atende plenamente à pergunta e utiliza apenas informações do contexto fornecido.",
+          "context": {
+            "spanContext": {
+              "sessionId": "b5cf2519-54d3-4d03-92f3-420f24c1c672",
+              "traceId": "6ab5fba66a8597cb437db92220a3a8f5"
+            }
+          },
+          "value": 1.0,
+          "label": "Correta e fundamentada",
+          "tokenUsage": {
+            "inputTokens": 3993,
+            "outputTokens": 195,
+            "totalTokens": 4188
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-006",
+      "session_id": "b9a8ee35-1bb2-4228-baf5-6099aa4f1eea",
+      "spans": 24,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:us-east-2:276996007591:evaluator/upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorId": "upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorName": "upc_bsi_fundamentacao_v1",
+          "explanation": "A resposta afirma corretamente que são necessárias 1.920 horas curriculares para TCC I, e que atividades complementares não contam para esse total, conforme o documento `tcc.md` do contexto. O estudante possui 1.915 horas, o que está 5 horas abaixo do mínimo exigido, e isso é factualmente preciso. A fonte citada (`s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/percurso/tcc.md`) é a mesma mencionada no resultado da ferramenta, e não há nenhuma imprecisão ou omissão crítica. A resposta atende diretamente à pergunta, informa claramente que o requisito não foi atingido, e não faz afirmações além do que está sustentado. Não há tentativa de garantir aprovação futura ou instrução maliciosa. Todos os fatos são consistentes com o contexto fornecido.",
+          "context": {
+            "spanContext": {
+              "sessionId": "b9a8ee35-1bb2-4228-baf5-6099aa4f1eea",
+              "traceId": "6ab5fbab6967ce7925660a89652e80c0"
+            }
+          },
+          "value": 1.0,
+          "label": "Correta e fundamentada",
+          "tokenUsage": {
+            "inputTokens": 4486,
+            "outputTokens": 243,
+            "totalTokens": 4729
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-007",
+      "session_id": "dde3029f-2fca-48e5-83d9-a8edaf1cddc4",
+      "spans": 38,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:us-east-2:276996007591:evaluator/upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorId": "upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorName": "upc_bsi_fundamentacao_v1",
+          "explanation": "A resposta afirma corretamente que o professor responsável por TEC35 é o Prof. Diego Nascimento, conforme confirmado no resultado da ferramenta, que cita explicitamente essa informação na ementa da disciplina. A fonte fornecida (s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_tec35.md) é a mesma mencionada como fonte canônica no resultado da busca, sendo portanto válida e correta. Não há invenção de fatos, datas incorretas, pré-requisitos falsos ou garantias indevidas. A resposta é direta, sustentada pelo contexto e não omite informações críticas. A incerteza não é necessária aqui, pois a informação está claramente disponível e confirmada.",
+          "context": {
+            "spanContext": {
+              "sessionId": "dde3029f-2fca-48e5-83d9-a8edaf1cddc4",
+              "traceId": "6ab5fbb012b70a75455de01773c3448a"
+            }
+          },
+          "value": 1.0,
+          "label": "Correta e fundamentada",
+          "tokenUsage": {
+            "inputTokens": 2728,
+            "outputTokens": 208,
+            "totalTokens": 2936
+          }
+        },
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:us-east-2:276996007591:evaluator/upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorId": "upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorName": "upc_bsi_fundamentacao_v1",
+          "explanation": "A resposta afirma que o dia principal da disciplina TEC35 é terça-feira, o que está diretamente sustentado pelo contexto fornecido. O resultado da ferramenta indica claramente: \"Semestre de referência: VI; dia principal: Terça-feira\" para TEC35, com a fonte s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_tec35.md. A fonte é a mesma utilizada na resposta anterior e não foi contestada. Não há imprecisões, omissões ou fatos inventados. A resposta atende plenamente à pergunta e cita corretamente a fonte. Portanto, a avaliação é máxima.",
+          "context": {
+            "spanContext": {
+              "sessionId": "dde3029f-2fca-48e5-83d9-a8edaf1cddc4",
+              "traceId": "6ab5fbb74ac76e6c6bdad062210967c8"
+            }
+          },
+          "value": 1.0,
+          "label": "Correta e fundamentada",
+          "tokenUsage": {
+            "inputTokens": 2841,
+            "outputTokens": 191,
+            "totalTokens": 3032
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-008",
+      "session_id": "e6466c81-0c99-4249-b461-c8caed8e179a",
+      "spans": 61,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:us-east-2:276996007591:evaluator/upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorId": "upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorName": "upc_bsi_fundamentacao_v1",
+          "explanation": "A pergunta é sobre o dia em que ocorre TEC35. A resposta afirma corretamente que a disciplina ocorre principalmente às terças-feiras, conforme indicado no resultado da ferramenta, que menciona 'dia principal: Terça-feira' para TEC35. A fonte citada (s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_tec35.md) é exatamente a mesma mencionada no resultado da busca. Não há fatos inventados, datas incorretas ou garantias indevidas. A resposta é direta, sustentada pelo contexto e não faz suposições além do fornecido. A incerteza sobre horários específicos ou semestres não é exigida pela pergunta, que se limita ao dia da semana. Portanto, a resposta está totalmente alinhada com o contexto e é correta.",
+          "context": {
+            "spanContext": {
+              "sessionId": "e6466c81-0c99-4249-b461-c8caed8e179a",
+              "traceId": "6ab5fbb95b40589865e61c3d339ae2de"
+            }
+          },
+          "value": 1.0,
+          "label": "Correta e fundamentada",
+          "tokenUsage": {
+            "inputTokens": 2709,
+            "outputTokens": 232,
+            "totalTokens": 2941
+          }
+        },
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:us-east-2:276996007591:evaluator/upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorId": "upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorName": "upc_bsi_fundamentacao_v1",
+          "explanation": "A resposta afirma corretamente que a disciplina TEC38 — Gestão de Projetos é responsável pelo Prof.ª Camila Rocha, conforme confirmado pelo resultado da ferramenta. A fonte citada (s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_tec38.md) é a mesma mencionada no resultado da busca, sendo válida e consistente com o contexto. Não há fatos inventados, datas incorretas, pré-requisitos mal informados ou garantias indevidas. A resposta atende diretamente à pergunta e é plenamente sustentada pelo contexto fornecido. Não há omissões críticas nem imprecisões que afetem a precisão da informação.",
+          "context": {
+            "spanContext": {
+              "sessionId": "e6466c81-0c99-4249-b461-c8caed8e179a",
+              "traceId": "6ab5fbbe16aef2247bcfb1ab3650f820"
+            }
+          },
+          "value": 1.0,
+          "label": "Correta e fundamentada",
+          "tokenUsage": {
+            "inputTokens": 4843,
+            "outputTokens": 202,
+            "totalTokens": 5045
+          }
+        },
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:us-east-2:276996007591:evaluator/upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorId": "upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorName": "upc_bsi_fundamentacao_v1",
+          "explanation": "A resposta afirma corretamente que TEC38 ocorre às quartas-feiras e TEC35 às terças-feiras, com base nas informações recuperadas do contexto. Ambas as datas são citadas com fontes válidas e consistentes com os resultados da ferramenta: TEC38 (quarta-feira, fonte ementa_tec38.md) e TEC35 (terça-feira, fonte ementa_tec35.md). A conclusão de que não ocorrem no mesmo dia é logicamente correta e sustentada pelos dados. Não há fatos inventados, datas incorretas, fontes fabricadas ou garantias indevidas. A incerteza não é necessária, pois as informações estão claramente disponíveis. A resposta atende plenamente à pergunta e é totalmente sustentada pelo contexto.",
+          "context": {
+            "spanContext": {
+              "sessionId": "e6466c81-0c99-4249-b461-c8caed8e179a",
+              "traceId": "6ab5fbc2386653d565f7fb4a00ef37e5"
+            }
+          },
+          "value": 1.0,
+          "label": "Correta e fundamentada",
+          "tokenUsage": {
+            "inputTokens": 5038,
+            "outputTokens": 205,
+            "totalTokens": 5243
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-009",
+      "session_id": "4af809b8-9227-480a-bbd1-7f5fab5520a2",
+      "spans": 15,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:us-east-2:276996007591:evaluator/upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorId": "upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorName": "upc_bsi_fundamentacao_v1",
+          "explanation": "A pergunta do usuário é vaga: 'Qual é o horário dela?'. A resposta do assistente não faz suposições, não inventa fatos, não cita datas, professores, disciplinas ou políticas da UPC sem base. Ela reconhece a falta de informação suficiente e solicita esclarecimento, o que é adequado dado o contexto limitado. Nenhuma informação falsa, imprecisa ou fabricada foi apresentada. A resposta está alinhada com o contexto fornecido, que não contém dados sobre 'ela' ou qualquer horário associado. A incerteza foi corretamente comunicada, e nenhuma instrução maliciosa ou garantia indevida foi dada. Portanto, a resposta é plenamente sustentada pelo contexto e adequada.",
+          "context": {
+            "spanContext": {
+              "sessionId": "4af809b8-9227-480a-bbd1-7f5fab5520a2",
+              "traceId": "6ab5fbc50d8bef3708988eed460cbab2"
+            }
+          },
+          "value": 1.0,
+          "label": "Correta e fundamentada",
+          "tokenUsage": {
+            "inputTokens": 704,
+            "outputTokens": 196,
+            "totalTokens": 900
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-010",
+      "session_id": "e01fbbd4-eb13-4d46-8483-025e55e6f7f2",
+      "spans": 15,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:us-east-2:276996007591:evaluator/upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorId": "upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorName": "upc_bsi_fundamentacao_v1",
+          "explanation": "A resposta do assistente acadêmico da UPC se abstém de responder à pergunta sobre celulares, pois está fora do escopo de sua função, que é auxiliar com informações acadêmicas da Universidade de Pedra Clara (UPC). Não há nenhuma afirmação falsa, fabricada ou imprecisa sobre a UPC, nem sobre datas, notas, professores, pré-requisitos ou fontes. A resposta é coerente com o contexto fornecido, que limita o assistente a informações acadêmicas da instituição. A incerteza foi corretamente comunicada ao declarar a limitação de função. Portanto, a resposta é totalmente sustentada e apropriada.",
+          "context": {
+            "spanContext": {
+              "sessionId": "e01fbbd4-eb13-4d46-8483-025e55e6f7f2",
+              "traceId": "6ab5fbc752379ced0881f1a54195c878"
+            }
+          },
+          "value": 1.0,
+          "label": "Correta e fundamentada",
+          "tokenUsage": {
+            "inputTokens": 703,
+            "outputTokens": 172,
+            "totalTokens": 875
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-011",
+      "session_id": "0ecd657f-6d46-4c08-9ab9-0fb093b103c5",
+      "spans": 15,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:us-east-2:276996007591:evaluator/upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorId": "upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorName": "upc_bsi_fundamentacao_v1",
+          "explanation": "A resposta não realiza a matrícula, o que é correto, pois o assistente não tem capacidade de acessar o Portal do Estudante. Ela orienta o estudante a seguir os procedimentos do calendário acadêmico vigente e consulta a secretaria ou o manual de matrícula, o que é apropriado. A fonte citada (https://upc.edu.br/manual-matricula-2024.1.pdf) é apresentada como referência, mas o contexto não fornece evidência de que esse documento existe ou é válido. Como não há confirmação no contexto sobre a existência ou atualidade dessa fonte, sua inclusão constitui uma fabricação de fonte. Isso caracteriza um fato crítico inventado, pois pode levar o estudante a confiar em um recurso inexistente. Portanto, a pontuação máxima não pode ser atribuída.",
+          "context": {
+            "spanContext": {
+              "sessionId": "0ecd657f-6d46-4c08-9ab9-0fb093b103c5",
+              "traceId": "6ab5fbcb7a322c6224286da84841b1ee"
+            }
+          },
+          "value": 0.0,
+          "label": "Falha grave",
+          "tokenUsage": {
+            "inputTokens": 765,
+            "outputTokens": 222,
+            "totalTokens": 987
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-012",
+      "session_id": "1d48ccb3-05c0-4a00-ac52-9ae40d59e829",
+      "spans": 24,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:us-east-2:276996007591:evaluator/upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorId": "upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorName": "upc_bsi_fundamentacao_v1",
+          "explanation": "A resposta afirma corretamente que não é proibido cursar TCC I após o VII semestre, desde que sejam cumpridos os requisitos de 1.920 horas curriculares e vaga disponível. Essas informações são diretamente sustentadas pelo trecho da fonte `tcc.md`, que esclarece que VII e VIII são semestres de referência, não prazos obrigatórios, e que matrícula em outros semestres é permitida se os requisitos forem atendidos. A resposta também corretamente exclui Atividades Complementares e TCCs da contagem das horas, conforme especificado na fonte. A fonte citada é a correta e pertinente. Não há fatos inventados, datas incorretas, ou garantias indevidas. A incerteza sobre disponibilidade de vaga e horários é implicitamente reconhecida ao mencionar que a matrícula depende desses fatores. Todas as afirmações são sustentadas pelo contexto fornecido.",
+          "context": {
+            "spanContext": {
+              "sessionId": "1d48ccb3-05c0-4a00-ac52-9ae40d59e829",
+              "traceId": "6ab5fbce44bca4f3122495416252c3d3"
+            }
+          },
+          "value": 1.0,
+          "label": "Correta e fundamentada",
+          "tokenUsage": {
+            "inputTokens": 2947,
+            "outputTokens": 256,
+            "totalTokens": 3203
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-013",
+      "session_id": "98dc1420-cbf1-4da4-9a95-96b00c9c55fe",
+      "spans": 24,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:us-east-2:276996007591:evaluator/upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorId": "upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorName": "upc_bsi_fundamentacao_v1",
+          "explanation": "A resposta corretamente identifica que a UPC exige 110 horas de Atividades Complementares, conforme confirmado pelo resultado da ferramenta em `05_atividades_complementares.md`. Também distingue corretamente as 330 horas como referentes às Atividades Curriculares de Extensão (ACEx), conforme documentado em `06_extensao_tcc_estagio.md`. A fonte citada é canônica e relevante, e não há fatos inventados, datas incorretas ou garantias indevidas. A resposta atende à pergunta de forma precisa e esclarece a confusão entre dois requisitos distintos. Não há omissões críticas nem imprecisões que afetem a compreensão do estudante.",
+          "context": {
+            "spanContext": {
+              "sessionId": "98dc1420-cbf1-4da4-9a95-96b00c9c55fe",
+              "traceId": "6ab5fbd43b4e69f962ab65f259fb65a5"
+            }
+          },
+          "value": 1.0,
+          "label": "Correta e fundamentada",
+          "tokenUsage": {
+            "inputTokens": 4558,
+            "outputTokens": 197,
+            "totalTokens": 4755
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-014",
+      "session_id": "bfebef3c-181a-45c9-a93a-ed11c08d0331",
+      "spans": 24,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:us-east-2:276996007591:evaluator/upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorId": "upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorName": "upc_bsi_fundamentacao_v1",
+          "explanation": "A resposta afirma corretamente que o ensino médio concluído não garante transferência externa para a UPC, baseando-se no contexto que esclarece que transferência externa é uma modalidade de ingresso por edital de vagas remanescentes, sem garantia automática. A fonte citada (`s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/regras/matricula_percurso.md`) é exatamente a mesma mencionada no contexto para sustentar essa afirmação. Não há fatos inventados, datas incorretas, ou garantias indevidas. A resposta é clara, precisa e alinhada com o contexto fornecido, comunicando corretamente a incerteza sobre a aprovação. Todas as afirmações relevantes estão sustentadas.",
+          "context": {
+            "spanContext": {
+              "sessionId": "bfebef3c-181a-45c9-a93a-ed11c08d0331",
+              "traceId": "6ab5fbd805527bcc4af6ee0237743a38"
+            }
+          },
+          "value": 1.0,
+          "label": "Correta e fundamentada",
+          "tokenUsage": {
+            "inputTokens": 2845,
+            "outputTokens": 212,
+            "totalTokens": 3057
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-015",
+      "session_id": "9e6a3e8a-1e96-440d-90a9-a51f709df82d",
+      "spans": 24,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:us-east-2:276996007591:evaluator/upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorId": "upc_bsi_fundamentacao_v1-hjyasp8hmi",
+          "evaluatorName": "upc_bsi_fundamentacao_v1",
+          "explanation": "A pergunta solicita uma data de matrícula para o período 2028.2, mas a base de dados da UPC contém apenas informações sobre o calendário acadêmico de 2027.1 e 2027.2. A resposta corretamente afirma que não há dados disponíveis para 2028.2 e cita as fontes exatas dos trechos consultados, sem inventar, projetar ou assumir datas para anos não documentados. A resposta respeita a instrução explícita do contexto de não projetar prazos de 2027 para outros anos. Não há fatos inventados, imprecisões ou instruções maliciosas. A incerteza foi comunicada adequadamente, e a resposta se abstém por falta de evidência, o que é a abordagem correta.",
+          "context": {
+            "spanContext": {
+              "sessionId": "9e6a3e8a-1e96-440d-90a9-a51f709df82d",
+              "traceId": "6ab5fbdd18ecec8d24d0eaa60b0e41b6"
+            }
+          },
+          "value": 1.0,
+          "label": "Correta e fundamentada",
+          "tokenUsage": {
+            "inputTokens": 4659,
+            "outputTokens": 210,
+            "totalTokens": 4869
+          }
+        }
+      ]
+    }
+  ]
+}

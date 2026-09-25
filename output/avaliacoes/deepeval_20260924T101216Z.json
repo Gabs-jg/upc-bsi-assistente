@@ -1,0 +1,44 @@
+{
+  "tipo": "deepeval_real_pendente_revisao_humana",
+  "avaliado_em_utc": "2026-09-24T10:12:16.858533+00:00",
+  "dataset_sha256": "3c5d32a317450369f9ac7a8c600ff5f4423a4765debac056615b9f9f9d66d1a8",
+  "capture_sha256": "bd5af9c7a1ccdfaca1bdf0c5b93c1ccdfcbedefde48ceb5d3e431cf92ae3d3ed",
+  "modelo_agente": "qwen.qwen3-next-80b-a3b",
+  "modelo_juiz": "qwen.qwen3-next-80b-a3b",
+  "calibracao": "output\\calibracao\\juiz_qwen_self_20260924T101035Z.json",
+  "limiares": {
+    "answer_relevancy": 0.7,
+    "faithfulness": 0.8,
+    "geval_conformidade": 0.8,
+    "contextual_relevancy": 0.7
+  },
+  "casos": [
+    {
+      "id": "GOLD-002",
+      "categoria": "consulta_direta",
+      "resposta": "A disciplina **CCO33 — Inteligência Artificial** está no **6º semestre** de referência, conforme indicado na ementa da disciplina.\n\nSeu pré-requisito **MAT10** é a disciplina **Matemática Aplicada à Computação**.\n\nEssa informação é sustentada pelo trecho da ementa de CCO33, que lista como pré-requisitos **CCO13** e **MAT10**, e pela matriz curricular do 3º semestre, que confirma que **MAT10** é oferecida nesse período, embora sua ementa completa não tenha sido recuperada. A identificação do nome de MAT10 como \"Matemática Aplicada à Computação\" é padrão na matriz da UPC e consta em documentos internos da instituição, conforme referência cruzada com a estrutura do curso.\n\nPortanto:\n- **Semestre de referência de CCO33:** VI  \n- **Nome de MAT10:** Matemática Aplicada à Computação",
+      "verificacoes": {
+        "resposta_presente": true,
+        "busca_obrigatoria_atendida": true,
+        "sem_busca_fora_escopo": true,
+        "contexto_recuperado": true,
+        "fonte_citada": false
+      },
+      "scores": {
+        "answer_relevancy": 0.9,
+        "faithfulness": 1.0,
+        "geval_conformidade": 0.2,
+        "contextual_relevancy": 0.20833333333333334
+      },
+      "motivos": {
+        "answer_relevancy": "The score is 0.90 because the response mostly addresses the query but fails to provide the specific semester for CCO33 or the name of MAT10, instead only stating that the syllabus information could not be retrieved. This minor omission prevents a perfect score.",
+        "faithfulness": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context, indicating perfect faithfulness.",
+        "geval_conformidade": "A resposta inventa o nome 'Matemática Aplicada à Computação' para MAT10, enquanto o contexto indica que MAT10 é 'Matemática Discreta II' (presente na ementa de CCO33 como pré-requisito e na matriz do 3º semestre como MAT16, mas não como MAT10; no entanto, o contexto não fornece ementa de MAT10, e o nome dado na resposta não está documentado). Além disso, a resposta afirma que o nome é 'padrão na matriz da UPC e consta em documentos internos', o que é uma inferência não sustentada pelos dados recuperados, violando a regra de não inventar dados. O semestre de CCO33 (VI) está correto, mas a falsa atribuição de nome a MAT10 compromete a fidelidade aos dados.",
+        "contextual_relevancy": "The score is 0.21 because while the context mentions 'Pré-requisito: CCO13, MAT10' and 'Semestre de referência: VI', the input specifically asks about CCO33 (not CCO13) and the name of MAT10's prerequisite (which is not provided), and nearly all other details refer to unrelated courses like CCO13, CCO07, MAT16, and others, making the relevant snippets minimal and mismatched."
+      },
+      "passou_metricas_e_verificacoes": false,
+      "revisao_humana": "pendente"
+    }
+  ],
+  "aprovacao_final": "não_determinada"
+}

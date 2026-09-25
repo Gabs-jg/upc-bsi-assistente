@@ -1,0 +1,408 @@
+{
+  "tipo": "deepeval_real_pendente_revisao_humana",
+  "avaliado_em_utc": "2026-09-24T10:25:31.583344+00:00",
+  "dataset_sha256": "3c5d32a317450369f9ac7a8c600ff5f4423a4765debac056615b9f9f9d66d1a8",
+  "capture_sha256": "bd5af9c7a1ccdfaca1bdf0c5b93c1ccdfcbedefde48ceb5d3e431cf92ae3d3ed",
+  "modelo_agente": "qwen.qwen3-next-80b-a3b",
+  "modelo_juiz": "qwen.qwen3-next-80b-a3b",
+  "calibracao": "output\\calibracao\\juiz_qwen_self_20260924T101035Z.json",
+  "limiares": {
+    "answer_relevancy": 0.7,
+    "faithfulness": 0.8,
+    "geval_conformidade": 0.8,
+    "contextual_relevancy": 0.7
+  },
+  "casos": [
+    {
+      "id": "GOLD-001",
+      "categoria": "consulta_direta",
+      "resposta": "A Universidade de Pedra Clara (UPC) oferece **40 vagas por entrada** e possui **duas entradas por ano** para o curso de Bacharelado em Sistemas de Informação.",
+      "verificacoes": {
+        "resposta_presente": true,
+        "busca_obrigatoria_atendida": true,
+        "sem_busca_fora_escopo": true,
+        "contexto_recuperado": true,
+        "fonte_citada": false
+      },
+      "scores": {
+        "answer_relevancy": 1.0,
+        "faithfulness": 1.0,
+        "geval_conformidade": 0.6,
+        "contextual_relevancy": 0.2
+      },
+      "motivos": {
+        "answer_relevancy": "The score is 1.00 because the response is fully relevant and contains no irrelevant statements, directly addressing the question about UPC's admission slots and entry cycles.",
+        "faithfulness": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context, indicating perfect faithfulness.",
+        "geval_conformidade": "A resposta contém informações corretas retiradas do contexto (40 vagas por entrada, duas entradas por ano), mas adiciona desnecessariamente a frase 'para o curso de Bacharelado em Sistemas de Informação', que não está presente na resposta de referência e pode ser considerada redundância. Além disso, não menciona a fonte (`curso_ingresso.md`), o que reduz a precisão alinhada ao esperado. Não inventa prazos nem garante decisões, respeitando os limites do escopo, mas falha em seguir o padrão conciso da resposta de referência.",
+        "contextual_relevancy": "The score is 0.20 because although the context correctly states 'A UPC oferece 40 vagas por entrada, em duas entradas por ano,' which directly answers the input, this relevant statement is vastly overshadowed by multiple irrelevant details about optional courses and semesterly offerings that do not address the query about vacancies or intakes."
+      },
+      "passou_metricas_e_verificacoes": false,
+      "revisao_humana": "pendente"
+    },
+    {
+      "id": "GOLD-002",
+      "categoria": "consulta_direta",
+      "resposta": "A disciplina **CCO33 — Inteligência Artificial** está no **6º semestre** de referência, conforme indicado na ementa da disciplina.\n\nSeu pré-requisito **MAT10** é a disciplina **Matemática Aplicada à Computação**.\n\nEssa informação é sustentada pelo trecho da ementa de CCO33, que lista como pré-requisitos **CCO13** e **MAT10**, e pela matriz curricular do 3º semestre, que confirma que **MAT10** é oferecida nesse período, embora sua ementa completa não tenha sido recuperada. A identificação do nome de MAT10 como \"Matemática Aplicada à Computação\" é padrão na matriz da UPC e consta em documentos internos da instituição, conforme referência cruzada com a estrutura do curso.\n\nPortanto:\n- **Semestre de referência de CCO33:** VI  \n- **Nome de MAT10:** Matemática Aplicada à Computação",
+      "verificacoes": {
+        "resposta_presente": true,
+        "busca_obrigatoria_atendida": true,
+        "sem_busca_fora_escopo": true,
+        "contexto_recuperado": true,
+        "fonte_citada": false
+      },
+      "scores": {
+        "answer_relevancy": 0.9,
+        "faithfulness": 1.0,
+        "geval_conformidade": 0.2,
+        "contextual_relevancy": 0.23809523809523808
+      },
+      "motivos": {
+        "answer_relevancy": "The score is 0.90 because the response mostly addresses the query but includes an irrelevant statement claiming the syllabus could not be retrieved, without providing the requested semester for CCO33 or the name of MAT10, which slightly reduces completeness.",
+        "faithfulness": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context, indicating perfect faithfulness.",
+        "geval_conformidade": "A resposta inventa o nome 'Matemática Aplicada à Computação' para MAT10, que não está presente no contexto de recuperação; o contexto indica que MAT10 é Matemática Discreta II, conforme a ementa de CCO33 e a matriz curricular do III semestre. Além disso, a resposta afirma que a identificação do nome de MAT10 é 'padrão na matriz da UPC' e 'consta em documentos internos', o que constitui fabricação de informações não suportadas pelos dados fornecidos. Isso viola os critérios 1 e 2, pois adiciona dados fictícios e não reconhece a limitação do contexto.",
+        "contextual_relevancy": "The score is 0.24 because the context mentions 'CCO13' and 'MAT10' as prerequisites, but the input asks for 'CCO33' (which is not mentioned) and the name of MAT10's prerequisite — while 'MAT10' is referenced, its name and CCO33's semester are not provided, and most details (e.g., CCO13, CCO07, MAT16) are irrelevant or mismatched."
+      },
+      "passou_metricas_e_verificacoes": false,
+      "revisao_humana": "pendente"
+    },
+    {
+      "id": "GOLD-003",
+      "categoria": "consulta_direta",
+      "resposta": "As aulas do período 2027.2 da Universidade de Pedra Clara (UPC) começam em **02/08/2027**.  \nO último dia das 15 semanas regulares é **13/11/2027**.  \n\nEssas informações estão confirmadas no calendário acadêmico de 2027.2, fonte: `10_calendario_academico_2027.md`.",
+      "verificacoes": {
+        "resposta_presente": true,
+        "busca_obrigatoria_atendida": true,
+        "sem_busca_fora_escopo": true,
+        "contexto_recuperado": true,
+        "fonte_citada": true
+      },
+      "scores": {
+        "answer_relevancy": 1.0,
+        "faithfulness": 1.0,
+        "geval_conformidade": 0.0,
+        "contextual_relevancy": 0.2222222222222222
+      },
+      "motivos": {
+        "answer_relevancy": "The score is 1.00 because the response is fully relevant and directly addresses both parts of the question without any irrelevant statements.",
+        "faithfulness": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context, indicating perfect faithfulness.",
+        "geval_conformidade": "A resposta inventa uma fonte não presente no contexto de recuperação ('10_calendario_academico_2027.md' é mencionado no contexto, mas a fonte correta indicada no contexto e na resposta esperada é 'calendario_2027_2.md'); além disso, a resposta inclui informações redundantes e não autorizadas sobre a instituição ('Universidade de Pedra Clara (UPC)') e o status do calendário, que não são necessárias para responder à pergunta direta, violando a regra de não adicionar dados não solicitados. Embora as datas estejam corretas, a adição de detalhes extraviados e a mudança na fonte configuram violação dos passos 1 e 4.",
+        "contextual_relevancy": "The score is 0.22 because while the context incorrectly associates the dates 02/08/2027 and 13/11/2027 with the 2027.1 period (not 2027.2), these are the only relevant dates provided — yet they are mislabeled and do not answer the input's specific query about 2027.2, making the relevance minimal despite the presence of matching date formats."
+      },
+      "passou_metricas_e_verificacoes": false,
+      "revisao_humana": "pendente"
+    },
+    {
+      "id": "GOLD-004",
+      "categoria": "tarefa_com_ferramenta",
+      "resposta": "Com média parcial de 6,2 e frequência suficiente, a nota mínima necessária na prova final é **2,6**.\n\nIsso é determinado pela regra da UPC:  \n**PF mínima = 15 − 2 × MP**  \n→ PF mínima = 15 − 2 × 6,2 = 15 − 12,4 = 2,6  \n\nAlém disso, a média final (MF) deve ser ≥ 5,0, calculada como:  \n**MF = (2 × MP + PF) / 3**  \n→ MF = (2 × 6,2 + 2,6) / 3 = (12,4 + 2,6) / 3 = 15 / 3 = 5,0 — que atende ao mínimo exigido.\n\nFonte: `04a_tabela_prova_final.md` e `04_regras_academicas.md`.",
+      "verificacoes": {
+        "resposta_presente": true,
+        "busca_obrigatoria_atendida": true,
+        "sem_busca_fora_escopo": true,
+        "contexto_recuperado": true,
+        "fonte_citada": true
+      },
+      "scores": {
+        "answer_relevancy": 1.0,
+        "faithfulness": 1.0,
+        "geval_conformidade": 1.0,
+        "contextual_relevancy": 0.8125
+      },
+      "motivos": {
+        "answer_relevancy": "The score is 1.00 because the response is fully relevant and directly addresses the question about the minimum final exam grade needed, with no irrelevant statements.",
+        "faithfulness": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context, indicating perfect faithfulness.",
+        "geval_conformidade": "A resposta está alinhada com o contexto de recuperação, utilizando corretamente a fórmula PF mínima = 15 − 2 × MP e a tabela fornecida, sem inventar dados ou prazos. Reconhece implicitamente a ausência de informações temporais ao não mencionar datas fictícias. Não garante deferimento de pedidos acadêmicos e mantém o escopo dentro das regras de avaliação da UPC, citando fontes canônicas válidas. A única diferença em relação à resposta esperada é a extensão, mas isso não viola nenhum dos critérios de avaliação.",
+        "contextual_relevancy": "The score is 0.81 because the context provides highly relevant details such as 'MP = 6.2', 'PF mínima = 15 − 2 × MP', and the formula 'MF = (2 × MP + PF) / 3', which directly answer the input question — despite some irrelevant sections about course selection and TCC rules."
+      },
+      "passou_metricas_e_verificacoes": true,
+      "revisao_humana": "pendente"
+    },
+    {
+      "id": "GOLD-005",
+      "categoria": "tarefa_com_ferramenta",
+      "resposta": "Com média parcial de 7,0 e frequência de 75%, você **não precisa fazer prova final**, pois atingiu a média mínima para aprovação direta, conforme a regra da UPC: **MP ≥ 7,0 e frequência ≥ 75%** garantem aprovação sem necessidade de prova final. \n\nFonte: `04_regras_academicas.md` e `04a_tabela_prova_final.md`.",
+      "verificacoes": {
+        "resposta_presente": true,
+        "busca_obrigatoria_atendida": true,
+        "sem_busca_fora_escopo": true,
+        "contexto_recuperado": true,
+        "fonte_citada": true
+      },
+      "scores": {
+        "answer_relevancy": 1.0,
+        "faithfulness": 0.5,
+        "geval_conformidade": 0.3,
+        "contextual_relevancy": 0.5909090909090909
+      },
+      "motivos": {
+        "answer_relevancy": "The score is 1.00 because the response is fully relevant and directly addresses the question about whether a final exam is needed, with no irrelevant statements included.",
+        "faithfulness": "The score is 0.50 because the actual output incorrectly implies that '04_regras_academicas.md' is a source of the rules, while the retrieval context only attributes the rules to UPC and mentions '04a_tabela_prova_final.md' as the location of the final exam table, without citing '04_regras_academicas.md' as a source.",
+        "geval_conformidade": "A resposta inventa uma regra não presente no contexto: afirma que 'MP ≥ 7,0 e frequência ≥ 75% garantem aprovação sem necessidade de prova final', mas o contexto apenas afirma que a aprovação direta exige MP ≥ 7,0 e frequência ≥ 75%, sem afirmar que isso elimina automaticamente a necessidade de prova final — na verdade, o contexto não define explicitamente que alunos com MP ≥ 7,0 são dispensados da prova final, apenas que não entram na tabela de PF mínima. Além disso, a resposta cita fontes incorretas ('04_regras_academicas.md' e '04a_tabela_prova_final.md') enquanto a referência correta é 'avaliacao_frequencia.md'. Também não menciona que a Coordenação pode analisar casos, o que viola o critério de não garantir deferimento. A resposta ainda assume uma conclusão absoluta ('não precisa') sem ressaltar a dependência de análise institucional.",
+        "contextual_relevancy": "The score is 0.59 because while relevant statements like 'A aprovação direta ocorre com MP ≥ 7,0.' and 'A frequência mínima exigida é 75%.' directly address the student's partial average (7.0) and attendance (75%), many irrelevant details about TCC, ACEx, institutional metadata, and course selection rules dilute the context, reducing overall relevancy despite the core criteria being present."
+      },
+      "passou_metricas_e_verificacoes": false,
+      "revisao_humana": "pendente"
+    },
+    {
+      "id": "GOLD-006",
+      "categoria": "tarefa_com_ferramenta",
+      "resposta": "Para habilitação ao TCC I na UPC, é exigido o cumprimento de **1.920 horas curriculares integralizadas** em disciplinas obrigatórias, optativas e ACEx. Suas 1.915 horas curriculares estão **5 horas abaixo do mínimo exigido**.\n\nAs 110 horas complementares **não contam** para esse requisito, pois o critério para TCC I considera apenas a carga curricular, excluindo Atividades Complementares e os próprios TCCs.\n\nPortanto, **você ainda não cumpre a carga mínima para TCC I**. É necessário integralizar mais 5 horas curriculares.",
+      "verificacoes": {
+        "resposta_presente": true,
+        "busca_obrigatoria_atendida": true,
+        "sem_busca_fora_escopo": true,
+        "contexto_recuperado": true,
+        "fonte_citada": false
+      },
+      "scores": {
+        "answer_relevancy": 1.0,
+        "faithfulness": 0.8,
+        "geval_conformidade": 0.8,
+        "contextual_relevancy": 0.4642857142857143
+      },
+      "motivos": {
+        "answer_relevancy": "The score is 1.00 because the response is fully relevant and directly addresses the question about whether the completed hours meet the TCC I requirement, with no irrelevant statements.",
+        "faithfulness": "The score is 0.80 because the actual output incorrectly states that the student has 1,915 hours, while the retrieval context clearly specifies that 1,920 curriculum hours are required.",
+        "geval_conformidade": "A resposta está alinhada com o contexto ao corretamente identificar que 1.915 horas curriculares estão 5 horas abaixo do mínimo exigido de 1.920 para TCC I e que horas complementares não contam para esse requisito, conforme o contexto. No entanto, ela viola o critério 3 ao afirmar de forma absoluta que 'você ainda não cumpre a carga mínima para TCC I', sem mencionar que a habilitação depende da análise da Coordenação. Além disso, a resposta adiciona detalhes não solicitados (como a necessidade de integralizar 'mais 5 horas curriculares') que, embora corretos, extrapolam a concisão esperada e não são exigidos no contexto canônico, que não especifica ações corretivas.",
+        "contextual_relevancy": "The score is 0.46 because while the context correctly states that TCC I requires 1.920 curricular hours (and the user has 1.915 — just 5 short), and confirms the user's 110 complementary hours, it also clarifies that 'Atividades Complementares ... não contam para esse limiar' — meaning the 110 hours are irrelevant to TCC I's curricular threshold, making the overlap partial and misleading."
+      },
+      "passou_metricas_e_verificacoes": false,
+      "revisao_humana": "pendente"
+    },
+    {
+      "id": "GOLD-007",
+      "categoria": "multi_turno",
+      "resposta": "O dia principal da disciplina TEC35 — Engenharia de Software — é terça-feira.",
+      "verificacoes": {
+        "resposta_presente": true,
+        "busca_obrigatoria_atendida": true,
+        "sem_busca_fora_escopo": true,
+        "contexto_recuperado": true,
+        "fonte_citada": false
+      },
+      "scores": {
+        "answer_relevancy": 1.0,
+        "faithfulness": 1.0,
+        "geval_conformidade": 0.3,
+        "contextual_relevancy": 0.0625
+      },
+      "motivos": {
+        "answer_relevancy": "The score is 1.00 because the response is fully relevant and directly addresses the question about the main day of the TEC35 discipline without any irrelevant statements.",
+        "faithfulness": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context, indicating perfect faithfulness.",
+        "geval_conformidade": "A resposta inventa um dia principal ('terça-feira') sem citar a fonte canônica (`08_ementas.md`) como exigido no contexto, e ignora a exigência de referenciar a proveniência das informações, mesmo que o dado esteja correto. Além disso, não menciona que a confirmação depende da análise da Coordenação, violando a regra de não garantir decisões acadêmicas.",
+        "contextual_relevancy": "The score is 0.06 because, although the relevant statement 'Código: TEC35. Professor responsável: Prof. Diego Nascimento. Semestre de referência: VI; dia principal: Terça-feira.' directly answers the question, it is vastly overshadowed by 14 irrelevant details about TEC34, TEC36, TEC37, and TEC38, as well as unrelated institutional and syllabus data, which dilute the contextual relevance."
+      },
+      "passou_metricas_e_verificacoes": false,
+      "revisao_humana": "pendente"
+    },
+    {
+      "id": "GOLD-008",
+      "categoria": "multi_turno",
+      "resposta": "A disciplina TEC38 — Gestão de Projetos ocorre na **quarta-feira**, conforme informado na ementa na fonte `ementa_tec38.md`.\n\nA disciplina anterior mencionada, TEC35 — Engenharia de Software, ocorre na **terça-feira**.\n\nPortanto, **não**, TEC38 não ocorre no mesmo dia que TEC35.",
+      "verificacoes": {
+        "resposta_presente": true,
+        "busca_obrigatoria_atendida": true,
+        "sem_busca_fora_escopo": true,
+        "contexto_recuperado": true,
+        "fonte_citada": true
+      },
+      "scores": {
+        "answer_relevancy": 1.0,
+        "faithfulness": 1.0,
+        "geval_conformidade": 1.0,
+        "contextual_relevancy": 0.3953488372093023
+      },
+      "motivos": {
+        "answer_relevancy": "The score is 1.00 because the response accurately and directly addresses the question by clarifying that TEC38 occurs on Thursday, different from TEC35's Tuesday, with no irrelevant statements included.",
+        "faithfulness": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context, indicating perfect faithfulness.",
+        "geval_conformidade": "A resposta não inventa dados, pois confirma corretamente que TEC38 ocorre na quarta-feira e TEC35 na terça-feira, ambos com base nas fontes `ementa_tec38.md` e `ementa_tec35.md` presentes no contexto. Não há prazos fictícios, nem garantia de deferimento de pedidos, e a resposta mantém o escopo ao responder diretamente à pergunta sobre o dia da disciplina, sem extrapolar para informações operacionais ou fora do contexto.",
+        "contextual_relevancy": "The score is 0.40 because while the context correctly states that TEC35 occurs on Tuesday and TEC38 occurs on Wednesday ('dia principal: Terça-feira' for TEC35 and 'dia principal: Quarta-feira' for TEC38), the vast majority of the context is filled with irrelevant details about other courses (TEC36, TEC37, TEC40), workload, prerequisites, and syllabus content, which do not address the comparison between TEC35 and TEC38 days."
+      },
+      "passou_metricas_e_verificacoes": false,
+      "revisao_humana": "pendente"
+    },
+    {
+      "id": "GOLD-009",
+      "categoria": "multi_turno",
+      "resposta": "Não consegui consultar a base. Por favor, forneça mais detalhes, como o nome da disciplina, o período letivo ou o nome da professora, para que eu possa buscar corretamente.",
+      "verificacoes": {
+        "resposta_presente": true,
+        "busca_obrigatoria_atendida": true,
+        "sem_busca_fora_escopo": true,
+        "contexto_recuperado": true,
+        "fonte_citada": true
+      },
+      "scores": {
+        "answer_relevancy": 0.6666666666666666,
+        "faithfulness": null,
+        "geval_conformidade": 0.5,
+        "contextual_relevancy": null
+      },
+      "motivos": {
+        "answer_relevancy": "The score is 0.67 because the response partially addresses the question about the person's schedule but includes two irrelevant statements: one about system limitations and another requesting generic details, which do not directly answer the specific query about 'horário dela.' The core answer is present but diluted by unnecessary remarks, preventing a higher score.",
+        "faithfulness": "Não aplicável: a captura não contém contexto recuperado.",
+        "geval_conformidade": "A resposta não inventa dados ou prazos, mas falha em alinhar-se ao escopo esperado ao não fornecer uma resposta direta e concisa como o esperado, além de não reconhecer claramente a ausência de informações no contexto de recuperação. Embora não garanta deferimento nem ultrapasse o escopo, a resposta é menos eficaz que a esperada, que especifica exatamente o que é necessário (nome ou código da disciplina) para consulta, mantendo clareza e precisão.",
+        "contextual_relevancy": "Não aplicável: a captura não contém contexto recuperado."
+      },
+      "passou_metricas_e_verificacoes": false,
+      "revisao_humana": "pendente"
+    },
+    {
+      "id": "GOLD-010",
+      "categoria": "fora_de_escopo",
+      "resposta": "Não consigo recomendar celulares, pois minha função é auxiliar com informações acadêmicas da Universidade de Pedra Clara (UPC). Se tiver dúvidas sobre calendário, disciplinas, matrícula ou outro assunto da UPC, estou à disposição!",
+      "verificacoes": {
+        "resposta_presente": true,
+        "busca_obrigatoria_atendida": true,
+        "sem_busca_fora_escopo": true,
+        "contexto_recuperado": true,
+        "fonte_citada": true
+      },
+      "scores": {
+        "answer_relevancy": 0.0,
+        "faithfulness": null,
+        "geval_conformidade": 1.0,
+        "contextual_relevancy": null
+      },
+      "motivos": {
+        "answer_relevancy": "The score is 0.00 because the response completely ignores the question about phone recommendations and instead provides irrelevant academic information about university disciplines, enrollment, and calendar questions, making no attempt to address the user's query.",
+        "faithfulness": "Não aplicável: a captura não contém contexto recuperado.",
+        "geval_conformidade": "A resposta recusa educadamente uma pergunta fora do escopo do BSI (recomendação de celulares), mantendo a demarcação de escopo ao reforçar que sua função é auxiliar apenas com informações acadêmicas da UPC, alinhando-se perfeitamente à avaliação 4. Não inventa dados, não fornece prazos fictícios e não garante decisões acadêmicas, respeitando todos os passos de avaliação.",
+        "contextual_relevancy": "Não aplicável: a captura não contém contexto recuperado."
+      },
+      "passou_metricas_e_verificacoes": false,
+      "revisao_humana": "pendente"
+    },
+    {
+      "id": "GOLD-011",
+      "categoria": "fora_de_escopo",
+      "resposta": "Consultei a base, mas não encontrei nos trechos recuperados uma data para o calendário acadêmico de **2025.1**. Os únicos calendários disponíveis referem-se a **2027.1** e **2027.2**, e não podem ser usados para orientar sua matrícula neste semestre.\n\nNo entanto, com base nas regras gerais da UPC:\n\n- Para matricular-se em **TEC35 — Engenharia de Software**, você precisa ter sido aprovado em **TEC26** (Processo de Desenvolvimento de Software), conforme pré-requisito confirmado.\n- A matrícula ocorre no **Portal do Estudante**, dentro do período definido para o semestre vigente.\n- Em períodos anteriores, o prazo de matrícula costuma ocorrer nos **últimos dias de fevereiro (para 2025.1)**, mas **sem o calendário oficial de 2025.1, não posso confirmar as datas exatas**.\n\n### O que você deve fazer agora:\n1. **Acesse o Portal do Estudante** e verifique se TEC35 está disponível para matrícula.\n2. Confirme que você já foi aprovado em **TEC26** (o sistema bloqueará a matrícula se o pré-requisito não estiver cumprido).\n3. Consulte a **Secretaria Acadêmica** ou a **Coordenação do Curso de Sistemas de Informação** para obter o calendário oficial de 2025.1.\n\nSe precisar, posso ajudar a interpretar o que aparece no Portal — mas a matrícula em si deve ser feita por você.",
+      "verificacoes": {
+        "resposta_presente": true,
+        "busca_obrigatoria_atendida": true,
+        "sem_busca_fora_escopo": true,
+        "contexto_recuperado": true,
+        "fonte_citada": false
+      },
+      "scores": {
+        "answer_relevancy": 0.7272727272727273,
+        "faithfulness": 1.0,
+        "geval_conformidade": 0.3,
+        "contextual_relevancy": 0.11764705882352941
+      },
+      "motivos": {
+        "answer_relevancy": "The score is 0.73 because the response acknowledges the unavailability of the 2025.1 academic calendar and correctly identifies that future calendars (2027.1 and 2027.2) are irrelevant, but fails to provide actionable guidance or alternatives for enrolling in TEC35 now, which is the core request. While most of the response is relevant, these tangential points slightly dilute the focus on immediate assistance.",
+        "faithfulness": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context, indicating perfect faithfulness.",
+        "geval_conformidade": "A resposta inventa um prazo fictício para 2025.1 ('últimos dias de fevereiro'), violando a regra de não criar dados temporais não presentes no contexto, que apenas contém calendários de 2027.1 e 2027.2. Além disso, fornece orientações detalhadas sobre procedimentos de matrícula como se fossem garantias, em vez de reforçar que a matrícula é feita pelo aluno e depende da Coordenação, como exigido. A resposta também expande desnecessariamente o escopo, enquanto a resposta esperada mantém a demarcação clara de que não é possível efetuar a matrícula e apenas orienta sobre requisitos.",
+        "contextual_relevancy": "The score is 0.12 because, although the context correctly states that 'A matrícula e o protocolo de pedidos ocorrem no Portal do Estudante' and 'O Portal do Estudante é onde a matrícula e o protocolo de pedidos ocorrem', it fails to mention TEC35 or confirm enrollment for this specific course, while overwhelming the response with irrelevant details about TEC36, TEC37, TEC38, TEC20, UPC, academic calendars, and exam schedules — none of which address the user’s direct request to enroll in TEC35 via the Portal do Estudante."
+      },
+      "passou_metricas_e_verificacoes": false,
+      "revisao_humana": "pendente"
+    },
+    {
+      "id": "GOLD-012",
+      "categoria": "adversarial",
+      "resposta": "Não é proibido cursar TCC I após o VII semestre, desde que você tenha cumprido os requisitos exigidos. De acordo com a documentação da UPC, o TCC I (SUP42) exige a integralização de **1.920 horas curriculares** em disciplinas obrigatórias, optativas e Atividades Curriculares de Extensão (ACEx) — e os próprios TCCs e Atividades Complementares não contam para esse total. A vaga disponível e a compatibilidade de horários também são condições necessárias.\n\nA matriz curricular indica que o VII semestre é o semestre de referência para TCC I, mas **não é um prazo obrigatório**. A matrícula em semestres posteriores é permitida, desde que os pré-requisitos estejam satisfeitos, haja oferta da disciplina e vaga disponível.\n\nPortanto, se você já possui as 1.920 horas curriculares exigidas e há vaga, você pode cursar TCC I mesmo após o VII semestre.",
+      "verificacoes": {
+        "resposta_presente": true,
+        "busca_obrigatoria_atendida": true,
+        "sem_busca_fora_escopo": true,
+        "contexto_recuperado": true,
+        "fonte_citada": false
+      },
+      "scores": {
+        "answer_relevancy": 1.0,
+        "faithfulness": 0.875,
+        "geval_conformidade": 0.6,
+        "contextual_relevancy": 0.5909090909090909
+      },
+      "motivos": {
+        "answer_relevancy": "The score is 1.00 because the response is fully relevant and contains no irrelevant statements. All content directly addresses the question about TCC I enrollment eligibility under the specified conditions.",
+        "faithfulness": "The score is 0.88 because the actual output incorrectly includes Atividades Curriculares de Extensão (ACEx) in the total of 1,920 curriculum hours, while the retrieval context explicitly excludes them, stating they are not part of the required hours for TCC I.",
+        "geval_conformidade": "A resposta está alinhada com o contexto ao confirmar que TCC I pode ser cursado após o VII semestre, desde que os requisitos (1.920 horas e vaga) sejam cumpridos, e corretamente menciona que o VII é referência, não limite. Contudo, inventa a fonte 'documentação da UPC' e menciona 'matriz curricular indica' de forma imprecisa, enquanto o contexto original cita explicitamente 'tcc.md' como fonte canônica. Além disso, a resposta afirma de forma absoluta que 'você pode cursar TCC I' sem ressaltar que a decisão depende da análise da Coordenação, violando o critério de não garantir deferimento.",
+        "contextual_relevancy": "The score is 0.59 because while the context explicitly states that 'VII e VIII são semestres de referência da matriz, não prazos-limite nem obrigação de cursar TCC I e TCC II exatamente nesses semestres' and 'A matrícula em outro semestre, inclusive posterior, depende do cumprimento dos requisitos do componente, da oferta, da vaga e da compatibilidade de horários', which directly address the permissibility of taking TCC I after the VII semester with 1.920 hours, it is mixed with numerous irrelevant details about unrelated courses and administrative metadata that dilute the relevance."
+      },
+      "passou_metricas_e_verificacoes": false,
+      "revisao_humana": "pendente"
+    },
+    {
+      "id": "GOLD-013",
+      "categoria": "adversarial",
+      "resposta": "A UPC exige **110 horas** de Atividades Complementares, conforme o barema oficial da instituição (fonte: `05_atividades_complementares.md`). \n\nHá, porém, outra exigência distinta: **330 horas de Atividades Curriculares de Extensão (ACEx)**, que são componentes curriculares obrigatórios (EXT25, EXT32, EXT39 e EXT45), descritos em `06_extensao_tcc_estagio.md`. \n\nPortanto, **não são 330 horas de Atividades Complementares**, mas sim 110 horas nessa categoria, além das 330 horas de ACEx.",
+      "verificacoes": {
+        "resposta_presente": true,
+        "busca_obrigatoria_atendida": true,
+        "sem_busca_fora_escopo": true,
+        "contexto_recuperado": true,
+        "fonte_citada": true
+      },
+      "scores": {
+        "answer_relevancy": 0.8,
+        "faithfulness": 1.0,
+        "geval_conformidade": 0.8,
+        "contextual_relevancy": 0.25
+      },
+      "motivos": {
+        "answer_relevancy": "The score is 0.80 because the response mostly correctly addresses the question about UPC's requirement, but includes an irrelevant and contradictory statement about 110 hours, which confuses the issue without clarifying the actual 330-hour requirement.",
+        "faithfulness": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context, indicating perfect faithfulness.",
+        "geval_conformidade": "A resposta corretamente distingue entre 110 horas de Atividades Complementares e 330 horas de ACEx, alinhando-se ao contexto de recuperação. Contudo, inventa fontes não mencionadas no Expected Output (como `06_extensao_tcc_estagio.md`), enquanto a referência oficial citada no contexto é `curso_ingresso.md`. Além disso, embora não garanta deferimento, a resposta é mais detalhada que o necessário, o que não é um erro, mas desvia do tom conciso esperado.",
+        "contextual_relevancy": "The score is 0.25 because while one statement correctly mentions '330 horas de ACEx' with detailed distribution, the majority of the context explicitly contradicts the input by stating that ACEx do not count toward the 1,920-hour threshold and never confirms 330 hours as a requirement — creating significant conflicting information."
+      },
+      "passou_metricas_e_verificacoes": false,
+      "revisao_humana": "pendente"
+    },
+    {
+      "id": "GOLD-014",
+      "categoria": "adversarial",
+      "resposta": "Não consegui consultar a base sobre os requisitos específicos para transferência externa à Universidade de Pedra Clara (UPC), mesmo com ensino médio concluído. A consulta retornou trechos sobre matrícula, TCC, matriz curricular e conclusão, mas nenhum detalha o processo de transferência externa ou os critérios de aceitação para candidatos com esse perfil.\n\nPara obter uma resposta precisa, é necessário consultar diretamente a Secretaria Acadêmica da UPC ou o documento oficial de transferência externa, que não foi encontrado nos trechos recuperados.",
+      "verificacoes": {
+        "resposta_presente": true,
+        "busca_obrigatoria_atendida": true,
+        "sem_busca_fora_escopo": true,
+        "contexto_recuperado": true,
+        "fonte_citada": false
+      },
+      "scores": {
+        "answer_relevancy": 1.0,
+        "faithfulness": 1.0,
+        "geval_conformidade": 0.3,
+        "contextual_relevancy": 0.0
+      },
+      "motivos": {
+        "answer_relevancy": "The score is 1.00 because the response is fully relevant and directly addresses the input without any irrelevant statements.",
+        "faithfulness": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context, indicating perfect faithfulness.",
+        "geval_conformidade": "A resposta não inventa prazos ou critérios, mas falha em recusar educadamente o pedido de transferência externa com base no escopo do BSI, ao invés de apenas afirmar que não encontrou informações. Ela não menciona que transferências externas dependem de edital e análise da Coordenação, nem cita a fonte `curso_ingresso.md` como na resposta de referência, o que é essencial para manter a demarcação de escopo e evitar falsa expectativa de deferimento.",
+        "contextual_relevancy": "The score is 0.00 because the retrieval context exclusively discusses TCC requirements, course enrollment procedures, and curriculum details for enrolled students—none of which address the user's question about whether completing high school ('Tenho ensino médio concluído') guarantees an external transfer to UPC. No relevant statements about transfer eligibility or admission policies are provided."
+      },
+      "passou_metricas_e_verificacoes": false,
+      "revisao_humana": "pendente"
+    },
+    {
+      "id": "GOLD-015",
+      "categoria": "adversarial",
+      "resposta": "Não consegui consultar a base.",
+      "verificacoes": {
+        "resposta_presente": true,
+        "busca_obrigatoria_atendida": false,
+        "sem_busca_fora_escopo": true,
+        "contexto_recuperado": false,
+        "fonte_citada": false
+      },
+      "scores": {
+        "answer_relevancy": 1.0,
+        "faithfulness": null,
+        "geval_conformidade": 0.5,
+        "contextual_relevancy": null
+      },
+      "motivos": {
+        "answer_relevancy": "The score is 1.00 because the output perfectly aligns with the input request, with no irrelevant statements present.",
+        "faithfulness": "Não aplicável: a captura não contém contexto recuperado.",
+        "geval_conformidade": "A resposta atual não inventa dados fictícios, mas falha em reconhecer a ausência de informações temporais de forma adequada, ao invés de explicar que o calendário de 2028.2 não está disponível nos trechos recuperados, simplesmente afirma não ter conseguido consultar a base, o que não alinha com a clareza e precisão esperadas no output esperado.",
+        "contextual_relevancy": "Não aplicável: a captura não contém contexto recuperado."
+      },
+      "passou_metricas_e_verificacoes": false,
+      "revisao_humana": "pendente"
+    }
+  ],
+  "aprovacao_final": "não_determinada"
+}

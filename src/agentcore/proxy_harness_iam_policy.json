@@ -1,0 +1,14 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "InvocarSomenteHarnessUPC",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock-agentcore:InvokeHarness",
+        "bedrock-agentcore:InvokeAgentRuntime"
+      ],
+      "Resource": "arn:aws:bedrock-agentcore:us-east-2:276996007591:harness/upc_bsi_assistente_v13-xWH7Nkzzk1"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "tipo": "deepeval_suite_captura_real",
+  "captura": "C:\\Users\\Gabriel\\Documents\\Codex\\upc-bsi-assistente\\output\\capturas\\harness_20260924T211251Z_7ddd9cd3.json",
+  "capture_sha256": "a888d2063612285f02ebf0806bbc4b94689d63738111990fc8211bde3a89a033",
+  "modelo_agente": "qwen.qwen3-next-80b-a3b",
+  "formato_contexto": "uri_fonte_mais_texto_recuperado_v2",
+  "rubrica_conformidade": "upc_conformidade_v4_referencia",
+  "casos": {
+    "GOLD-006": {
+      "id": "GOLD-006",
+      "categoria": "tarefa_com_ferramenta",
+      "input": "Integralizei 1.915 horas curriculares e 110 horas complementares. Já cumpro a carga para TCC I?",
+      "resposta": "Não. Para se inscrever em TCC I, é necessário ter integralizado **1.920 horas curriculares** em disciplinas obrigatórias e optativas. Você possui 1.915 horas, o que está **5 horas abaixo do mínimo exigido**. \n\nAs Atividades Complementares (110 horas) **não contam** para esse requisito, conforme especificado na fonte `tcc.md`. \n\nPortanto, você ainda não cumpre a carga horária mínima para TCC I. \n\n**Fonte:** `s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/percurso/tcc.md`",
+      "trechos_recuperados": 5,
+      "busca_obrigatoria_atendida": true,
+      "contexto_obrigatorio_presente": true,
+      "fonte_citada": true,
+      "metricas": {
+        "Answer Relevancy": {
+          "score": 0.8571428571428571,
+          "reason": "The score is 0.86 because the response includes an irrelevant standalone 'Não.' without context, which doesn't address the question about fulfilling TCC I requirements; however, the rest of the output is relevant and correctly interprets the academic credit query.",
+          "success": true,
+          "threshold": 0.7,
+          "classe": "AnswerRelevancyMetric",
+          "erro": null
+        },
+        "Faithfulness": {
+          "score": 0.6,
+          "reason": "The score is 0.60 because the actual output incorrectly limits the 1,920 required hours to only mandatory and elective disciplines, excluding ACEx, which the context explicitly includes as part of the total; however, it correctly states the student has not met the minimum requirement (1,915 < 1,920), and accurately notes that AC (not ACEx) don't count, which aligns with the context.",
+          "success": false,
+          "threshold": 0.8,
+          "classe": "FaithfulnessMetric",
+          "erro": null
+        },
+        "Conformidade UPC": {
+          "score": 1.0,
+          "reason": "A resposta corretamente identifica que 1.915 horas curriculares estão 5 horas abaixo do mínimo exigido de 1.920 para TCC I, conforme especificado na fonte recuperada tcc.md. Também corretamente exclui as 110 horas complementares como não contáveis para esse requisito, alinhando-se com o trecho que afirma que 'Atividades Complementares e os próprios TCCs não contam para esse limiar'. A fonte citada é exatamente a recuperada (s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/percurso/tcc.md), e todas as afirmações são sustentadas pelos trechos sem inferências ou extrapolações. A estrutura e o conteúdo atendem plenamente à pergunta, preservando números, períodos e distinções normativas.",
+          "success": true,
+          "threshold": 0.8,
+          "classe": "GEval",
+          "erro": null
+        },
+        "Relevância de domínio (diagnóstico)": {
+          "score": 1.0,
+          "reason": "A resposta aborda diretamente a intenção da pergunta, esclarecendo que o aluno não atende ao requisito de 1.920 horas curriculares, destacando a deficiência de 5 horas e excluindo as horas complementares como válidas para esse fim, com base na fonte especificada `tcc.md`. Não há recusa injustificada, nem informações falsas, e a resposta é precisa e alinhada aos critérios acadêmicos mencionados.",
+          "success": true,
+          "threshold": 0.7,
+          "classe": "GEval",
+          "erro": null
+        },
+        "Fundamentação lógica (diagnóstico)": {
+          "score": 1.0,
+          "reason": "O output corretamente afirma que 1.915 horas curriculares estão abaixo do mínimo exigido de 1.920 horas, conforme especificado no Retrieval Context; também corretamente exclui as 110 horas complementares como não contáveis para o requisito de TCC I, alinhado com a menção explícita de que 'Atividades Complementares e os próprios TCCs não contam para esse limiar'. Não há contradições, deduções indevidas ou erros numéricos, e a relação entre regra e procedimento é respeitada.",
+          "success": true,
+          "threshold": 0.8,
+          "classe": "GEval",
+          "erro": null
+        }
+      },
+      "erro": null
+    },
+    "GOLD-012": {
+      "id": "GOLD-012",
+      "categoria": "adversarial",
+      "input": "Se eu cursar TCC I depois do VII semestre, com 1.920 horas curriculares e vaga, isso é proibido?",
+      "resposta": "Não. Não é proibido cursar TCC I após o VII semestre, desde que você tenha integralizado 1.920 horas curriculares em disciplinas obrigatórias, optativas e ACEx (não incluindo Atividades Complementares nem os próprios TCCs) e haja vaga disponível. A matriz curricular indica o VII semestre como referência, mas não é um prazo obrigatório. A matrícula em TCC I em semestres posteriores é permitida, conforme regra da UPC, desde que os requisitos sejam cumpridos e haja compatibilidade de horários e vaga.\n\nFonte: `s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/percurso/tcc.md`",
+      "trechos_recuperados": 5,
+      "busca_obrigatoria_atendida": true,
+      "contexto_obrigatorio_presente": true,
+      "fonte_citada": true,
+      "metricas": {
+        "Answer Relevancy": {
+          "score": 0.9090909090909091,
+          "reason": "The score is 0.91 because the response is highly relevant and correctly addresses the core question about whether taking TCC I after the 7th semester is prohibited, but includes one minor irrelevant detail about schedule compatibility, which does not impact the main answer but slightly detracts from precision.",
+          "success": true,
+          "threshold": 0.7,
+          "classe": "AnswerRelevancyMetric",
+          "erro": null
+        },
+        "Faithfulness": {
+          "score": 1.0,
+          "reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context, indicating perfect faithfulness.",
+          "success": true,
+          "threshold": 0.8,
+          "classe": "FaithfulnessMetric",
+          "erro": null
+        },
+        "Conformidade UPC": {
+          "score": 1.0,
+          "reason": "A resposta está correta em sua conclusão e sustenta todas as afirmações com os trechos recuperados: confirma que o VII semestre é referência, não limite; menciona os requisitos de 1.920 horas curriculares (exclusivamente disciplinas obrigatórias, optativas e ACEx, conforme o contexto); e ressalta a necessidade de vaga e compatibilidade de horários, alinhado ao trecho da fonte tcc.md. A fonte citada ('tcc.md') é uma abreviação válida da URI recuperada, e não há erro material, inferência falsa ou extrapolação. A resposta é mais detalhada que a esperada, mas sem desvios ou adições não sustentadas.",
+          "success": true,
+          "threshold": 0.8,
+          "classe": "GEval",
+          "erro": null
+        },
+        "Relevância de domínio (diagnóstico)": {
+          "score": 1.0,
+          "reason": "A resposta aborda diretamente a intenção da pergunta, confirmando que cursar TCC I após o VII semestre não é proibido desde que os requisitos de 1.920 horas curriculares e vaga sejam atendidos, e especifica quais disciplinas contam para o cálculo, excluindo atividades complementares e TCCs, conforme a matriz curricular. A resposta é precisa, não inventa dados, e cita a fonte oficial, alinhando-se perfeitamente aos critérios de escopo acadêmico da UPC.",
+          "success": true,
+          "threshold": 0.7,
+          "classe": "GEval",
+          "erro": null
+        },
+        "Fundamentação lógica (diagnóstico)": {
+          "score": 1.0,
+          "reason": "Todas as afirmações no Output são diretamente sustentadas pelo Retrieval Context: a exigência de 1.920 horas curriculares (excluindo Atividades Complementares e TCCs) é citada textualmente; a menção ao VII semestre como referência, não prazo obrigatório, é reproduzida exatamente; a permissão para matrícula posterior com vaga e compatibilidade de horários é confirmada no contexto; não há comparação numérica incorreta; não há confusão entre equivalência de disciplinas e requisitos de transferência; e nenhuma regra é aplicada a um processo não descrito no contexto.",
+          "success": true,
+          "threshold": 0.8,
+          "classe": "GEval",
+          "erro": null
+        }
+      },
+      "erro": null
+    }
+  }
+}

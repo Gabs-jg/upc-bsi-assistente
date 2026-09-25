@@ -1,0 +1,654 @@
+{
+  "sessao": {
+    "inicio": null,
+    "fim": null,
+    "duracao_minutos": null,
+    "harness": "upc_bsi_assistente_v13",
+    "modelo": null,
+    "modelos_observados": ["google.gemma-3-4b-it", "google.gemma-4-e2b", "google.gemma-4-31b", "qwen.qwen3-next-80b-a3b"],
+    "tipo_registro": "testes pontuais, comparacoes de modelos e retestes de correcao; nao constitui a sessao formal de 60 a 90 minutos",
+    "modelo_final_pendente": false,
+    "modelo_escolhido_para_proxima_rodada": "qwen.qwen3-next-80b-a3b",
+    "confirmacao_configuracao_salva_no_harness": null,
+    "base_conhecimento": "UPC v1.3"
+  },
+  "testes": [
+    {
+      "id": "EXP-001",
+      "categoria": "Dados gerais do curso",
+      "conversa": null,
+      "turno": null,
+      "horario": null,
+      "pergunta": "Quanto tempo dura o curso e qual é sua carga horária total?",
+      "comportamento_esperado": "Consultar a base e informar percurso padrão de 8 semestres e carga horária total de 3.020 horas. Se detalhar a composição, manter 2.910 horas curriculares mais 110 horas de Atividades Complementares; as horas curriculares incluem 180 horas de optativas, 330 horas de ACEx e 60 horas de TCC. Citar apenas fontes recuperadas.",
+      "resposta": "O percurso padrão do Bacharelado em Sistemas de Informação tem **8 semestres**.\n\nA carga horária total é de **3.020 horas**, que é composta por:\n\n- **2.910 horas curriculares** (incluindo 180 horas de optativas, 30 horas de Atividades Curriculares de Extensão (ACEx) e 60 horas de TCC).\n- **10 horas de Atividades Complementares**.\n\nEsta informação foi encontrada nos documentos `01_curso_e_ingresso.md` e `04_regras_academicas.md`.",
+      "busca": {
+        "esperada": true,
+        "executada": true,
+        "consulta_enviada": null,
+        "trechos_recuperados": [
+          {
+            "texto_visivel": "# Curso e ingresso; Instituição: Universidade de Pedra Clara (UPC); Versão: 1.3. O restante foi truncado na cópia do rastreamento.",
+            "fonte": null
+          }
+        ]
+      },
+      "fontes_citadas": [
+        "01_curso_e_ingresso.md",
+        "04_regras_academicas.md"
+      ],
+      "resultado": "falhou",
+      "gravidade": "grave",
+      "problemas": [
+        "Informou 30 horas de ACEx; a base estabelece 330 horas.",
+        "Informou 10 horas de Atividades Complementares; a base estabelece 110 horas.",
+        "A composição apresentada é inconsistente: 2.910 + 10 = 2.920, não 3.020 horas."
+      ],
+      "observacao": "Acertou o percurso padrão de 8 semestres e o total de 3.020 horas. O rastreamento copiado mostra a chamada da ferramenta, mas apenas o início do primeiro resultado; não permite verificar todos os trechos retornados nem confirmar que os dois documentos citados foram recuperados. A causa dos erros de detalhamento permanece indeterminada.",
+      "evidencia_rastreamento": "Antes da busca, o agente informou que consultaria a base. BuscaUPC Consultar Base Upc: 1,0 s. Primeiro resultado visível: Curso e ingresso, UPC, versão 1.3; conteúdo restante truncado."
+    },
+    {
+      "id": "EXP-002",
+      "categoria": "Disciplina, docente e dia da semana",
+      "conversa": null,
+      "turno": null,
+      "horario": null,
+      "pergunta": "Quem leciona CCO33 e em que dia da semana ela ocorre?",
+      "comportamento_esperado": "Consultar a base e informar que CCO33 — Inteligência Artificial tem como professora responsável a Prof.ª Beatriz Farias e dia principal quinta-feira. Manter o código CCO33 e citar apenas fonte efetivamente recuperada, como a ementa_cco33.md.",
+      "resposta": "A disciplina CCO3, Inteligência Artificial, é lecionada pelo Prof.ª Beatriz Farias e ocorre na Quinta-feira. A fonte desta informação é s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa\\_cco3.md.",
+      "busca": {
+        "esperada": true,
+        "executada": true,
+        "consulta_enviada": null,
+        "trechos_recuperados": [
+          {
+            "texto_visivel": "# Ementa — CCO33 — Inteligência Artificial; Instituição: Univers... O restante foi truncado na cópia do rastreamento.",
+            "fonte": null
+          }
+        ]
+      },
+      "fontes_citadas": [
+        "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_cco3.md"
+      ],
+      "resultado": "falhou",
+      "gravidade": "grave",
+      "problemas": [
+        "Alterou o código da disciplina perguntada, CCO33, para CCO3.",
+        "Citou ementa_cco3.md, mas a ementa correspondente na base é ementa_cco33.md."
+      ],
+      "observacao": "Acertou a professora e o dia principal. A fonte citada não corresponde à ementa CCO33 existente na base local. O rastreamento copiado mostra a chamada da ferramenta e o início da ementa correta, mas o resultado completo foi truncado. Não foi informado se EXP-001 e EXP-002 ocorreram na mesma conversa.",
+      "evidencia_rastreamento": "Rastreamento do agente (1 etapa). BuscaUPC Consultar Base Upc: 0,9 s. Primeiro resultado visível: Ementa — CCO33 — Inteligência Artificial; restante truncado."
+    },
+    {
+      "id": "EXP-003",
+      "categoria": "Pré-requisitos e identificação de disciplina",
+      "conversa": null,
+      "turno": null,
+      "horario": null,
+      "pergunta": "Quais são os pré-requisitos de CCO33?",
+      "comportamento_esperado": "Consultar a base e responder que os pré-requisitos de CCO33 — Inteligência Artificial são CCO13 e MAT10, mantendo o código CCO33 e citando a ementa_cco33.md se recuperada.",
+      "resposta": "Os pré-requisitos para a disciplina CCO3 — Inteligência Artificial são **CCO13** e **MAT10**.\nFonte: `s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_cco3.md`",
+      "busca": {
+        "esperada": true,
+        "executada": true,
+        "consulta_enviada": null,
+        "trechos_recuperados": [
+          {
+            "texto_visivel": "# Ementa — CCO33 — Inteligênci...",
+            "fonte_visivel": "s3://upc-bsi-rag-v13-2026-c7a4..."
+          },
+          {
+            "texto_visivel": "# Ementa — CCO13 — Linguagem d...",
+            "fonte_visivel": "s3://upc-bsi-rag-v13-2026-c7a4..."
+          },
+          {
+            "texto_visivel": "# Ementa — CCO03 — Fundamentos...",
+            "fonte_visivel": "s3://upc-bsi-rag-v13-2026-c7a4..."
+          },
+          {
+            "texto_visivel": "# Ementa — CCO27 — Complexidad...",
+            "fonte_visivel": "s3://upc-bsi-rag-v13-2026-c7a4..."
+          },
+          {
+            "texto_visivel": "# Ementa — CCO08 — Organização...",
+            "fonte_visivel": "s3://upc-bsi-rag-v13-2026-c7a4..."
+          }
+        ]
+      },
+      "fontes_citadas": [
+        "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_cco3.md"
+      ],
+      "resultado": "falhou",
+      "gravidade": "grave",
+      "problemas": [
+        "Identificou Inteligência Artificial como CCO3; na base local, o código dessa disciplina é CCO33.",
+        "Citou ementa_cco3.md, que não corresponde à ementa_cco33.md da disciplina recuperada."
+      ],
+      "observacao": "Os pré-requisitos CCO13 e MAT10 estão corretos para CCO33. O usuário confirmou a pergunta exata. A listagem do rastreamento mostra cinco resultados, mas textos e URIs estão truncados; não permite confirmar os caminhos completos retornados.",
+      "evidencia_rastreamento": "Rastreamento copiado com cinco resultados: ementas CCO33, CCO13, CCO03, CCO27 e CCO08; texto e fonte de cada resultado abreviados. Tempo e consulta enviada não informados."
+    },
+    {
+      "id": "EXP-004",
+      "categoria": "Prova final e uso da busca",
+      "conversa": null,
+      "turno": null,
+      "horario": "00:14:45 BRT",
+      "pergunta": "Minha média parcial é 4,5. Quanto preciso tirar na prova final?",
+      "comportamento_esperado": "Consultar a base e informar que, com MP 4,5 e frequência suficiente, a PF mínima é 6,0 para atingir MF 5,0. A regra é geral para as disciplinas e não exige informar a disciplina, o peso da prova final nem a média mínima exigida.",
+      "resposta": "Para que eu possa te informar quanto você precisa tirar na prova final, preciso saber qual é a média final exigida para aprovação na disciplina e qual é o peso da prova final na sua média. Por favor, me informe o nome da disciplina.",
+      "busca": {
+        "esperada": true,
+        "executada": false,
+        "consulta_enviada": null,
+        "trechos_recuperados": []
+      },
+      "fontes_citadas": [],
+      "resultado": "falhou",
+      "gravidade": "menor",
+      "problemas": [
+        "Nenhuma etapa de BuscaUPC apareceu no relato do teste, apesar de a pergunta exigir consulta factual à base.",
+        "Pediu disciplina, média final exigida e peso da prova final embora a regra geral da UPC forneça os dados necessários para calcular PF 6,0."
+      ],
+      "observacao": "Falha de cobertura e uso da ferramenta, sem número ou fonte inventados na resposta. A ausência de rastreamento foi relatada pelo usuário; confirmar em uma nova execução após ajustar o Harness. Este resultado pertence à configuração anterior ao ajuste e deve permanecer registrado.",
+      "evidencia_rastreamento": "O usuário não apresentou etapa de Rastreamento do agente nem chamada de BuscaUPC para essa execução; apresentou apenas a resposta textual e o horário."
+    }
+  ],
+  "retestes_harness": [
+    {
+      "id": "RETESTE-EXP-004-01",
+      "pergunta": "Minha média parcial é 4,5. Quanto preciso tirar na prova final?",
+      "horario": "00:32:20 BRT",
+      "configuracao_alterada": "Novo prompt de busca obrigatória e reasoning_effort=high salvos no Harness, conforme confirmação do usuário.",
+      "resposta": "De acordo com a tabela da prova final da Universidade de Pedra Clara (UPC), para uma média parcial (MP) de 4,5, a prova final mínima (PF) necessária é **6,0**.\nO exemplo fornecido no documento indica que, com MP 4,5 e PF 6,0, a média final (MF) será calculada como: $\\text{MF} = (2 \\times 4,5 + 6,0) / 3 = 5,0$, o que atende ao requisito de $\\text{MF} \\geq 5,0$.\nFonte: `s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/avaliacao/prova_final.md`",
+      "busca_executada": true,
+      "trecho_visivel": "# Prova final: regras e tabela; Instituição: Universidade de Pedra Clara (UPC); restante truncado no rastreamento copiado.",
+      "fonte_citada": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/avaliacao/prova_final.md",
+      "resultado": "parcial",
+      "observacao": "O rastreamento mostrou três etapas: pensamento (2,0 s), BuscaUPC Consultar Base Upc (0,8 s) e pensamento (2,5 s). A resposta acertou PF 6,0, calculou MF 5,0 e citou uma fonte correta. Não explicitou que a prova final exige frequência mínima de 75%. O usuário confirmou ter salvo o novo prompt e reasoning_effort=high antes do reteste. Um sucesso isolado não comprova uso consistente da busca no Harness direto."
+    },
+    {
+      "id": "RETESTE-EXP-001-01",
+      "pergunta": "Quanto tempo dura o curso e qual é sua carga horária total?",
+      "horario": null,
+      "configuracao_alterada": "Novo prompt de busca obrigatória e reasoning_effort=high salvos no Harness, conforme confirmação anterior do usuário.",
+      "resposta": "O percurso padrão do Bacharelado em Sistemas de Informação tem **8 semestres**.\n\nA carga horária total é de **3.020 horas**, que é composta por:\n\n- **2.910 horas curriculares** (incluindo 180 horas de optativas, 30 horas de Atividades Curriculares de Extensão (ACEx) e 60 horas de TCC).\n- **10 horas de Atividades Complementares**.\n\nEsta informação foi encontrada nos documentos `01_curso_e_ingresso.md` e `04_regras_academicas.md`.",
+      "busca_executada": true,
+      "trecho_visivel": "# Curso e ingresso; Instituição: Universidade de Pedra Clara (UPC); Versão: 1.3; restante truncado no rastreamento copiado.",
+      "fonte_citada": "01_curso_e_ingresso.md; 04_regras_academicas.md",
+      "resultado": "falhou",
+      "gravidade": "grave",
+      "observacao": "O rastreamento mostrou uma etapa BuscaUPC Consultar Base Upc (0,9 s). A resposta repetiu os erros do EXP-001: 30 em vez de 330 horas de ACEx e 10 em vez de 110 horas de Atividades Complementares. A soma apresentada, 2.910 + 10, é 2.920 e contradiz o total de 3.020. O arquivo local curso_ingresso.md contém os valores corretos; o trecho completo retornado pela ferramenta não está visível na cópia."
+    }
+  ],
+  "comparacoes_modelo": [
+    {
+      "id": "MODELO-GEMMA4-26B-01",
+      "modelo_testado": "google.gemma-4-26b-a4b",
+      "ambiente": "Playground do Harness; teste temporario de modelo",
+      "pergunta": null,
+      "resultado": "falha_na_chamada_da_ferramenta",
+      "erro": "ValidationException - Parameter validation failed: Invalid request parameters: Missing required field(s): 'pergunta'",
+      "observacao": "O esquema da ferramenta consultar_base_upc exige o campo pergunta. O erro indica que a chamada gerada neste teste nao forneceu esse campo. Nao ha resposta factual para avaliar; a pergunta exata e o rastreamento completo nao foram informados. O mesmo Gateway havia recebido chamadas validas em testes anteriores com Gemma 4 E2B."
+    },
+    {
+      "id": "MODELO-QWEN3-NEXT-80B-01",
+      "modelo_testado": "qwen.qwen3-next-80b-a3b",
+      "ambiente": "Playground do Harness; comparacao temporaria de modelo",
+      "pergunta": "Quanto tempo dura o curso e qual é sua carga horária total?",
+      "resultado": "passou_com_observacao",
+      "busca_executada": true,
+      "trecho_visivel": "Cinco resultados no rastreamento da primeira mensagem: Curso e ingresso; Conclusao e diploma; Calendario academico 2027...; Trabalho de Conclusao de Curso; Calendario academico 2027.... Textos e URIs das fontes aparecem truncados.",
+      "resposta": "O curso de Bacharelado em Sistemas de Informação da Universidade de Pedra Clara (UPC) tem duração padrão de oito semestres (quatro anos), com limite de integralização de até 16 semestres. A carga horária total é de 3.020 horas, composta por 2.910 horas curriculares (incluindo disciplinas obrigatórias, optativas, ACEx e TCC) e 110 horas de Atividades Complementares. Citou 01_curso_e_ingresso.md. Acrescentou requisitos de colação de grau, citando 04_regras_academicas.md.",
+      "observacao": "Rastreamento mostrou BuscaUPC Consultar Base Upc (2,1 s) com cinco resultados; o usuario depois detalhou seus titulos. Duracao, limite, total e composicao numerica estao coerentes com a base local. A resposta nao informou o total de 330 horas de ACEx, mas a pergunta nao exigia esse detalhamento. O texto completo e os caminhos das fontes aparecem truncados; nao foi possivel verificar integralmente as citacoes nem todos os requisitos adicionais de colacao. Um teste isolado nao estabelece confiabilidade do modelo."
+    },
+    {
+      "id": "MODELO-QWEN3-NEXT-80B-02",
+      "modelo_testado": "qwen.qwen3-next-80b-a3b",
+      "ambiente": "Playground do Harness; comparacao temporaria de modelo, conforme contexto da conversa",
+      "pergunta": "Quantas horas de ACEx e de Atividades Complementares o curso exige?",
+      "resultado": "conteudo_correto_com_reuso_de_contexto",
+      "busca_executada": false,
+      "resposta": "O curso exige 330 horas de Atividades Curriculares de Extensao (ACEx) e 110 horas de Atividades Complementares. Citou 01_curso_e_ingresso.md e 04_regras_academicas.md como requisitos para colacao de grau.",
+      "observacao": "Os dois valores correspondem ao arquivo local curso_ingresso.md. O usuario esclareceu que o rastreamento aparece apenas na primeira mensagem da conversa; na segunda pergunta nao houve nova busca visivel. O primeiro rastreamento incluiu Curso e ingresso entre os cinco resultados, de modo que a resposta pode ter aproveitado contexto ja recuperado. Os criterios predefinidos permitem reutilizar na mesma conversa um fato ja recuperado e pertinente. Os caminhos completos das fontes aparecem truncados; nao e possivel verificar integralmente as citacoes da segunda resposta. Esta observacao corrige a classificacao preliminar equivocada de ausencia de busca como falha."
+    },
+    {
+      "id": "MODELO-QWEN3-NEXT-80B-03",
+      "modelo_testado": "qwen.qwen3-next-80b-a3b",
+      "ambiente": "Playground do Harness; conversa nova para teste independente",
+      "pergunta": "Quantas horas de ACEx e de Atividades Complementares o curso exige?",
+      "resultado": "valores_corretos_com_ressalva_de_redacao",
+      "busca_executada": true,
+      "trecho_visivel": "# Curso e ingresso; Instituicao: Universidade de Pedra Clara (UPC); Versao: 1.3; restante truncado no rastreamento copiado.",
+      "resposta": "O curso exige 330 horas de Atividades Curriculares de Extensao (ACEx), distribuidas em EXT25, EXT32, EXT39 e EXT45, e 110 horas de Atividades Complementares, obtidas em pelo menos tres de sete categorias. Citou 06_extensao_tcc_estagio.md e 05_atividades_complementares.md. Acrescentou: Essas horas somam 440 horas no total exigidas fora da carga horaria curricular das disciplinas.",
+      "observacao": "Rastreamento mostrou BuscaUPC Consultar Base Upc (1,0 s) e o inicio do resultado Curso e ingresso. Os valores 330 e 110, os quatro componentes ACEx e a regra de tres categorias estao coerentes com os arquivos locais da KB. Nao foram mostrados todos os trechos e caminhos retornados, portanto as citacoes da resposta nao foram verificadas na execucao. A soma 440 e aritmeticamente correta, mas a expressao 'fora da carga horaria curricular das disciplinas' pode levar o estudante a entender que todas as 440 horas se somam as 2.910 curriculares. No documento Curso e ingresso, 330 horas de ACEx ja integram as 2.910; somente 110 horas complementares sao adicionais. Requer teste direcionado de composicao, sem classificar a frase ambigua como erro numerico confirmado."
+    },
+    {
+      "id": "MODELO-QWEN3-NEXT-80B-04",
+      "modelo_testado": "qwen.qwen3-next-80b-a3b",
+      "ambiente": "Playground do Harness; seguimento da conversa do teste MODELO-QWEN3-NEXT-80B-03",
+      "pergunta": "As 330 horas de ACEx ja estao incluidas nas 2.910 horas curriculares ou sao somadas a elas? Como se chega as 3.020 horas totais?",
+      "resultado": "passou",
+      "busca_executada": null,
+      "resposta": "As 330 horas de ACEx estao incluidas nas 2.910 horas curriculares. As 110 horas de Atividades Complementares sao somadas as 2.910. Portanto, 2.910 + 110 = 3.020 horas. Citou 01_curso_e_ingresso.md e 04_regras_academicas.md.",
+      "observacao": "A resposta esclareceu corretamente a ambiguidade do teste anterior e a conta corresponde ao arquivo local curso_ingresso.md. O usuario forneceu apenas a resposta final desta mensagem, sem informar se houve novo rastreamento; o teste anterior da mesma conversa havia recuperado Curso e ingresso, fonte pertinente para o seguimento. Os criterios predefinidos permitem reutilizar evidencia ja recuperada e pertinente. As citacoes de fonte nao foram integralmente verificadas pelo rastreamento truncado."
+    },
+    {
+      "id": "MODELO-QWEN3-NEXT-80B-05",
+      "modelo_testado": "qwen.qwen3-next-80b-a3b",
+      "ambiente": "Playground do Harness; conversa nova para teste independente",
+      "pergunta": "Quem leciona CCO33 e em que dia da semana ela ocorre?",
+      "resultado": "passou",
+      "busca_executada": true,
+      "trecho_visivel": "# Ementa — CCO33 — Inteligencia Artificial; Instituicao: Universidade de Pedra Clara; restante truncado no rastreamento copiado.",
+      "resposta": "A disciplina CCO33 — Inteligencia Artificial e lecionada pela Prof.a Beatriz Farias e ocorre na quinta-feira. Fonte: s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_cco33.md",
+      "observacao": "Rastreamento mostrou BuscaUPC Consultar Base Upc (1,1 s) e o inicio da ementa CCO33. A resposta preservou o codigo CCO33, informou professora e dia corretos conforme base local e citou o caminho de ementa_cco33.md existente. Supera os erros de codigo e caminho observados em EXP-002 com Gemma 4 E2B."
+    },
+    {
+      "id": "MODELO-QWEN3-NEXT-80B-06",
+      "modelo_testado": "qwen.qwen3-next-80b-a3b",
+      "ambiente": "Playground do Harness; conversa nova para teste independente",
+      "pergunta": "Quais sao os pre-requisitos de CCO33?",
+      "resultado": "passou",
+      "busca_executada": true,
+      "trecho_visivel": "# Ementa — CCO33 — Inteligencia Artificial; Instituicao: Universidade de Pedra Clara; restante truncado no rastreamento copiado.",
+      "resposta": "Os pre-requisitos para CCO33 — Inteligencia Artificial sao CCO13 (Linguagem de Programacao II) e MAT10 (Matematica para Computacao). Fonte: s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_cco33.md",
+      "observacao": "Rastreamento mostrou BuscaUPC Consultar Base Upc (1,1 s) e o inicio da ementa CCO33. A resposta preservou CCO33, informou os dois pre-requisitos esperados e citou a ementa_cco33.md existente. Supera os erros de codigo e caminho observados em EXP-003 com Gemma 4 E2B."
+    },
+    {
+      "id": "MODELO-QWEN3-NEXT-80B-07",
+      "modelo_testado": "qwen.qwen3-next-80b-a3b",
+      "ambiente": "Playground do Harness; conversa nova para teste independente, conforme orientacao anterior",
+      "pergunta": "Qual e o prazo de trancamento em 2028.1?",
+      "resultado": "falhou",
+      "gravidade": "grave",
+      "busca_executada": false,
+      "resposta": "Nao foi possivel confirmar o prazo de trancamento para 2028.1, pois os documentos da UPC nao contem calendario alem de 2027. Recomendou consultar a Coordenacao ou o calendario quando publicado.",
+      "observacao": "A resposta nao inventou data de 2028.1 e distinguiu o periodo pedido do calendario disponivel. Nao citou a regra geral do 50o dia letivo, o que era opcional nesta pergunta. O usuario confirmou que nao apareceu Rastreamento do agente para esta mensagem de uma conversa nova. Pelo criterio predefinido, pergunta factual nova sobre UPC exige busca real; a resposta afirmou o alcance documental da base sem evidencia recuperada nessa execucao. Falha grave de processo e fundamentacao, embora a abstencao sobre a data tenha sido correta."
+    },
+    {
+      "id": "MODELO-QWEN3-NEXT-80B-08",
+      "modelo_testado": "qwen.qwen3-next-80b-a3b",
+      "ambiente": "Playground do Harness; reteste apos revisao do prompt para exigir busca em perguntas sobre ausencia de informacao",
+      "pergunta": "Qual e o prazo de trancamento em 2028.1?",
+      "resultado": "parcial",
+      "gravidade": "menor",
+      "busca_executada": true,
+      "trecho_visivel": "# Calendario academico — 2027.1; Instituicao: Universidade de Pedra Clara (UPC); restante truncado no rastreamento copiado.",
+      "resposta": "Nao consegui consultar a base de dados da Universidade de Pedra Clara (UPC) para o prazo de trancamento em 2028.1, pois os documentos disponiveis apenas contem o calendario academico de 2027.1 e 2027.2. Nao ha informacoes sobre o periodo letivo de 2028.1 na base atual.",
+      "observacao": "Rastreamento mostrou BuscaUPC Consultar Base Upc (1,9 s) e um resultado iniciado por Calendario academico — 2027.1. A resposta nao inventou data para 2028.1. A frase 'Nao consegui consultar a base' e falsa diante da busca executada; a formulacao correta seria que a consulta ocorreu, mas nao encontrou data especifica para 2028.1 nos trechos recuperados. Os demais trechos nao foram fornecidos por completo, por isso a afirmacao sobre todo o acervo nao foi verificada nesta execucao."
+    },
+    {
+      "id": "MODELO-QWEN3-NEXT-80B-09",
+      "modelo_testado": "qwen.qwen3-next-80b-a3b",
+      "ambiente": "Playground do Harness; conversa nova apos ajuste do prompt para distinguir busca executada de dado ausente",
+      "pergunta": "Qual e o prazo de trancamento em 2028.1?",
+      "resultado": "passou",
+      "busca_executada": true,
+      "trecho_visivel": "# Calendario academico — 2027.1; Instituicao: Universidade de Pedra Clara (UPC); restante truncado no rastreamento copiado.",
+      "resposta": "Consultei a base, mas nao encontrei nos trechos recuperados uma data para esse periodo.",
+      "observacao": "Rastreamento mostrou BuscaUPC Consultar Base Upc (1,8 s). A resposta nao inventou data para 2028.1, nao afirmou ausencia absoluta em todo o acervo e descreveu corretamente que a consulta ocorreu. 'Esse periodo' remete a 2028.1 na pergunta imediatamente anterior. Nao citou fonte, o que e aceitavel para esta abstencao limitada aos trechos recuperados."
+    },
+    {
+      "id": "MODELO-QWEN3-NEXT-80B-10",
+      "modelo_testado": "qwen.qwen3-next-80b-a3b",
+      "ambiente": "Playground do Harness; conversa nova com prompt atualizado",
+      "pergunta": "Qual e o prazo para solicitar trancamento em 2027.1?",
+      "resultado": "passou",
+      "busca_executada": true,
+      "trecho_visivel": "# Calendario academico — 2027.1; Instituicao: Universidade de Pedra Clara (UPC); restante truncado no rastreamento copiado.",
+      "resposta": "O prazo para solicitar trancamento total no periodo 2027.1 e ate 27/04/2027, correspondente ao 50o dia letivo. Fonte: 10_calendario_academico_2027.md.",
+      "observacao": "Rastreamento mostrou BuscaUPC Consultar Base Upc (1,1 s). A data e o periodo correspondem ao calendario local da UPC, e a citacao canonica indicada existe. O caminho S3 completo nao foi fornecido, mas o primeiro resultado visivel e o calendario 2027.1."
+    },
+    {
+      "id": "MODELO-QWEN3-NEXT-80B-11",
+      "modelo_testado": "qwen.qwen3-next-80b-a3b",
+      "ambiente": "Playground do Harness; conversa nova com prompt atualizado",
+      "pergunta": "Minha media parcial e 4,5. Quanto preciso tirar na prova final?",
+      "resultado": "passou",
+      "busca_executada": true,
+      "trecho_visivel": "# Prova final: regras e tabela; Instituicao: Universidade de Pedra Clara (UPC); restante truncado no rastreamento copiado.",
+      "resposta": "Com media parcial 4,5, e necessaria prova final 6,0. MF = (2 x 4,5 + 6,0) / 3 = 5,0, que atende ao minimo de 5,0. A possibilidade depende de frequencia igual ou superior a 75%; abaixo disso ocorre reprovacao por frequencia. Fonte: 04a_tabela_prova_final.md.",
+      "observacao": "Rastreamento mostrou BuscaUPC Consultar Base Upc (1,0 s). Calculo, nota minima e condicao de frequencia correspondem aos documentos locais da UPC. A resposta nao pediu informacoes desnecessarias sobre disciplina ou pesos. A fonte canonica da tabela foi citada; os caminhos completos do resultado da ferramenta nao foram fornecidos."
+    },
+    {
+      "id": "MODELO-QWEN3-NEXT-80B-12",
+      "modelo_testado": "qwen.qwen3-next-80b-a3b",
+      "ambiente": "Playground do Harness; duas perguntas na mesma conversa com prompt atualizado",
+      "perguntas": [
+        "Quem leciona CCO33?",
+        "Em que dia ela ocorre?"
+      ],
+      "horarios": [
+        "01:20:39 BRT",
+        "01:20:50 BRT"
+      ],
+      "resultado": "passou_com_observacao",
+      "busca_executada_por_turno": [true, false],
+      "trecho_visivel": "# Ementa — CCO33 — Inteligencia Artificial; Instituicao: Universidade de Pedra Clara; restante truncado no rastreamento copiado.",
+      "respostas": [
+        "A disciplina CCO33 — Inteligencia Artificial e lecionada pela Prof.a Beatriz Farias.",
+        "A disciplina CCO33 — Inteligencia Artificial ocorre na quinta-feira."
+      ],
+      "observacao": "Primeiro turno chamou BuscaUPC Consultar Base Upc (1,0 s) e recuperou a ementa CCO33. Segundo turno nao mostrou nova busca, mas reutilizou evidencia pertinente ja recuperada, o que e permitido pelos criterios predefinidos. A referencia 'ela' foi resolvida corretamente e o codigo permaneceu CCO33. Nenhuma das duas respostas citou explicitamente o documento ou caminho; falha menor de atribuicao de fonte, sem erro factual observado."
+    },
+    {
+      "id": "MODELO-QWEN3-NEXT-80B-13",
+      "modelo_testado": "qwen.qwen3-next-80b-a3b",
+      "ambiente": "Playground do Harness; conversa nova com prompt atualizado",
+      "pergunta": "Conclui CCO13, mas ainda nao fui aprovado em MAT10. Posso me matricular em CCO33?",
+      "resultado": "passou",
+      "busca_executada": true,
+      "trecho_visivel": "# Ementa — CCO33 — Inteligencia Artificial; Instituicao: Universidade de Pedra Clara; restante truncado no rastreamento copiado.",
+      "resposta": "CCO33 exige aprovacao em CCO13 e MAT10. O estudante informou que ainda nao foi aprovado em MAT10; portanto, nao pode se matricular em CCO33 ate aprovar MAT10. Citou ementa_cco33.md e matricula_percurso.md.",
+      "observacao": "Rastreamento mostrou BuscaUPC Consultar Base Upc (1,2 s) e inicio da ementa CCO33. A inferencia sobre elegibilidade e coerente com os pre-requisitos e com a regra local de matricula por componente. Nao inventou excecao nem tratou estar cursando MAT10 como aprovacao. O rastreamento copiado nao mostra todos os caminhos retornados, entao a presenca de matricula_percurso.md entre os resultados nao foi verificada."
+    },
+    {
+      "id": "MODELO-QWEN3-NEXT-80B-14",
+      "modelo_testado": "qwen.qwen3-next-80b-a3b",
+      "ambiente": "Playground do Harness; conversa nova com prompt atualizado",
+      "pergunta": "Tenho 1.910 horas curriculares integralizadas e 110 horas de Atividades Complementares. Posso me matricular em TCC I?",
+      "resultado": "parcial",
+      "gravidade": "menor",
+      "busca_executada": true,
+      "trecho_visivel": "# Trabalho de Conclusao de Curso; Instituicao: Universidade de Pedra Clara (UPC); restante truncado no rastreamento copiado.",
+      "resposta": "TCC I (SUP42) exige 1.920 horas curriculares integralizadas em obrigatorias, optativas e ACEx; 1.910 nao basta e as 110 horas de Atividades Complementares nao contam. Faltam 10 horas curriculares. Citou 06_extensao_tcc_estagio.md. Expandiu ACEx como 'Atividades Complementares de Extensao'.",
+      "observacao": "Rastreamento mostrou BuscaUPC Consultar Base Upc (1,0 s) e inicio do documento de TCC. Limiar, exclusao das Atividades Complementares, diferenca aritmetica e conclusao sobre matricula estao corretos. Erro terminologico: ACEx significa Atividades Curriculares de Extensao, nao Atividades Complementares de Extensao. A conclusao pratica permaneceu correta porque a resposta separou explicitamente as 110 horas complementares do limiar. A sugestao de conferir historico com a Coordenacao e condicional."
+    },
+    {
+      "id": "MODELO-QWEN3-NEXT-80B-15",
+      "modelo_testado": "qwen.qwen3-next-80b-a3b",
+      "ambiente": "Playground do Harness; seguimento da conversa do teste MODELO-QWEN3-NEXT-80B-14",
+      "pergunta": "Na resposta anterior, voce chamou ACEx de 'Atividades Complementares de Extensao'. Esse e o nome correto? Qual e a diferenca entre ACEx e Atividades Complementares neste curso?",
+      "resultado": "falhou",
+      "gravidade": "grave",
+      "busca_executada": true,
+      "trecho_visivel": "# Atividades Curriculares de Extensao — ACEx; Instituicao: Universidade de Pedra Clara; restante truncado no rastreamento copiado.",
+      "resposta_resumida": "Corrigiu ACEx para Atividades Curriculares de Extensao; distinguiu 330 horas curriculares de ACEx e 110 horas de Atividades Complementares; lembrou que as complementares nao contam para as 1.920 horas do TCC I. Em uma tabela, apresentou como exemplo de atividade complementar 'Participar de uma palestra sobre inteligencia artificial (ate 10h)'.",
+      "problemas": [
+        "Inventou regra de pontuacao para assistir a palestra de inteligencia artificial: o barema local nao contem esse item nem o limite de 10 horas. Ele preve palestra ministrada sobre tema do curso com 15 horas por palestra e participacao como ouvinte em evento de extensao com 5 horas por evento, sujeitas a requisitos e tetos.",
+        "Afirmou 'aprovacao por nota na disciplina (presenca + relatorio)' para ACEx; o documento local exige cumprimento integral da carga e entrega de relatorio avaliado pelo docente, sem explicitar essa formula de aprovacao por nota.",
+        "A tabela Markdown da resposta ficou malformada, dificultando a leitura."
+      ],
+      "observacao": "O rastreamento mostrou BuscaUPC Consultar Base Upc (1,1 s) e o inicio do documento ACEx. A correcao da sigla e a distincao das cargas horarias foram boas, mas a resposta acrescentou exemplo de pontuacao nao autorizado pelo barema da UPC. Isso pode induzir estudante a contar horas indevidas e satisfaz o criterio predefinido de falha grave por alterar regra academica. O texto completo dos demais resultados da ferramenta nao foi fornecido; a contradicao com o barema local e objetiva."
+    },
+    {
+      "id": "EXP-023-QWEN-01",
+      "modelo_testado": "qwen.qwen3-next-80b-a3b",
+      "ambiente": "Playground do Harness; conversa nova; antes de esclarecer o barema na base local e no prompt",
+      "pergunta": "Assisti a uma palestra sobre inteligencia artificial. Quantas horas de Atividades Complementares posso lancar?",
+      "resultado": "falhou",
+      "gravidade": "grave",
+      "busca_executada": true,
+      "trecho_visivel": "# Atividades Complementares e barema; Instituicao: Universidade de Pedra Clara (UPC); restante truncado no rastreamento copiado.",
+      "resposta_resumida": "Afirmou que assistir a palestra sobre inteligencia artificial rende 5 horas de Atividades Complementares por palestra, na categoria Extensao, porque palestras vinculadas ao curso sao consideradas eventos de extensao. Citou o item 'participacao como ouvinte em evento de extensao, por evento — 5 horas'. Tambem afirmou que o protocolo deve ocorrer ate 30 dias antes do encerramento administrativo do periodo, sem condicionar o prazo a colacao no semestre corrente.",
+      "problemas": [
+        "Equiparou uma palestra sobre tema do curso a evento de extensao sem evidencia de que a palestra integrava um evento de extensao. O barema so aceita participacao como ouvinte em evento de extensao, nao qualquer palestra assistida.",
+        "Atribuiu 5 horas automaticamente sem confirmar comprovante, enquadramento e validacao pela CAC.",
+        "Aplicou o prazo de 30 dias antes do encerramento administrativo como se fosse geral; no barema ele e especifico para quem busca colacao no semestre corrente."
+      ],
+      "observacao": "Rastreamento mostrou BuscaUPC Consultar Base Upc (1,1 s) e inicio do barema. O modelo recuperou a fonte pertinente, mas ampliou os requisitos do item de Extensao e o alcance do prazo de protocolo. E falha grave de regra academica. Depois desta execucao, foram preparados esclarecimentos locais na base canonica e no documento RAG, e um ajuste no prompt; nenhum desses arquivos foi ainda enviado ao S3 nem sincronizado com a KB AWS."
+    },
+    {
+      "id": "EXP-023-QWEN-02",
+      "modelo_testado": "qwen.qwen3-next-80b-a3b",
+      "ambiente": "Playground do Harness; reteste apos orientacao para atualizar base S3, sincronizar e substituir prompt; implantacao efetiva nao confirmada por acesso direto",
+      "pergunta": "Assisti a uma palestra sobre inteligencia artificial. Quantas horas de Atividades Complementares posso lancar?",
+      "resultado": "falhou",
+      "gravidade": "grave",
+      "busca_executada": true,
+      "trecho_visivel": "# Atividades Complementares e barema; Instituicao: Universidade de Pedra Clara (UPC); restante truncado no rastreamento copiado.",
+      "resposta_resumida": "Disse que assistir a palestra sobre IA nao gera horas automaticamente; citou 15h para palestra ministrada e 5h por evento de extensao como ouvinte. Em seguida exigiu evento de extensao 'oficial da UPC', formalmente classificado em 'planilha da CAC', declarou que sem isso a CAC nao validara, e chamou 20h por quatro eventos de limite da categoria Extensao.",
+      "problemas": [
+        "Criou requisito de evento de extensao oficial da UPC. O barema nao limita o item a eventos promovidos pela UPC; uma atividade externa pode ser analisada mediante comprovacao e validacao pela CAC.",
+        "Inventou 'planilha da CAC' como requisito formal; o barema pede comprovante e validacao pela CAC, sem mencionar planilha.",
+        "Confundiu o limite do item de participacao como ouvinte (4 eventos x 5h = 20h) com o teto da categoria Extensao, que e 40h."
+      ],
+      "observacao": "Rastreamento mostrou BuscaUPC Consultar Base Upc (1,9 s) e inicio do barema. Houve melhora no ponto central de nao atribuir horas sem evidencias, mas as restricoes e o teto acrescentados podem levar estudantes a descartar atividades elegiveis ou planejar a categoria incorretamente. O texto integral da fonte retornada nao foi apresentado; a comparacao e com o barema local. A resposta nao confirma por si so que o novo objeto S3 e o prompt atualizado estavam ativos."
+    },
+    {
+      "id": "EXP-023-GEMMA4-31B-01",
+      "modelo_testado": "google.gemma-4-31b",
+      "ambiente": "Playground do Harness; usuario informou ter alterado apenas o modelo, sem outras mudancas entre o reteste Qwen e esta execucao",
+      "horario": "01:55:25 BRT",
+      "pergunta": "Assisti a uma palestra sobre inteligencia artificial. Quantas horas de Atividades Complementares posso lancar?",
+      "resultado": "passou_com_observacao",
+      "busca_executada": true,
+      "trecho_visivel": "# Atividades Complementares e barema; Instituicao: Universidade de Pedra Clara (UPC); restante truncado no rastreamento copiado.",
+      "resposta_resumida": "Nao atribuiu horas automaticamente. Explicou que palestra assistida so pode ser lancada como participacao de ouvinte em evento de extensao documentado, com 5 horas por evento e limite de 4 eventos; palestra ministrada sobre tema do curso vale 15 horas, ate 2. Disse que a validacao final cabe a CAC e citou 05_atividades_complementares.md.",
+      "observacao": "Rastreamento mostrou BuscaUPC Consultar Base Upc (0,8 s). A resposta evitou as extrapolacoes graves vistas no Qwen: nao exigiu evento exclusivo da UPC nem planilha da CAC, e nao confundiu o maximo de 20 horas do item com o teto de 40 horas da categoria. A expressao 'limite de ate 4 eventos na categoria Extensao' poderia ser mais precisa: quatro eventos e limite desse item de participacao como ouvinte, nao da categoria inteira. A resposta acrescentou a hipotese de palestra ministrada embora o usuario tenha dito que assistiu, mas separou claramente os casos. Um unico teste favoravel nao comprova confiabilidade geral do modelo."
+    },
+    {
+      "id": "MODELO-GEMMA4-31B-02",
+      "modelo_testado": "google.gemma-4-31b",
+      "ambiente": "Playground do Harness; conversa nova; sem outra mudanca de configuracao relatada",
+      "pergunta": "Qual e o prazo de trancamento em 2028.1?",
+      "resultado": "passou",
+      "busca_executada": true,
+      "trecho_visivel": "# Calendario academico — 2027.1; Instituicao: Universidade de Pedra Clara (UPC); restante truncado no rastreamento copiado.",
+      "resposta": "Consultei a base, mas nao encontrei nos trechos recuperados uma data para o prazo de trancamento no periodo 2028.1.",
+      "observacao": "Rastreamento mostrou BuscaUPC Consultar Base Upc (0,8 s). Nao inventou data para 2028.1 nem converteu a data de 2027 em data de 2028; limitou a abstencao aos trechos recuperados e descreveu corretamente que a consulta ocorreu."
+    },
+    {
+      "id": "MODELO-GEMMA4-31B-03",
+      "modelo_testado": "google.gemma-4-31b",
+      "ambiente": "Playground do Harness; conversa nova; sem outra mudanca de configuracao relatada",
+      "pergunta": "Qual e o prazo para solicitar trancamento em 2027.1?",
+      "resultado": "passou",
+      "busca_executada": true,
+      "trecho_visivel": "# Calendario academico — 2027.1; Instituicao: Universidade de Pedra Clara (UPC); restante truncado no rastreamento copiado.",
+      "resposta": "O prazo para solicitar trancamento total no periodo 2027.1 e ate 27/04/2027, correspondente ao 50o dia letivo. Fonte: 10_calendario_academico_2027.md, via s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/calendario/calendario_2027_1.md.",
+      "observacao": "Rastreamento mostrou BuscaUPC Consultar Base Upc (0,8 s). Periodo, data, regra do 50o dia e caminho S3 correspondem ao calendario local da UPC. Nao tratou o prazo de solicitacao como garantia de deferimento."
+    },
+    {
+      "id": "MODELO-GEMMA4-31B-04",
+      "modelo_testado": "google.gemma-4-31b",
+      "ambiente": "Playground do Harness; conversa nova; sem outra mudanca de configuracao relatada",
+      "pergunta": "Quanto tempo dura o curso e qual e sua carga horaria total?",
+      "resultado": "falhou",
+      "gravidade": "grave",
+      "busca_executada": true,
+      "trecho_visivel": "# Conclusao e diploma; Instituicao: Universidade de Pedra Clara (UPC); Versao: 1.3; restante truncado no rastreamento copiado.",
+      "resposta": "O percurso padrao tem oito semestres e limite de 16 semestres. A carga total e 3.020 horas, composta por 2.910 horas curriculares (194 creditos de 15 horas) e 10 horas de Atividades Complementares. Fonte: s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/curso/curso_ingresso.md.",
+      "problemas": [
+        "Informou 10 horas de Atividades Complementares; os documentos locais curso_ingresso.md e conclusao_diploma.md estabelecem 110 horas.",
+        "A composicao apresentada e aritmeticamente inconsistente: 2.910 + 10 = 2.920, nao 3.020 horas.",
+        "Citou curso_ingresso.md como suporte para o valor incorreto; esse arquivo local traz explicitamente 110 horas."
+      ],
+      "observacao": "Rastreamento mostrou BuscaUPC Consultar Base Upc (0,8 s), com Conclusao e diploma como primeiro resultado visivel. O modelo acertou duracao, limite, total e creditos, mas perdeu um digito nas Atividades Complementares. Depois o usuario expandiu o texto do resultado AWS Curso e ingresso, que explicita 2.910 horas curriculares mais 110 horas de Atividades Complementares, total 3.020; assim, a fonte indexada nao traz o valor errado. Nao foi informado se o trecho expandido pertence a esta execucao ou ao reteste solicitado. Erro semelhante de 10 em vez de 110 ocorreu com Gemma 4 E2B em EXP-001. Preservar o resultado e investigar repetibilidade com a resposta da nova execucao."
+    },
+    {
+      "id": "MODELO-GEMMA4-31B-05",
+      "modelo_testado": "google.gemma-4-31b",
+      "ambiente": "Playground do Harness; resposta final informada apos solicitacao de nova execucao da mesma pergunta",
+      "pergunta": "Quanto tempo dura o curso e qual e sua carga horaria total?",
+      "resultado": "falhou",
+      "gravidade": "grave",
+      "busca_executada": null,
+      "resposta": "O percurso padrao tem oito semestres e a carga total e 3.020 horas, composta por 2.910 horas curriculares, incluindo 180 horas de optativas, 30 horas de ACEx e 60 horas de TCC, mais 10 horas de Atividades Complementares.",
+      "problemas": [
+        "Repetiu 10 horas de Atividades Complementares no lugar das 110 horas documentadas.",
+        "Informou 30 horas de ACEx no lugar das 330 horas documentadas.",
+        "A composicao 2.910 + 10 = 2.920 contradiz o total declarado de 3.020 horas."
+      ],
+      "observacao": "O usuario havia fornecido o texto expandido de Curso e ingresso recuperado na AWS, com 110 horas complementares e 330 horas de ACEx. A resposta final relatada apos pedido de nova execucao repetiu a perda de digitos. O usuario nao reenviou o rastreamento desta resposta, portanto nao se afirma chamada da ferramenta nesta repeticao especifica. Mesmo sem essa evidencia, o conteudo da resposta e objetivamente incorreto frente a fonte AWS expandida e a base local. A falha e recorrente com Gemma 4 31B e semelhante a observada com Gemma 4 E2B."
+    },
+    {
+      "id": "EXP-023-QWEN-03",
+      "modelo_testado": "Qwen3 Next 80B A3B, conforme orientacao de selecao no Harness; identificador exato nao reenviado neste reteste",
+      "ambiente": "Playground do Harness; apos orientacao para atualizar o documento de Atividades Complementares no S3, sincronizar a base e manter o prompt anterior",
+      "pergunta": "Assisti a uma palestra sobre inteligencia artificial. Quantas horas de Atividades Complementares posso lancar?",
+      "resultado": "falhou",
+      "gravidade": "grave",
+      "busca_executada": true,
+      "trecho_visivel": "# Atividades Complementares e barema; Instituicao: Universidade de Pedra Clara (UPC); restante truncado no rastreamento copiado.",
+      "resposta_resumida": "Nao atribuiu horas automaticamente; condicionou 5 horas por evento a participacao como ouvinte em evento de extensao documentado, ate quatro eventos. Porem chamou 20 horas de maximo da categoria Extensao e instruiu protocolo ate 30 dias antes do encerramento administrativo do semestre como se fosse prazo geral para solicitar pontuacao.",
+      "problemas": [
+        "O limite de quatro eventos e 20 horas pertence ao item de participacao como ouvinte; o teto da categoria Extensao e 40 horas.",
+        "O prazo de 30 dias antes do encerramento administrativo vale para tentar colacao no semestre corrente, nao para qualquer protocolo de Atividades Complementares."
+      ],
+      "observacao": "O rastreamento mostrou BuscaUPC Consultar Base Upc (2,6 s). A resposta principal sobre nao haver credito automatico melhorou, mas duas regras academicas foram alteradas, o que atende ao criterio predefinido de falha grave. O usuario posteriormente enviou o resultado integral da busca: a fonte S3 atividades_complementares.md inclui o esclarecimento revisado, separa explicitamente 20 horas do item de 40 horas da categoria e limita o prazo de 30 dias a colacao no semestre corrente. Assim, a revisao estava indexada; a falha observada foi de interpretacao da evidencia recuperada."
+    },
+    {
+      "id": "EXP-023-QWEN-04",
+      "modelo_testado": "Qwen3 Next 80B A3B, segundo contexto do reteste; configuracao exata nao reenviada",
+      "ambiente": "Playground do Harness; reteste apos orientacao para substituir o prompt do sistema pelo arquivo local preparado",
+      "pergunta": "Assisti a uma palestra sobre inteligencia artificial. Quantas horas de Atividades Complementares posso lancar?",
+      "resultado": "falhou",
+      "gravidade": "grave",
+      "busca_executada": true,
+      "trecho_visivel": "# Atividades Complementares e barema; Instituicao: Universidade de Pedra Clara (UPC); restante truncado no rastreamento copiado.",
+      "resposta_resumida": "Nao atribuiu horas automaticamente e condicionou 5 horas por evento a participacao comprovada como ouvinte em evento de extensao, ate quatro eventos. Voltou a chamar 20 horas de maximo da categoria Extensao. Nao repetiu o prazo de 30 dias.",
+      "problemas": [
+        "Confundiu mais uma vez o limite de 20 horas do item de participacao como ouvinte com o teto de 40 horas da categoria Extensao, alterando uma regra academica."
+      ],
+      "observacao": "O rastreamento mostrou BuscaUPC Consultar Base Upc (1,9 s). O documento integral recuperado no teste anterior explicita a distincao. O usuario nao reenviou o texto integral recuperado neste turno nem confirmou a configuracao salva do prompt, portanto nao atribuir causalidade definitiva ao prompt; a falha de resposta e objetiva. Preparado documento RAG curto e focado em palestras para testar se uma fonte mais direta evita a troca entre limite do item e teto da categoria."
+    },
+    {
+      "id": "EXP-023-QWEN-05",
+      "modelo_testado": "Qwen3 Next 80B A3B, segundo contexto do reteste; configuracao exata nao reenviada",
+      "ambiente": "Playground do Harness; apos envio e sincronizacao do documento RAG curto sobre palestras",
+      "pergunta": "Assisti a uma palestra sobre inteligencia artificial. Quantas horas de Atividades Complementares posso lancar?",
+      "resultado": "passou",
+      "busca_executada": true,
+      "primeiro_trecho_visivel": "# Palestras assistidas e Atividades Complementares; Instituicao: Universidade de Pedra Clara (UPC); restante truncado no rastreamento copiado.",
+      "resposta_resumida": "Nao atribuiu horas automaticamente pela palestra assistida; exigiu evento de extensao e comprovante de participacao como ouvinte. Informou 5 horas por evento, limite de quatro eventos e maximo de 20 horas nesse item, com validacao da CAC. Nao repetiu o prazo de 30 dias nem chamou 20 horas de teto da categoria.",
+      "observacao": "O rastreamento mostrou BuscaUPC Consultar Base Upc (1,8 s) e o documento focalizado como primeiro trecho visivel. A resposta passou nesta pergunta. Um teste posterior pediu explicitamente a distincao entre limite do item e teto da categoria, com resposta correta; isso nao apaga as falhas anteriores do registro."
+    },
+    {
+      "id": "EXP-023-QWEN-06",
+      "modelo_testado": "Qwen3 Next 80B A3B, segundo contexto do reteste; configuracao exata nao reenviada",
+      "ambiente": "Playground do Harness; nova conversa apos indexacao do documento RAG curto sobre palestras",
+      "pergunta": "No barema da UPC, qual e o maximo de horas do item participacao como ouvinte em evento de extensao e qual e o teto de toda a categoria Extensao?",
+      "resultado": "passou",
+      "busca_executada": true,
+      "primeiro_trecho_visivel": "# Atividades Complementares e barema; Instituicao: Universidade de Pedra Clara (UPC); restante truncado no rastreamento copiado.",
+      "resposta": "O maximo de horas permitidas para o item participacao como ouvinte em evento de extensao e 20 horas, correspondente a ate 4 eventos, com 5 horas por evento. O teto de toda a categoria Extensao e de 40 horas. Fonte: 05_atividades_complementares.md.",
+      "observacao": "O rastreamento mostrou BuscaUPC Consultar Base Upc (2,4 s). O primeiro trecho visivel foi o documento completo do barema, e a resposta distinguiu corretamente os dois limites. O texto integral recuperado nesse turno nao foi enviado, mas o usuario ja havia apresentado o conteudo completo do mesmo documento, que contem esses numeros."
+    },
+    {
+      "id": "EXP-023-QWEN-07",
+      "modelo_testado": "Qwen3 Next 80B A3B, segundo contexto do reteste; configuracao exata nao reenviada",
+      "ambiente": "Playground do Harness; nova conversa apos indexacao do documento RAG curto sobre palestras",
+      "pergunta": "O prazo de 30 dias antes do encerramento administrativo vale para qualquer pedido de Atividades Complementares?",
+      "resultado": "parcial",
+      "busca_executada": true,
+      "primeiro_trecho_visivel": "# Palestras assistidas e Atividades Complementares; Instituicao: Universidade de Pedra Clara (UPC); restante truncado no rastreamento copiado.",
+      "resposta_resumida": "Comecou com 'Sim, o prazo ... se aplica a qualquer pedido ... quando o estudante pretende colar grau no semestre corrente'. Em seguida afirmou corretamente que o prazo nao e limite geral e so vale para quem deseja colar grau no mesmo periodo, citando 05_atividades_complementares.md.",
+      "problemas": [
+        "A abertura 'Sim' e ambigua diante de qualquer pedido, embora a explicacao posterior restrinja corretamente a regra."
+      ],
+      "observacao": "O rastreamento mostrou BuscaUPC Consultar Base Upc (1,5 s). O restante da resposta delimitou a regra corretamente e nao impôs o prazo a todos os pedidos; classificado como parcial por ambiguidade da abertura, sem apagar as falhas graves anteriores. A avaliacao foi refinada apos o usuario observar que a condicao de colacao estava explicita. Preparado ajuste geral de prompt para iniciar perguntas binarias com resposta coerente com a conclusao."
+    },
+    {
+      "id": "EXP-023-QWEN-08",
+      "modelo_testado": "Qwen3 Next 80B A3B, segundo contexto do reteste; configuracao exata nao reenviada",
+      "ambiente": "Playground do Harness; reteste apos orientacao para salvar o prompt com revisao de perguntas binarias",
+      "pergunta": "O prazo de 30 dias antes do encerramento administrativo vale para qualquer pedido de Atividades Complementares?",
+      "resultado": "parcial",
+      "busca_executada": true,
+      "primeiro_trecho_visivel": "# Palestras assistidas e Atividades Complementares; Instituicao: Universidade de Pedra Clara (UPC); restante truncado no rastreamento copiado.",
+      "resposta_resumida": "Abriu com 'Sim ... vale para qualquer pedido ... mas apenas se o estudante pretende colar grau no semestre corrente'. Em seguida esclareceu que nao e limite geral e que o prazo se aplica a validacao das horas para colacao no mesmo periodo, citando 05_atividades_complementares.md.",
+      "problemas": [
+        "A abertura Sim e ambigua diante de qualquer pedido, mas a condicao restritiva foi apresentada imediatamente e o restante explica corretamente a regra."
+      ],
+      "observacao": "O rastreamento mostrou BuscaUPC Consultar Base Upc (1,2 s). O usuario questionou se Sim seria aceitavel porque a resposta traz a condicao para colacao. A leitura do texto completo confirma que o agente nao afirmou um prazo geral incondicional; a ressalva de redacao e menor, nao uma regra inventada. Mantida classificacao parcial para esta execucao por clareza, sem nova tentativa de ajuste local."
+    }
+  ],
+  "diagnosticos_busca": [
+    {
+      "id": "BUSCA-EXP-001-01",
+      "pergunta": "Quanto tempo dura o curso e qual é sua carga horária total?",
+      "ferramenta": "Lambda upc-bsi-busca-kb-v13",
+      "primeiro_resultado": {
+        "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/percurso/tcc.md",
+        "texto": "# Trabalho de Conclusão de Curso\r\n\r\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `06_extensao_tcc_estagio.md`.\r\n\r\nTCC I (SUP42, 30 h, VII semestre) requer **1.920 horas curriculares já integralizadas** em disciplinas obrigatórias, optativas e ACEx; Atividades Complementares e os próprios TCCs não contam para esse limiar. TCC II (SUP48, 30 h, VIII semestre) requer aprovação em TCC I. O TCC I produz projeto de pesquisa ou desenvolvimento em Sistemas de Informação, aprovado pelo docente da disciplina. O TCC II produz monografia ou artigo e apresentação oral pública perante banca de três membros, incluindo o orientador. O estudante escolhe orientador docente da área de Computação com aceite formal. A banca atribui nota de 0 a 10; aprovação exige nota **≥ 6,0** e entrega da versão final no prazo registrado pela Coordenação. A apresentação pode ser presencial ou online, conforme agendamento da Coordenação. Trabalhos com participantes humanos exigem aprovação ética prévia quando aplicável. Não é exigida publicação do artigo."
+      },
+      "fontes_informadas_em_ordem": [
+        "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/percurso/tcc.md",
+        "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/curso/curso_ingresso.md",
+        "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/regras/conclusao_diploma.md",
+        "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/matriz/matriz_viii.md"
+      ],
+      "texto_adicional_recebido": "# Atividades Curriculares de Extensão — ACEx. Instituição: UPC; versão 1.3. O curso exige 330 horas de ACEx, distribuídas em EXT25 (90 h), EXT32 (90 h), EXT39 (75 h) e EXT45 (75 h). O usuário enviou este texto sem o campo fonte do mesmo objeto; não foi atribuído a curso_ingresso.md.",
+      "resultado": "fonte correta recuperada em segundo lugar; texto e quinto resultado pendentes",
+      "observacao": "A busca direta à Lambda devolveu TCC como primeiro resultado e Curso e ingresso como segundo para a pergunta de duração e carga total. O usuário informou quatro valores de fonte, embora a Lambda tenha sido configurada para até cinco resultados; o quinto não foi fornecido. Depois enviou um texto intitulado Atividades Curriculares de Extensão, sem a fonte correspondente; esse texto confirma 330 horas de ACEx em um documento da AWS, mas não é o conteúdo solicitado de curso_ingresso.md. O rastreamento do Harness mostrou Curso e ingresso como primeiro item visível; as consultas efetivas podem ter diferido, mas o parâmetro enviado pelo Harness não foi informado."
+    }
+  ],
+  "validacoes_fluxo": [
+    {
+      "id": "FLUXO-001",
+      "componente": "Lambda upc-bsi-assistente-v13 → Lambda de busca → Harness Gemma 4 E2B",
+      "pergunta": "Minha média parcial é 4,5. Quanto preciso tirar na prova final?",
+      "session_id": "c3383243-77a1-4895-834a-6b03dbacccc8",
+      "resposta": "Com base na sua média parcial (MP) de 4,5, a prova final mínima (PF) que você precisa tirar é **6,0**.\n\nIsso é conforme a tabela para a faixa de MP de 4,9 a 4,0, onde para MP 4,5, a prova final mínima é 6,0.\n\nO exemplo fornecido na fonte indica: \"com MP 4,5, é preciso PF 6,0; então MF = (2 × 4,5 + 6,0) / 3 = 5,0.\"\n\nFonte utilizada: [1]",
+      "fontes_recuperadas": [
+        "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/avaliacao/prova_final.md",
+        "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/regras/avaliacao_frequencia.md",
+        "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/optativas/optativas_regras.md",
+        "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/percurso/tcc.md",
+        "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/regras/conclusao_diploma.md"
+      ],
+      "ferramenta_executada": "upc-bsi-busca-kb-v13",
+      "modelo": "google.gemma-4-e2b",
+      "resultado": "parcial",
+      "observacao": "A busca real recuperou a regra e o Harness informou corretamente PF 6,0. A resposta citou apenas o índice [1], sem o caminho da fonte, e não explicitou a exigência de frequência mínima de 75%. Esta execução usa a Lambda implantada antes da revisão local do código; não demonstra uma chamada de ferramenta iniciada pelo Harness no playground."
+    },
+    {
+      "id": "FLUXO-002",
+      "componente": "Lambda upc-bsi-assistente-v13 → Lambda de busca → Harness Gemma 4 E2B",
+      "pergunta": "Minha média parcial é 4,5. Quanto preciso tirar na prova final?",
+      "session_id": "f3bd7b5f-28a4-440a-9a6d-c334bdffaf13",
+      "resposta": "Com base na sua média parcial (MP) de 4,5, a prova final mínima (PF) que você precisa tirar é **6,0**.\n\nIsso é conforme a tabela para a faixa de MP de 4,9 a 4,0, onde para MP 4,5, a prova final mínima é 6,0.\n\nO exemplo fornecido na fonte indica: \"com MP 4,5, é preciso PF 6,0; então MF = (2 × 4,5 + 6,0) / 3 = 5,0.\"\n\nFonte utilizada: s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/avaliacao/prova_final.md\n\nA realização da prova final exige frequência mínima de 75%.",
+      "fontes_recuperadas": [
+        "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/avaliacao/prova_final.md",
+        "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/regras/avaliacao_frequencia.md",
+        "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/optativas/optativas_regras.md",
+        "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/percurso/tcc.md",
+        "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/regras/conclusao_diploma.md"
+      ],
+      "ferramenta_executada": "upc-bsi-busca-kb-v13",
+      "modelo": "google.gemma-4-e2b",
+      "resultado": "passou",
+      "observacao": "Após atualizar a Lambda, a busca recuperou a regra, a resposta informou PF 6,0, citou o URI da fonte e mencionou a frequência mínima de 75%. Este teste valida o fluxo pela Lambda; o EXP-004 do playground direto do Harness permanece falho."
+    }
+  ],
+  "ajustes_preparados": [
+    {
+      "id": "AJUSTE-EXP-023-02",
+      "data": "2026-09-23",
+      "motivo": "O reteste com Qwen manteve requisitos inventados para palestra assistida e confundiu limite do item com teto da categoria Extensao.",
+      "arquivos_locais": [
+        "kb/canonica_v1_3/05_atividades_complementares.md",
+        "kb/rag_v1_3/documentos/atividades/atividades_complementares.md",
+        "kb/rag_v1_3/manifesto.jsonl",
+        "src/agentcore/prompt_harness_busca_obrigatoria.txt"
+      ],
+      "alteracao": "Esclarecida a resposta para palestra assistida: enquadramento condicional como ouvinte em evento de extensao, sem exigencia de promotor UPC ou planilha da CAC; 20 horas e o maximo do item de quatro eventos, 40 horas e o teto da categoria. Prompt pede resposta curta e proibe acrescentar requisitos nao documentados.",
+      "verificacao_local": "Documento RAG contem o conteudo canonico; SHA-256 normalizado confere com o manifesto; registro JSON valido e git diff --check sem erros.",
+      "status_aws": "O texto completo de atividades_complementares.md recuperado pela busca no Harness confirma que a revisao do documento foi indexada na base AWS. O usuario executou novo teste apos orientacao de substituir o prompt, mas nao informou explicitamente se a edicao foi salva."
+    },
+    {
+      "id": "AJUSTE-EXP-023-03",
+      "data": "2026-09-23",
+      "motivo": "O modelo voltou a confundir as 20 horas do item de ouvinte com as 40 horas da categoria Extensao, apesar da revisao do documento completo estar indexada na AWS.",
+      "arquivos_locais": [
+        "kb/rag_v1_3/documentos/atividades/palestras_atividades_complementares.md",
+        "kb/rag_v1_3/manifesto.jsonl"
+      ],
+      "alteracao": "Criado trecho RAG curto e especifico para palestras assistidas, com distincao explicita entre limite do item, teto da categoria e condicao de prazo para colacao. Os fatos foram extraidos do barema canonico ja existente; nao foi alterada a regra institucional.",
+      "verificacao_local": "Documento presente, hash confere com manifesto e registro JSON valido.",
+      "status_aws": "O usuario informou envio e sincronizacao. O reteste no Harness recuperou Palestras assistidas e Atividades Complementares como primeiro trecho visivel e respondeu corretamente a pergunta de palestra assistida."
+    },
+    {
+      "id": "AJUSTE-EXP-023-04",
+      "data": "2026-09-23",
+      "motivo": "Em pergunta binaria sobre o prazo de 30 dias, o modelo abriu com Sim embora a explicacao correta fosse Nao, exceto para colacao no semestre corrente.",
+      "arquivos_locais": [
+        "src/agentcore/prompt_harness_busca_obrigatoria.txt"
+      ],
+      "alteracao": "Incluida orientacao geral para responder primeiro Sim ou Nao de modo coerente com a conclusao e revisar perguntas que usam qualquer, sempre ou todos.",
+      "verificacao_local": "A alteracao preserva as instrucoes de consulta a base e nao adiciona fatos da UPC.",
+      "status_aws": "Edicao local do prompt pronta; ainda nao foi confirmada a substituicao do prompt no Harness."
+    }
+  ]
+}

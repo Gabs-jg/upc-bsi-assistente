@@ -1,0 +1,113 @@
+{
+  "tipo": "harness_capture_real",
+  "tipo_dataset": "golden_independente_sem_respostas_do_agente",
+  "capturado_em_utc": "2026-09-24T15:52:11.817510+00:00",
+  "dataset_sha256": "3c5d32a317450369f9ac7a8c600ff5f4423a4765debac056615b9f9f9d66d1a8",
+  "harness_arn": "arn:aws:bedrock-agentcore:us-east-2:276996007591:harness/upc_bsi_assistente_v13-xWH7Nkzzk1",
+  "harness_version": "22",
+  "modelo_agente": "qwen.qwen3-next-80b-a3b",
+  "config_sha256": "d28badd52316f14c3a5123e503bd3c397e52cf0d1924276c3bf759b985ac9e55",
+  "estado": "concluido",
+  "total_casos_dataset": 15,
+  "casos_selecionados": [
+    "GOLD-002"
+  ],
+  "casos": [
+    {
+      "id": "GOLD-002",
+      "categoria": "consulta_direta",
+      "session_id": "78ebcbba-ea81-4a49-9863-9e9e2f84dc0b",
+      "turnos": [
+        {
+          "pergunta": "Em qual semestre de referência está CCO33 e qual é o nome de MAT10, seu pré-requisito?",
+          "busca_esperada": true,
+          "resposta": "A disciplina CCO33 — Inteligência Artificial — está no semestre de referência VI. Seu pré-requisito MAT10 tem o nome **Matemática Discreta II**.\n\nFonte: `ementa_cco33.md` (trecho: \"Pré-requisito: CCO13, MAT10\" e \"Nomes dos pré-requisitos na base da UPC: ... MAT10 — Matemática Discreta II\").",
+          "chamadas": [
+            {
+              "nome": "BuscaUPC___consultar_base_upc",
+              "id": "tooluse_p16npYiWOeI9fqIUK6DSkq",
+              "entrada": {
+                "pergunta": "Em qual semestre de referência está a disciplina CCO33 e qual é o nome e o código do seu pré-requisito?"
+              }
+            }
+          ],
+          "resultados_ferramenta": [
+            {
+              "id": "tooluse_p16npYiWOeI9fqIUK6DSkq",
+              "status": "success",
+              "conteudo": [
+                "{\"resultados\":[{\"texto\":\"# Ementa — CCO33 — Inteligência Artificial\\n\\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `08_ementas.md`.\\n\\n**Código:** CCO33. **Professor responsável:** Prof.ª Beatriz Farias. Semestre de referência: VI; dia principal: Quinta-feira.\\n\\n**Proveniência complementar:** Docente e dia de referência: `02_matriz_curricular.md`.\\n\\n### CCO33 — Inteligência Artificial\\n\\n**Carga total:** 60 h (4 créditos). **Distribuição:** teórica 15 horas; prática 45 horas; extensão -. **Pré-requisito:** CCO13, MAT10.\\n\\n**Nomes dos pré-requisitos na base da UPC:** CCO13 — Linguagem de Programação II; MAT10 — Matemática Discreta II. O nome de MAT10 consta na ementa `ementa_mat10.md` e na matriz do II semestre; esta linha reúne os nomes para consultas sobre os pré-requisitos de CCO33.\\n\\n**Ementa:** Introdução a Inteligência Artificial. Histórico de Inteligência Artificial. Linguagem de programação aplicada à Inteligência Artificial. Frameworks, processos de des",
+                "envolvimento e arquiteturas de software dedicadas à Inteligência Artificial. Laboratório de Inteligência Artificial com práticas de criação de sistemas de informação baseados em Inteligência Artificial.\",\"fonte\":\"s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_cco33.md\"},{\"texto\":\"# Ementa — CCO13 — Linguagem de Programação II\\r\\n\\r\\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `08_ementas.md`.\\r\\n\\r\\n**Código:** CCO13. **Professor responsável:** Prof.ª Helena Duarte. Semestre de referência: III; dia principal: Quarta-feira.\\r\\n\\r\\n**Proveniência complementar:** Docente e dia de referência: `02_matriz_curricular.md`.\\r\\n\\r\\n### CCO13 — Linguagem de Programação II\\r\\n\\r\\n**Carga total:** 60 h (4 créditos). **Distribuição:** teórica 15 horas; prática 45 horas; extensão -. **Pré-requisito:** CCO07.\\r\\n\\r\\n**Ementa:** Tratamento de exceção. Programação genérica. Manipulação de arquivos e streams. Desenvolvimento de interfaces gráficas básicas. Fluxos de con",
+                "trole paralelo. Boas práticas de programação.\",\"fonte\":\"s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_cco13.md\"},{\"texto\":\"# Matriz curricular — I semestre\\r\\n\\r\\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `02_matriz_curricular.md`.\\r\\n\\r\\nEste é o percurso de referência do I semestre. Para optativas, o código na matriz é uma escolha de referência; outra opção do catálogo pode ocupar a posição, conforme oferta e pré-requisitos.\\r\\n\\r\\n| Dia | Código | Disciplina | Professor responsável | Créditos | Horas | Pré-requisito |\\r\\n|---|---|---|---|---:|---:|---|\\r\\n| Segunda-feira | CCO01 | Algoritmos e Programação | Prof.ª Helena Duarte | 4 | 60 | Nenhum |\\r\\n| Terça-feira | CCO03 | Fundamentos de Sistemas de Informação | Prof. Rafael Moura | 4 | 60 | Nenhum |\\r\\n| Quarta-feira | COM06 | Inglês Aplicado à Computação | Prof. André Lima | 4 | 60 | Nenhum |\\r\\n| Quinta-feira | CCO05 | Introdução à Ciência da Computação | Prof. Rafael Moura | 4 | 60 | Nenhum",
+                " |\\r\\n| Sexta-feira | COM02 | Leitura e Produção de Gêneros Acadêmicos | Prof. André Lima | 4 | 60 | Nenhum |\\r\\n| Sábado | MAT04 | Matemática Discreta I | Prof.ª Lúcia Azevedo | 4 | 60 | Nenhum |\",\"fonte\":\"s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/matriz/matriz_i.md\"},{\"texto\":\"# Ementa — CCO03 — Fundamentos de Sistemas de Informação\\r\\n\\r\\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `08_ementas.md`.\\r\\n\\r\\n**Código:** CCO03. **Professor responsável:** Prof. Rafael Moura. Semestre de referência: I; dia principal: Terça-feira.\\r\\n\\r\\n**Proveniência complementar:** Docente e dia de referência: `02_matriz_curricular.md`.\\r\\n\\r\\n### CCO03 — Fundamentos de Sistemas de Informação\\r\\n\\r\\n**Carga total:** 60 h (4 créditos). **Distribuição:** teórica 60 horas; prática -; extensão -. **Pré-requisito:** Nenhum.\\r\\n\\r\\n**Ementa:** Princípios de Sistemas de Informação. Os conceitos, objetivos, funções e componentes dos sistemas de informação. As dimensões tecnológica, orga",
+                "nizacional e humana dos sistemas de informação. Os tipos de sistemas de informação. Hierarquia de Sistemas. Importância da Modelagem de Sistemas.\",\"fonte\":\"s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_cco03.md\"},{\"texto\":\"# Matriz curricular — III semestre\\r\\n\\r\\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `02_matriz_curricular.md`.\\r\\n\\r\\nEste é o percurso de referência do III semestre. Para optativas, o código na matriz é uma escolha de referência; outra opção do catálogo pode ocupar a posição, conforme oferta e pré-requisitos.\\r\\n\\r\\n| Dia | Código | Disciplina | Professor responsável | Créditos | Horas | Pré-requisito |\\r\\n|---|---|---|---|---:|---:|---|\\r\\n| Segunda-feira | HUM17 | Direito Cibernético | Prof. André Lima | 4 | 60 | Nenhum |\\r\\n| Terça-feira | CCO14 | Estruturas de Dados | Prof.ª Helena Duarte | 4 | 60 | CCO07 |\\r\\n| Quarta-feira | CCO13 | Linguagem de Programação II | Prof.ª Helena Duarte | 4 | 60 | CCO07 |\\r\\n| Quinta-feira | C",
+                "OM18 | Organização, Sistemas e Métodos | Prof. Rafael Moura | 4 | 60 | COM12 |\\r\\n| Sexta-feira | MAT16 | Probabilidade e Estatística | Prof.ª Lúcia Azevedo | 4 | 60 | Nenhum |\\r\\n| Sábado | TEC15 | Sistemas Operacionais | Prof.ª Marina Costa | 4 | 60 | CCO08 |\",\"fonte\":\"s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/matriz/matriz_iii.md\"}]}"
+              ],
+              "resultados": [
+                {
+                  "texto": "# Ementa — CCO33 — Inteligência Artificial\n\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `08_ementas.md`.\n\n**Código:** CCO33. **Professor responsável:** Prof.ª Beatriz Farias. Semestre de referência: VI; dia principal: Quinta-feira.\n\n**Proveniência complementar:** Docente e dia de referência: `02_matriz_curricular.md`.\n\n### CCO33 — Inteligência Artificial\n\n**Carga total:** 60 h (4 créditos). **Distribuição:** teórica 15 horas; prática 45 horas; extensão -. **Pré-requisito:** CCO13, MAT10.\n\n**Nomes dos pré-requisitos na base da UPC:** CCO13 — Linguagem de Programação II; MAT10 — Matemática Discreta II. O nome de MAT10 consta na ementa `ementa_mat10.md` e na matriz do II semestre; esta linha reúne os nomes para consultas sobre os pré-requisitos de CCO33.\n\n**Ementa:** Introdução a Inteligência Artificial. Histórico de Inteligência Artificial. Linguagem de programação aplicada à Inteligência Artificial. Frameworks, processos de desenvolvimento e arquiteturas de software dedicadas à Inteligência Artificial. Laboratório de Inteligência Artificial com práticas de criação de sistemas de informação baseados em Inteligência Artificial.",
+                  "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_cco33.md"
+                },
+                {
+                  "texto": "# Ementa — CCO13 — Linguagem de Programação II\r\n\r\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `08_ementas.md`.\r\n\r\n**Código:** CCO13. **Professor responsável:** Prof.ª Helena Duarte. Semestre de referência: III; dia principal: Quarta-feira.\r\n\r\n**Proveniência complementar:** Docente e dia de referência: `02_matriz_curricular.md`.\r\n\r\n### CCO13 — Linguagem de Programação II\r\n\r\n**Carga total:** 60 h (4 créditos). **Distribuição:** teórica 15 horas; prática 45 horas; extensão -. **Pré-requisito:** CCO07.\r\n\r\n**Ementa:** Tratamento de exceção. Programação genérica. Manipulação de arquivos e streams. Desenvolvimento de interfaces gráficas básicas. Fluxos de controle paralelo. Boas práticas de programação.",
+                  "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_cco13.md"
+                },
+                {
+                  "texto": "# Matriz curricular — I semestre\r\n\r\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `02_matriz_curricular.md`.\r\n\r\nEste é o percurso de referência do I semestre. Para optativas, o código na matriz é uma escolha de referência; outra opção do catálogo pode ocupar a posição, conforme oferta e pré-requisitos.\r\n\r\n| Dia | Código | Disciplina | Professor responsável | Créditos | Horas | Pré-requisito |\r\n|---|---|---|---|---:|---:|---|\r\n| Segunda-feira | CCO01 | Algoritmos e Programação | Prof.ª Helena Duarte | 4 | 60 | Nenhum |\r\n| Terça-feira | CCO03 | Fundamentos de Sistemas de Informação | Prof. Rafael Moura | 4 | 60 | Nenhum |\r\n| Quarta-feira | COM06 | Inglês Aplicado à Computação | Prof. André Lima | 4 | 60 | Nenhum |\r\n| Quinta-feira | CCO05 | Introdução à Ciência da Computação | Prof. Rafael Moura | 4 | 60 | Nenhum |\r\n| Sexta-feira | COM02 | Leitura e Produção de Gêneros Acadêmicos | Prof. André Lima | 4 | 60 | Nenhum |\r\n| Sábado | MAT04 | Matemática Discreta I | Prof.ª Lúcia Azevedo | 4 | 60 | Nenhum |",
+                  "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/matriz/matriz_i.md"
+                },
+                {
+                  "texto": "# Ementa — CCO03 — Fundamentos de Sistemas de Informação\r\n\r\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `08_ementas.md`.\r\n\r\n**Código:** CCO03. **Professor responsável:** Prof. Rafael Moura. Semestre de referência: I; dia principal: Terça-feira.\r\n\r\n**Proveniência complementar:** Docente e dia de referência: `02_matriz_curricular.md`.\r\n\r\n### CCO03 — Fundamentos de Sistemas de Informação\r\n\r\n**Carga total:** 60 h (4 créditos). **Distribuição:** teórica 60 horas; prática -; extensão -. **Pré-requisito:** Nenhum.\r\n\r\n**Ementa:** Princípios de Sistemas de Informação. Os conceitos, objetivos, funções e componentes dos sistemas de informação. As dimensões tecnológica, organizacional e humana dos sistemas de informação. Os tipos de sistemas de informação. Hierarquia de Sistemas. Importância da Modelagem de Sistemas.",
+                  "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_cco03.md"
+                },
+                {
+                  "texto": "# Matriz curricular — III semestre\r\n\r\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `02_matriz_curricular.md`.\r\n\r\nEste é o percurso de referência do III semestre. Para optativas, o código na matriz é uma escolha de referência; outra opção do catálogo pode ocupar a posição, conforme oferta e pré-requisitos.\r\n\r\n| Dia | Código | Disciplina | Professor responsável | Créditos | Horas | Pré-requisito |\r\n|---|---|---|---|---:|---:|---|\r\n| Segunda-feira | HUM17 | Direito Cibernético | Prof. André Lima | 4 | 60 | Nenhum |\r\n| Terça-feira | CCO14 | Estruturas de Dados | Prof.ª Helena Duarte | 4 | 60 | CCO07 |\r\n| Quarta-feira | CCO13 | Linguagem de Programação II | Prof.ª Helena Duarte | 4 | 60 | CCO07 |\r\n| Quinta-feira | COM18 | Organização, Sistemas e Métodos | Prof. Rafael Moura | 4 | 60 | COM12 |\r\n| Sexta-feira | MAT16 | Probabilidade e Estatística | Prof.ª Lúcia Azevedo | 4 | 60 | Nenhum |\r\n| Sábado | TEC15 | Sistemas Operacionais | Prof.ª Marina Costa | 4 | 60 | CCO08 |",
+                  "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/matriz/matriz_iii.md"
+                }
+              ]
+            }
+          ],
+          "uso_tokens": [
+            {
+              "inputTokens": 1523,
+              "outputTokens": 58,
+              "totalTokens": 1581
+            },
+            {
+              "inputTokens": 3463,
+              "outputTokens": 104,
+              "totalTokens": 3567
+            }
+          ],
+          "busca_obrigatoria_atendida": true,
+          "chamada_observada": true,
+          "resultado_observado": true
+        }
+      ],
+      "resposta_final": "A disciplina CCO33 — Inteligência Artificial — está no semestre de referência VI. Seu pré-requisito MAT10 tem o nome **Matemática Discreta II**.\n\nFonte: `ementa_cco33.md` (trecho: \"Pré-requisito: CCO13, MAT10\" e \"Nomes dos pré-requisitos na base da UPC: ... MAT10 — Matemática Discreta II\").",
+      "trechos_recuperados": [
+        {
+          "texto": "# Ementa — CCO33 — Inteligência Artificial\n\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `08_ementas.md`.\n\n**Código:** CCO33. **Professor responsável:** Prof.ª Beatriz Farias. Semestre de referência: VI; dia principal: Quinta-feira.\n\n**Proveniência complementar:** Docente e dia de referência: `02_matriz_curricular.md`.\n\n### CCO33 — Inteligência Artificial\n\n**Carga total:** 60 h (4 créditos). **Distribuição:** teórica 15 horas; prática 45 horas; extensão -. **Pré-requisito:** CCO13, MAT10.\n\n**Nomes dos pré-requisitos na base da UPC:** CCO13 — Linguagem de Programação II; MAT10 — Matemática Discreta II. O nome de MAT10 consta na ementa `ementa_mat10.md` e na matriz do II semestre; esta linha reúne os nomes para consultas sobre os pré-requisitos de CCO33.\n\n**Ementa:** Introdução a Inteligência Artificial. Histórico de Inteligência Artificial. Linguagem de programação aplicada à Inteligência Artificial. Frameworks, processos de desenvolvimento e arquiteturas de software dedicadas à Inteligência Artificial. Laboratório de Inteligência Artificial com práticas de criação de sistemas de informação baseados em Inteligência Artificial.",
+          "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_cco33.md"
+        },
+        {
+          "texto": "# Ementa — CCO13 — Linguagem de Programação II\r\n\r\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `08_ementas.md`.\r\n\r\n**Código:** CCO13. **Professor responsável:** Prof.ª Helena Duarte. Semestre de referência: III; dia principal: Quarta-feira.\r\n\r\n**Proveniência complementar:** Docente e dia de referência: `02_matriz_curricular.md`.\r\n\r\n### CCO13 — Linguagem de Programação II\r\n\r\n**Carga total:** 60 h (4 créditos). **Distribuição:** teórica 15 horas; prática 45 horas; extensão -. **Pré-requisito:** CCO07.\r\n\r\n**Ementa:** Tratamento de exceção. Programação genérica. Manipulação de arquivos e streams. Desenvolvimento de interfaces gráficas básicas. Fluxos de controle paralelo. Boas práticas de programação.",
+          "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_cco13.md"
+        },
+        {
+          "texto": "# Matriz curricular — I semestre\r\n\r\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `02_matriz_curricular.md`.\r\n\r\nEste é o percurso de referência do I semestre. Para optativas, o código na matriz é uma escolha de referência; outra opção do catálogo pode ocupar a posição, conforme oferta e pré-requisitos.\r\n\r\n| Dia | Código | Disciplina | Professor responsável | Créditos | Horas | Pré-requisito |\r\n|---|---|---|---|---:|---:|---|\r\n| Segunda-feira | CCO01 | Algoritmos e Programação | Prof.ª Helena Duarte | 4 | 60 | Nenhum |\r\n| Terça-feira | CCO03 | Fundamentos de Sistemas de Informação | Prof. Rafael Moura | 4 | 60 | Nenhum |\r\n| Quarta-feira | COM06 | Inglês Aplicado à Computação | Prof. André Lima | 4 | 60 | Nenhum |\r\n| Quinta-feira | CCO05 | Introdução à Ciência da Computação | Prof. Rafael Moura | 4 | 60 | Nenhum |\r\n| Sexta-feira | COM02 | Leitura e Produção de Gêneros Acadêmicos | Prof. André Lima | 4 | 60 | Nenhum |\r\n| Sábado | MAT04 | Matemática Discreta I | Prof.ª Lúcia Azevedo | 4 | 60 | Nenhum |",
+          "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/matriz/matriz_i.md"
+        },
+        {
+          "texto": "# Ementa — CCO03 — Fundamentos de Sistemas de Informação\r\n\r\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `08_ementas.md`.\r\n\r\n**Código:** CCO03. **Professor responsável:** Prof. Rafael Moura. Semestre de referência: I; dia principal: Terça-feira.\r\n\r\n**Proveniência complementar:** Docente e dia de referência: `02_matriz_curricular.md`.\r\n\r\n### CCO03 — Fundamentos de Sistemas de Informação\r\n\r\n**Carga total:** 60 h (4 créditos). **Distribuição:** teórica 60 horas; prática -; extensão -. **Pré-requisito:** Nenhum.\r\n\r\n**Ementa:** Princípios de Sistemas de Informação. Os conceitos, objetivos, funções e componentes dos sistemas de informação. As dimensões tecnológica, organizacional e humana dos sistemas de informação. Os tipos de sistemas de informação. Hierarquia de Sistemas. Importância da Modelagem de Sistemas.",
+          "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_cco03.md"
+        },
+        {
+          "texto": "# Matriz curricular — III semestre\r\n\r\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `02_matriz_curricular.md`.\r\n\r\nEste é o percurso de referência do III semestre. Para optativas, o código na matriz é uma escolha de referência; outra opção do catálogo pode ocupar a posição, conforme oferta e pré-requisitos.\r\n\r\n| Dia | Código | Disciplina | Professor responsável | Créditos | Horas | Pré-requisito |\r\n|---|---|---|---|---:|---:|---|\r\n| Segunda-feira | HUM17 | Direito Cibernético | Prof. André Lima | 4 | 60 | Nenhum |\r\n| Terça-feira | CCO14 | Estruturas de Dados | Prof.ª Helena Duarte | 4 | 60 | CCO07 |\r\n| Quarta-feira | CCO13 | Linguagem de Programação II | Prof.ª Helena Duarte | 4 | 60 | CCO07 |\r\n| Quinta-feira | COM18 | Organização, Sistemas e Métodos | Prof. Rafael Moura | 4 | 60 | COM12 |\r\n| Sexta-feira | MAT16 | Probabilidade e Estatística | Prof.ª Lúcia Azevedo | 4 | 60 | Nenhum |\r\n| Sábado | TEC15 | Sistemas Operacionais | Prof.ª Marina Costa | 4 | 60 | CCO08 |",
+          "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/matriz/matriz_iii.md"
+        }
+      ],
+      "busca_obrigatoria_atendida": true
+    }
+  ]
+}

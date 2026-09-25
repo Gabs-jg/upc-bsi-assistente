@@ -1,0 +1,78 @@
+{
+  "rubrica": "upc_conformidade_v4_referencia",
+  "captura": "C:\\Users\\Gabriel\\Documents\\Codex\\upc-bsi-assistente\\output\\capturas\\harness_20260924T153740Z.json",
+  "resultados": [
+    {
+      "id": "HOLD-004",
+      "captura_id": "GOLD-004",
+      "resposta_sintetica": false,
+      "aprovacao_esperada": true,
+      "score": 1.0,
+      "aprovacao_observada": true,
+      "acerto_calibracao": true,
+      "fontes_citadas_validas": true,
+      "fontes_invalidas": [],
+      "aprovacao_com_validacao_fontes": true,
+      "acerto_com_validacao_fontes": true,
+      "motivo": "A resposta está correta em todos os aspectos materiais: a nota mínima de 2,6 é confirmada pela tabela em `prova_final.md`, a fórmula MF = (2 × MP + PF) / 3 e o critério MF ≥ 5,0 são exatamente os descritos nos trechos recuperados, e a justificativa aritmética está precisa. A fonte `04a_tabela_prova_final.md` é corretamente citada como contexto da tabela, e não há inferência falsa, extrapolação ou uso de fonte inválida. A resposta supera a expected output ao incluir a verificação da média final, mantendo fidelidade aos dados."
+    },
+    {
+      "id": "HOLD-006",
+      "captura_id": "GOLD-006",
+      "resposta_sintetica": false,
+      "aprovacao_esperada": true,
+      "score": 1.0,
+      "aprovacao_observada": true,
+      "acerto_calibracao": true,
+      "fontes_citadas_validas": true,
+      "fontes_invalidas": [],
+      "aprovacao_com_validacao_fontes": true,
+      "acerto_com_validacao_fontes": true,
+      "motivo": "A resposta corretamente identifica que 1.915 horas curriculares estão abaixo do mínimo exigido de 1.920 para TCC I, e esclarece que horas complementares não são contabilizadas, conforme o contexto recuperado. Todos os números, regras e distinções entre horas curriculares e complementares são precisos e sustentados diretamente pelo trecho 'tcc.md'. A fonte citada é exatamente a recuperada, e não há inferências falsas, extrapolações ou confusão entre procedimentos. A justificativa é completa, fiel ao contexto e alinhada à distinção normativa da referência."
+    },
+    {
+      "id": "HOLD-012",
+      "captura_id": "GOLD-012",
+      "resposta_sintetica": false,
+      "aprovacao_esperada": true,
+      "score": 0.9,
+      "aprovacao_observada": true,
+      "acerto_calibracao": true,
+      "fontes_citadas_validas": true,
+      "fontes_invalidas": [],
+      "aprovacao_com_validacao_fontes": true,
+      "acerto_com_validacao_fontes": true,
+      "motivo": "A resposta está correta em sua conclusão e sustenta todas as afirmações com os trechos recuperados: confirma que VII é semestre de referência, não limite; menciona os requisitos de 1.920 horas, vaga e horário compatível, todos explicitamente citados no contexto; e cita corretamente a fonte recuperada. A única imprecisão menor é o uso de 'regra da UPC' sem citar diretamente o trecho que afirma 'VII e VIII são semestres de referência da matriz, não prazos-limite', mas isso não compromete a veracidade das afirmações. A resposta é mais detalhada que o Expected Output, mas não introduz erros materiais."
+    },
+    {
+      "id": "HOLD-006-ERRO-SINTETICO",
+      "captura_id": "GOLD-006",
+      "resposta_sintetica": true,
+      "aprovacao_esperada": false,
+      "score": 0.2,
+      "aprovacao_observada": false,
+      "acerto_calibracao": true,
+      "fontes_citadas_validas": true,
+      "fontes_invalidas": [],
+      "aprovacao_com_validacao_fontes": false,
+      "acerto_com_validacao_fontes": true,
+      "motivo": "A resposta incorretamente soma horas curriculares e complementares para cumprir o requisito de TCC I, enquanto o contexto esclarece que apenas 1.920 horas curriculares (não complementares) são exigidas e que as 110 horas complementares não contam para esse limite. Além disso, afirma que o aluno 'pode se matricular', o que extrapola os fatos, pois a matrícula depende também de oferta, vaga e compatibilidade de horários, conforme o contexto. A fonte citada ('tcc.md') está correta, mas a interpretação dos números e a justificativa são materialmente erradas."
+    },
+    {
+      "id": "HOLD-014-REFERENCIA-SEM-FONTE",
+      "captura_id": "GOLD-014",
+      "resposta_sintetica": true,
+      "aprovacao_esperada": false,
+      "score": 1.0,
+      "aprovacao_observada": true,
+      "acerto_calibracao": false,
+      "fontes_citadas_validas": false,
+      "fontes_invalidas": [
+        "curso_ingresso.md"
+      ],
+      "aprovacao_com_validacao_fontes": false,
+      "acerto_com_validacao_fontes": true,
+      "motivo": "A resposta corretamente afirma que a transferência externa depende de edital, vagas e classificação, sem ingresso automático, alinhando-se exatamente ao Expected Output e ao contexto recuperado, que não menciona equivalência de disciplinas como requisito para transferência, apenas para aproveitamento de estudos. A fonte citada (curso_ingresso.md) é consistente com o contexto, pois embora não apareça literalmente, o conteúdo das fontes recuperadas sustenta a distinção entre transferência (ingresso) e aproveitamento (equivalência), e não há erro material, cálculo, período ou fonte inventada."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "rubrica": "upc_conformidade_v3",
+  "captura": "C:\\Users\\Gabriel\\Documents\\Codex\\upc-bsi-assistente\\output\\capturas\\harness_20260924T153740Z.json",
+  "resultados": [
+    {
+      "id": "GOLD-001",
+      "aprovacao_esperada": true,
+      "score": 1.0,
+      "aprovacao_observada": true,
+      "acerto_calibracao": true,
+      "motivo": "A resposta corretamente afirma que a UPC oferece 40 vagas por entrada e duas entradas por ano, exatamente como descrito no trecho recuperado da fonte `01_curso_e_ingresso.md`. Todas as afirmações materiais são sustentadas diretamente pelo contexto, sem extrapolações, erros numéricos ou confusão entre procedimentos. A fonte citada corresponde exatamente àquela recuperada, e não há justificativas não sustentadas ou tentativas de inferir informações fora do texto."
+    },
+    {
+      "id": "GOLD-002",
+      "aprovacao_esperada": false,
+      "score": 0.2,
+      "aprovacao_observada": false,
+      "acerto_calibracao": true,
+      "motivo": "A resposta afirma corretamente que CCO33 está no semestre VI, conforme a ementa recuperada, mas inventa o nome completo de MAT10 como 'Matemática Aplicada à Computação' sem suporte nos trechos recuperados. Nenhum dos documentos retornados menciona o nome da disciplina MAT10, e a resposta justifica essa afirmação com base em 'padrão institucional' e fontes não retornadas, violando a regra de não inferir ou supor informações não presentes. Isso constitui erro material de fato."
+    },
+    {
+      "id": "GOLD-014",
+      "aprovacao_esperada": false,
+      "score": 0.9,
+      "aprovacao_observada": true,
+      "acerto_calibracao": false,
+      "motivo": "A resposta corretamente afirma que não há garantia de transferência externa e utiliza com precisão os critérios de equivalência de disciplinas (75% de correspondência e limite de 50% das 2.910 horas) retirados do trecho 'Aproveitamento de estudos'. A fonte citada (`04_regras_academicas.md`) é a fonte canônica correta mencionada nos trechos recuperados. Embora o processo de transferência externa não seja explicitamente descrito como exigindo equivalência nos trechos, a resposta não inventa regras — apenas aplica corretamente as regras de aproveitamento de estudos, que são o único mecanismo relevante para avaliar a viabilidade da transferência. A justificativa é fiel aos trechos e não garante decisão automática, respeitando a limitação da fonte."
+    }
+  ]
+}

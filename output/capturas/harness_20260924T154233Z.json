@@ -1,0 +1,114 @@
+{
+  "tipo": "harness_capture_real",
+  "tipo_dataset": "golden_independente_sem_respostas_do_agente",
+  "capturado_em_utc": "2026-09-24T15:42:35.573372+00:00",
+  "dataset_sha256": "3c5d32a317450369f9ac7a8c600ff5f4423a4765debac056615b9f9f9d66d1a8",
+  "harness_arn": "arn:aws:bedrock-agentcore:us-east-2:276996007591:harness/upc_bsi_assistente_v13-xWH7Nkzzk1",
+  "harness_version": "22",
+  "modelo_agente": "qwen.qwen3-next-80b-a3b",
+  "config_sha256": "d28badd52316f14c3a5123e503bd3c397e52cf0d1924276c3bf759b985ac9e55",
+  "estado": "concluido",
+  "total_casos_dataset": 15,
+  "casos_selecionados": [
+    "GOLD-002"
+  ],
+  "casos": [
+    {
+      "id": "GOLD-002",
+      "categoria": "consulta_direta",
+      "session_id": "3bf72ad2-3ad4-4987-8f17-b3390564757d",
+      "turnos": [
+        {
+          "pergunta": "Em qual semestre de referência está CCO33 e qual é o nome de MAT10, seu pré-requisito?",
+          "busca_esperada": true,
+          "resposta": "A disciplina CCO33 (Inteligência Artificial) está no semestre de referência VI. O nome da disciplina com código MAT10, seu pré-requisito, é Matemática Discreta II.\n\nFonte: s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_cco33.md  \nFonte: s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_mat10.md",
+          "chamadas": [
+            {
+              "nome": "BuscaUPC___consultar_base_upc",
+              "id": "tooluse_Zp6a5TDXRNoBeAxoWL7mPW",
+              "entrada": {
+                "pergunta": "Em qual semestre de referência está a disciplina CCO33 e qual é o nome da disciplina com código MAT10, seu pré-requisito?"
+              }
+            }
+          ],
+          "resultados_ferramenta": [
+            {
+              "id": "tooluse_Zp6a5TDXRNoBeAxoWL7mPW",
+              "status": "success",
+              "conteudo": [
+                "{\"resultados\":[{\"texto\":\"# Ementa — CCO33 — Inteligência Artificial\\r\\n\\r\\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `08_ementas.md`.\\r\\n\\r\\n**Código:** CCO33. **Professor responsável:** Prof.ª Beatriz Farias. Semestre de referência: VI; dia principal: Quinta-feira.\\r\\n\\r\\n**Proveniência complementar:** Docente e dia de referência: `02_matriz_curricular.md`.\\r\\n\\r\\n### CCO33 — Inteligência Artificial\\r\\n\\r\\n**Carga total:** 60 h (4 créditos). **Distribuição:** teórica 15 horas; prática 45 horas; extensão -. **Pré-requisito:** CCO13, MAT10.\\r\\n\\r\\n**Ementa:** Introdução a Inteligência Artificial. Histórico de Inteligência Artificial. Linguagem de programação aplicada à Inteligência Artificial. Frameworks, processos de desenvolvimento e arquiteturas de software dedicadas à Inteligência Artificial. Laboratório de Inteligência Artificial com práticas de criação de sistemas de informação baseados em Inteligência Artificial.\",\"fonte\":\"s3://upc-bsi-rag-v13-2026-c7a42f1d",
+                "/documentos/ementas/ementa_cco33.md\"},{\"texto\":\"# Ementa — MAT10 — Matemática Discreta II\\r\\n\\r\\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `08_ementas.md`.\\r\\n\\r\\n**Código:** MAT10. **Professor responsável:** Prof.ª Lúcia Azevedo. Semestre de referência: II; dia principal: Sexta-feira.\\r\\n\\r\\n**Proveniência complementar:** Docente e dia de referência: `02_matriz_curricular.md`.\\r\\n\\r\\n### MAT10 — Matemática Discreta II\\r\\n\\r\\n**Carga total:** 60 h (4 créditos). **Distribuição:** teórica 60 horas; prática -; extensão -. **Pré-requisito:** MAT04.\\r\\n\\r\\n**Ementa:** Teoria dos grafos: representação de grafo; grafo parcial e sub-grafo; grafo completo e grafo bipartido; caminho; percurso; ciclo; circuito; e comprimento.\",\"fonte\":\"s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_mat10.md\"},{\"texto\":\"# Matriz curricular — I semestre\\r\\n\\r\\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `02_matriz_curricular.md`.\\r\\n\\",
+                "r\\nEste é o percurso de referência do I semestre. Para optativas, o código na matriz é uma escolha de referência; outra opção do catálogo pode ocupar a posição, conforme oferta e pré-requisitos.\\r\\n\\r\\n| Dia | Código | Disciplina | Professor responsável | Créditos | Horas | Pré-requisito |\\r\\n|---|---|---|---|---:|---:|---|\\r\\n| Segunda-feira | CCO01 | Algoritmos e Programação | Prof.ª Helena Duarte | 4 | 60 | Nenhum |\\r\\n| Terça-feira | CCO03 | Fundamentos de Sistemas de Informação | Prof. Rafael Moura | 4 | 60 | Nenhum |\\r\\n| Quarta-feira | COM06 | Inglês Aplicado à Computação | Prof. André Lima | 4 | 60 | Nenhum |\\r\\n| Quinta-feira | CCO05 | Introdução à Ciência da Computação | Prof. Rafael Moura | 4 | 60 | Nenhum |\\r\\n| Sexta-feira | COM02 | Leitura e Produção de Gêneros Acadêmicos | Prof. André Lima | 4 | 60 | Nenhum |\\r\\n| Sábado | MAT04 | Matemática Discreta I | Prof.ª Lúcia Azevedo | 4 | 60 | Nenhum |\",\"fonte\":\"s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/matriz/matriz_i.md\"},{\"texto\":\"# Matriz curri",
+                "cular — II semestre\\r\\n\\r\\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `02_matriz_curricular.md`.\\r\\n\\r\\nEste é o percurso de referência do II semestre. Para optativas, o código na matriz é uma escolha de referência; outra opção do catálogo pode ocupar a posição, conforme oferta e pré-requisitos.\\r\\n\\r\\n| Dia | Código | Disciplina | Professor responsável | Créditos | Horas | Pré-requisito |\\r\\n|---|---|---|---|---:|---:|---|\\r\\n| Segunda-feira | COM12 | Administração | Prof.ª Camila Rocha | 4 | 60 | Nenhum |\\r\\n| Terça-feira | MAT11 | Cálculo Diferencial Aplicado à Computação | Prof.ª Lúcia Azevedo | 4 | 60 | MAT04 |\\r\\n| Quarta-feira | COM09 | Computador, Ética e Sociedade | Prof. André Lima | 4 | 60 | Nenhum |\\r\\n| Quinta-feira | CCO07 | Linguagem de Programação I | Prof.ª Helena Duarte | 4 | 60 | CCO01 |\\r\\n| Sexta-feira | MAT10 | Matemática Discreta II | Prof.ª Lúcia Azevedo | 4 | 60 | MAT04 |\\r\\n| Sábado | CCO08 | Organização e Arquitetura de Computadores | Pr",
+                "of.ª Marina Costa | 4 | 60 | Nenhum |\",\"fonte\":\"s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/matriz/matriz_ii.md\"},{\"texto\":\"# Ementa — CCO13 — Linguagem de Programação II\\r\\n\\r\\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `08_ementas.md`.\\r\\n\\r\\n**Código:** CCO13. **Professor responsável:** Prof.ª Helena Duarte. Semestre de referência: III; dia principal: Quarta-feira.\\r\\n\\r\\n**Proveniência complementar:** Docente e dia de referência: `02_matriz_curricular.md`.\\r\\n\\r\\n### CCO13 — Linguagem de Programação II\\r\\n\\r\\n**Carga total:** 60 h (4 créditos). **Distribuição:** teórica 15 horas; prática 45 horas; extensão -. **Pré-requisito:** CCO07.\\r\\n\\r\\n**Ementa:** Tratamento de exceção. Programação genérica. Manipulação de arquivos e streams. Desenvolvimento de interfaces gráficas básicas. Fluxos de controle paralelo. Boas práticas de programação.\",\"fonte\":\"s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_cco13.md\"}]}"
+              ],
+              "resultados": [
+                {
+                  "texto": "# Ementa — CCO33 — Inteligência Artificial\r\n\r\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `08_ementas.md`.\r\n\r\n**Código:** CCO33. **Professor responsável:** Prof.ª Beatriz Farias. Semestre de referência: VI; dia principal: Quinta-feira.\r\n\r\n**Proveniência complementar:** Docente e dia de referência: `02_matriz_curricular.md`.\r\n\r\n### CCO33 — Inteligência Artificial\r\n\r\n**Carga total:** 60 h (4 créditos). **Distribuição:** teórica 15 horas; prática 45 horas; extensão -. **Pré-requisito:** CCO13, MAT10.\r\n\r\n**Ementa:** Introdução a Inteligência Artificial. Histórico de Inteligência Artificial. Linguagem de programação aplicada à Inteligência Artificial. Frameworks, processos de desenvolvimento e arquiteturas de software dedicadas à Inteligência Artificial. Laboratório de Inteligência Artificial com práticas de criação de sistemas de informação baseados em Inteligência Artificial.",
+                  "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_cco33.md"
+                },
+                {
+                  "texto": "# Ementa — MAT10 — Matemática Discreta II\r\n\r\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `08_ementas.md`.\r\n\r\n**Código:** MAT10. **Professor responsável:** Prof.ª Lúcia Azevedo. Semestre de referência: II; dia principal: Sexta-feira.\r\n\r\n**Proveniência complementar:** Docente e dia de referência: `02_matriz_curricular.md`.\r\n\r\n### MAT10 — Matemática Discreta II\r\n\r\n**Carga total:** 60 h (4 créditos). **Distribuição:** teórica 60 horas; prática -; extensão -. **Pré-requisito:** MAT04.\r\n\r\n**Ementa:** Teoria dos grafos: representação de grafo; grafo parcial e sub-grafo; grafo completo e grafo bipartido; caminho; percurso; ciclo; circuito; e comprimento.",
+                  "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_mat10.md"
+                },
+                {
+                  "texto": "# Matriz curricular — I semestre\r\n\r\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `02_matriz_curricular.md`.\r\n\r\nEste é o percurso de referência do I semestre. Para optativas, o código na matriz é uma escolha de referência; outra opção do catálogo pode ocupar a posição, conforme oferta e pré-requisitos.\r\n\r\n| Dia | Código | Disciplina | Professor responsável | Créditos | Horas | Pré-requisito |\r\n|---|---|---|---|---:|---:|---|\r\n| Segunda-feira | CCO01 | Algoritmos e Programação | Prof.ª Helena Duarte | 4 | 60 | Nenhum |\r\n| Terça-feira | CCO03 | Fundamentos de Sistemas de Informação | Prof. Rafael Moura | 4 | 60 | Nenhum |\r\n| Quarta-feira | COM06 | Inglês Aplicado à Computação | Prof. André Lima | 4 | 60 | Nenhum |\r\n| Quinta-feira | CCO05 | Introdução à Ciência da Computação | Prof. Rafael Moura | 4 | 60 | Nenhum |\r\n| Sexta-feira | COM02 | Leitura e Produção de Gêneros Acadêmicos | Prof. André Lima | 4 | 60 | Nenhum |\r\n| Sábado | MAT04 | Matemática Discreta I | Prof.ª Lúcia Azevedo | 4 | 60 | Nenhum |",
+                  "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/matriz/matriz_i.md"
+                },
+                {
+                  "texto": "# Matriz curricular — II semestre\r\n\r\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `02_matriz_curricular.md`.\r\n\r\nEste é o percurso de referência do II semestre. Para optativas, o código na matriz é uma escolha de referência; outra opção do catálogo pode ocupar a posição, conforme oferta e pré-requisitos.\r\n\r\n| Dia | Código | Disciplina | Professor responsável | Créditos | Horas | Pré-requisito |\r\n|---|---|---|---|---:|---:|---|\r\n| Segunda-feira | COM12 | Administração | Prof.ª Camila Rocha | 4 | 60 | Nenhum |\r\n| Terça-feira | MAT11 | Cálculo Diferencial Aplicado à Computação | Prof.ª Lúcia Azevedo | 4 | 60 | MAT04 |\r\n| Quarta-feira | COM09 | Computador, Ética e Sociedade | Prof. André Lima | 4 | 60 | Nenhum |\r\n| Quinta-feira | CCO07 | Linguagem de Programação I | Prof.ª Helena Duarte | 4 | 60 | CCO01 |\r\n| Sexta-feira | MAT10 | Matemática Discreta II | Prof.ª Lúcia Azevedo | 4 | 60 | MAT04 |\r\n| Sábado | CCO08 | Organização e Arquitetura de Computadores | Prof.ª Marina Costa | 4 | 60 | Nenhum |",
+                  "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/matriz/matriz_ii.md"
+                },
+                {
+                  "texto": "# Ementa — CCO13 — Linguagem de Programação II\r\n\r\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `08_ementas.md`.\r\n\r\n**Código:** CCO13. **Professor responsável:** Prof.ª Helena Duarte. Semestre de referência: III; dia principal: Quarta-feira.\r\n\r\n**Proveniência complementar:** Docente e dia de referência: `02_matriz_curricular.md`.\r\n\r\n### CCO13 — Linguagem de Programação II\r\n\r\n**Carga total:** 60 h (4 créditos). **Distribuição:** teórica 15 horas; prática 45 horas; extensão -. **Pré-requisito:** CCO07.\r\n\r\n**Ementa:** Tratamento de exceção. Programação genérica. Manipulação de arquivos e streams. Desenvolvimento de interfaces gráficas básicas. Fluxos de controle paralelo. Boas práticas de programação.",
+                  "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_cco13.md"
+                }
+              ]
+            }
+          ],
+          "uso_tokens": [
+            {
+              "inputTokens": 2238,
+              "outputTokens": 63,
+              "totalTokens": 2301
+            },
+            {
+              "inputTokens": 4089,
+              "outputTokens": 131,
+              "totalTokens": 4220
+            }
+          ],
+          "busca_obrigatoria_atendida": true,
+          "chamada_observada": true,
+          "resultado_observado": true
+        }
+      ],
+      "resposta_final": "A disciplina CCO33 (Inteligência Artificial) está no semestre de referência VI. O nome da disciplina com código MAT10, seu pré-requisito, é Matemática Discreta II.\n\nFonte: s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_cco33.md  \nFonte: s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_mat10.md",
+      "trechos_recuperados": [
+        {
+          "texto": "# Ementa — CCO33 — Inteligência Artificial\r\n\r\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `08_ementas.md`.\r\n\r\n**Código:** CCO33. **Professor responsável:** Prof.ª Beatriz Farias. Semestre de referência: VI; dia principal: Quinta-feira.\r\n\r\n**Proveniência complementar:** Docente e dia de referência: `02_matriz_curricular.md`.\r\n\r\n### CCO33 — Inteligência Artificial\r\n\r\n**Carga total:** 60 h (4 créditos). **Distribuição:** teórica 15 horas; prática 45 horas; extensão -. **Pré-requisito:** CCO13, MAT10.\r\n\r\n**Ementa:** Introdução a Inteligência Artificial. Histórico de Inteligência Artificial. Linguagem de programação aplicada à Inteligência Artificial. Frameworks, processos de desenvolvimento e arquiteturas de software dedicadas à Inteligência Artificial. Laboratório de Inteligência Artificial com práticas de criação de sistemas de informação baseados em Inteligência Artificial.",
+          "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_cco33.md"
+        },
+        {
+          "texto": "# Ementa — MAT10 — Matemática Discreta II\r\n\r\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `08_ementas.md`.\r\n\r\n**Código:** MAT10. **Professor responsável:** Prof.ª Lúcia Azevedo. Semestre de referência: II; dia principal: Sexta-feira.\r\n\r\n**Proveniência complementar:** Docente e dia de referência: `02_matriz_curricular.md`.\r\n\r\n### MAT10 — Matemática Discreta II\r\n\r\n**Carga total:** 60 h (4 créditos). **Distribuição:** teórica 60 horas; prática -; extensão -. **Pré-requisito:** MAT04.\r\n\r\n**Ementa:** Teoria dos grafos: representação de grafo; grafo parcial e sub-grafo; grafo completo e grafo bipartido; caminho; percurso; ciclo; circuito; e comprimento.",
+          "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_mat10.md"
+        },
+        {
+          "texto": "# Matriz curricular — I semestre\r\n\r\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `02_matriz_curricular.md`.\r\n\r\nEste é o percurso de referência do I semestre. Para optativas, o código na matriz é uma escolha de referência; outra opção do catálogo pode ocupar a posição, conforme oferta e pré-requisitos.\r\n\r\n| Dia | Código | Disciplina | Professor responsável | Créditos | Horas | Pré-requisito |\r\n|---|---|---|---|---:|---:|---|\r\n| Segunda-feira | CCO01 | Algoritmos e Programação | Prof.ª Helena Duarte | 4 | 60 | Nenhum |\r\n| Terça-feira | CCO03 | Fundamentos de Sistemas de Informação | Prof. Rafael Moura | 4 | 60 | Nenhum |\r\n| Quarta-feira | COM06 | Inglês Aplicado à Computação | Prof. André Lima | 4 | 60 | Nenhum |\r\n| Quinta-feira | CCO05 | Introdução à Ciência da Computação | Prof. Rafael Moura | 4 | 60 | Nenhum |\r\n| Sexta-feira | COM02 | Leitura e Produção de Gêneros Acadêmicos | Prof. André Lima | 4 | 60 | Nenhum |\r\n| Sábado | MAT04 | Matemática Discreta I | Prof.ª Lúcia Azevedo | 4 | 60 | Nenhum |",
+          "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/matriz/matriz_i.md"
+        },
+        {
+          "texto": "# Matriz curricular — II semestre\r\n\r\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `02_matriz_curricular.md`.\r\n\r\nEste é o percurso de referência do II semestre. Para optativas, o código na matriz é uma escolha de referência; outra opção do catálogo pode ocupar a posição, conforme oferta e pré-requisitos.\r\n\r\n| Dia | Código | Disciplina | Professor responsável | Créditos | Horas | Pré-requisito |\r\n|---|---|---|---|---:|---:|---|\r\n| Segunda-feira | COM12 | Administração | Prof.ª Camila Rocha | 4 | 60 | Nenhum |\r\n| Terça-feira | MAT11 | Cálculo Diferencial Aplicado à Computação | Prof.ª Lúcia Azevedo | 4 | 60 | MAT04 |\r\n| Quarta-feira | COM09 | Computador, Ética e Sociedade | Prof. André Lima | 4 | 60 | Nenhum |\r\n| Quinta-feira | CCO07 | Linguagem de Programação I | Prof.ª Helena Duarte | 4 | 60 | CCO01 |\r\n| Sexta-feira | MAT10 | Matemática Discreta II | Prof.ª Lúcia Azevedo | 4 | 60 | MAT04 |\r\n| Sábado | CCO08 | Organização e Arquitetura de Computadores | Prof.ª Marina Costa | 4 | 60 | Nenhum |",
+          "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/matriz/matriz_ii.md"
+        },
+        {
+          "texto": "# Ementa — CCO13 — Linguagem de Programação II\r\n\r\n**Instituição:** Universidade de Pedra Clara (UPC). **Versão:** 1.3. **Fonte canônica:** `08_ementas.md`.\r\n\r\n**Código:** CCO13. **Professor responsável:** Prof.ª Helena Duarte. Semestre de referência: III; dia principal: Quarta-feira.\r\n\r\n**Proveniência complementar:** Docente e dia de referência: `02_matriz_curricular.md`.\r\n\r\n### CCO13 — Linguagem de Programação II\r\n\r\n**Carga total:** 60 h (4 créditos). **Distribuição:** teórica 15 horas; prática 45 horas; extensão -. **Pré-requisito:** CCO07.\r\n\r\n**Ementa:** Tratamento de exceção. Programação genérica. Manipulação de arquivos e streams. Desenvolvimento de interfaces gráficas básicas. Fluxos de controle paralelo. Boas práticas de programação.",
+          "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_cco13.md"
+        }
+      ],
+      "busca_obrigatoria_atendida": true
+    }
+  ],
+  "system_prompt_override_sha256": "28dcabda05b41aead7550fa969a57a337a22d9eb86257aeeba8a483a8cfd6efd",
+  "system_prompt_override_file": "src\\agentcore\\prompt_harness_busca_obrigatoria.txt"
+}

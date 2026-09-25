@@ -14,8 +14,13 @@ __pycache__/
 *.key
 .aws/
 
-# Saídas temporárias de avaliações
-evals/resultados/
+# Saídas temporárias ou de infraestrutura descartáveis
+output/cloudshell/
+output/deploy/
+output/pip_temp/
+output/backups/
+output/diagnosticos/
+tmp/
 *.log
 
 # VS Code local

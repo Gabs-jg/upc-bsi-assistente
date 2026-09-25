@@ -1,0 +1,30 @@
+{
+  "rubrica": "upc_conformidade_v2",
+  "captura": "C:\\Users\\Gabriel\\Documents\\Codex\\upc-bsi-assistente\\output\\capturas\\harness_20260924T153740Z.json",
+  "resultados": [
+    {
+      "id": "GOLD-001",
+      "aprovacao_esperada": true,
+      "score": 1.0,
+      "aprovacao_observada": true,
+      "acerto_calibracao": true,
+      "motivo": "A resposta corretamente afirma que a UPC oferece 40 vagas por entrada e duas entradas por ano, informação diretamente sustentada pelo trecho recuperado da fonte `01_curso_e_ingresso.md`. A fonte citada na resposta (`01_curso_e_ingresso.md`) corresponde à fonte canônica mencionada no contexto, e não há erro de fato, cálculo, período ou aplicação de regra. A resposta é precisa, concisa e alinhada aos dados do contexto."
+    },
+    {
+      "id": "GOLD-002",
+      "aprovacao_esperada": false,
+      "score": 0.3,
+      "aprovacao_observada": false,
+      "acerto_calibracao": true,
+      "motivo": "A resposta afirma corretamente que CCO33 está no semestre VI, conforme a ementa recuperada (`ementa_cco33.md`), mas inventa o nome completo de MAT10 como 'Matemática Aplicada à Computação' sem suporte nos trechos recuperados. Nenhum dos arquivos de matriz curricular (I ou III semestre) menciona MAT10, e o contexto não contém qualquer documento que defina seu nome. A menção a uma 'fonte canônica' ou 'padrão institucional' não é sustentada por nenhum trecho recuperado, violando a regra de não inferir fatos não presentes. Isso constitui erro material de fato."
+    },
+    {
+      "id": "GOLD-014",
+      "aprovacao_esperada": false,
+      "score": 1.0,
+      "aprovacao_observada": true,
+      "acerto_calibracao": false,
+      "motivo": "A resposta corretamente recusa a garantia de transferência externa, citando regras precisas de equivalência de disciplinas (75% de correspondência de conteúdo e carga horária) e limite de 50% das 2.910 horas curriculares, todas extraídas diretamente do contexto recuperado em 'aproveitamento_estudos.md'. A fonte `04_regras_academicas.md` é corretamente mencionada como fonte canônica, e a resposta evita inventar condições de ingresso ou garantir deferimento, respeitando o limite do contexto. Não há erro material, cálculo, período ou fonte."
+    }
+  ]
+}

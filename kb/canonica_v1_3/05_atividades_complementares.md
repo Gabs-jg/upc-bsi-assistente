@@ -44,8 +44,16 @@
 | Representação estudantil e serviço público | Representação no Colegiado, por semestre completo | 10 | 2 |
 | Representação estudantil e serviço público | Serviço eleitoral comprovado, por turno | 5 | 2 |
 
+## Esclarecimento sobre palestras assistidas
+
+Assistir a uma palestra sobre tema do curso não gera horas automaticamente. O item **palestra ministrada** (15 horas) se aplica a quem apresentou a palestra, não ao ouvinte. O item **participação como ouvinte em evento de extensão** vale **5 horas por evento**, até **4 eventos**: o limite desse item é **20 horas**, enquanto o teto de toda a categoria **Extensão é 40 horas**. Para usar o item de ouvinte, o comprovante deve identificar a atividade como parte de um evento de extensão e confirmar a participação como ouvinte. O evento pode ser promovido pela UPC ou por outra instituição; o barema não exige evento exclusivo da UPC nem registro em uma planilha específica da CAC. O tema da palestra, por si só, não comprova o enquadramento. Sem informação sobre o tipo de evento e o comprovante, não há quantidade de horas a atribuir; a validação final cabe à CAC e respeita o teto restante da categoria.
+
+**Consulta frequente:** “Assisti a uma palestra sobre inteligência artificial. Quantas horas posso lançar?” Com essa informação isolada, a quantidade é **indeterminada**. Se a palestra integrou um evento de extensão e a participação como ouvinte estiver documentada, o item prevê **5 horas por evento**, sujeito ao limite de **4 eventos**, ao teto da categoria e à validação pela CAC. Caso contrário, não presumir 5 horas apenas pelo assunto da palestra.
+
 ## Comprovação e contagem
 
 Certificados, declarações, histórico ou contrato devem identificar estudante, atividade, instituição responsável e período. A CAC pode pedir detalhe adicional quando o comprovante não demonstrar a unidade pontuada. O pedido é feito no Portal do Estudante, com os comprovantes em um único PDF e indicação das páginas correspondentes a cada atividade. A CAC comunica decisão em até **15 dias úteis** após protocolo completo; cabe recurso em até **5 dias úteis** da ciência da decisão. Para colação no semestre corrente, o estudante deve protocolar até **30 dias corridos antes do encerramento administrativo do período**. Em 2027, os prazos são 02/06 para 2027.1 e 03/11 para 2027.2, conforme `10_calendario_academico_2027.md`.
+
+O prazo de 30 dias corridos é uma condição para tentar a colação no semestre corrente; ele não é o prazo geral de protocolo de toda Atividade Complementar.
 
 A mesma atividade ou comprovante não pode ser pontuada duas vezes, nem simultaneamente como ACEx e Atividade Complementar. Optativas usadas nas 180 horas curriculares não geram horas complementares. Estágio é opcional para o curso e só pode pontuar aqui se não tiver sido aproveitado em outra obrigação curricular. A decisão final de validação cabe à CAC; o cálculo do agente é apenas estimativa.

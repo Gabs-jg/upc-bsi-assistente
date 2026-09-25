@@ -10,4 +10,6 @@
 
 **Carga total:** 60 h (4 créditos). **Distribuição:** teórica 15 horas; prática 45 horas; extensão -. **Pré-requisito:** CCO13, MAT10.
 
+**Nomes dos pré-requisitos na base da UPC:** CCO13 — Linguagem de Programação II; MAT10 — Matemática Discreta II. O nome de MAT10 consta na ementa `ementa_mat10.md` e na matriz do II semestre; esta linha reúne os nomes para consultas sobre os pré-requisitos de CCO33.
+
 **Ementa:** Introdução a Inteligência Artificial. Histórico de Inteligência Artificial. Linguagem de programação aplicada à Inteligência Artificial. Frameworks, processos de desenvolvimento e arquiteturas de software dedicadas à Inteligência Artificial. Laboratório de Inteligência Artificial com práticas de criação de sistemas de informação baseados em Inteligência Artificial.

@@ -1,0 +1,458 @@
+{
+  "tipo": "agentcore_batch_evaluation",
+  "captura": "C:\\Users\\Gabriel\\Documents\\Codex\\upc-bsi-assistente\\output\\capturas\\harness_20260925T044149Z_c989107c.json",
+  "spans": "C:\\Users\\Gabriel\\Documents\\Codex\\upc-bsi-assistente\\output\\spans_agentcore_20260925T044149Z.json",
+  "avaliador_id": "Builtin.Faithfulness",
+  "modelo_agente": "qwen.qwen3-next-80b-a3b",
+  "modelo_avaliador": null,
+  "avaliado_em_utc": "2026-09-25T04:55:33.024605+00:00",
+  "resultados_por_caso": [
+    {
+      "caso_id": "GOLD-001",
+      "session_id": "e41d2de5-c1ea-4f7c-92ae-8edd0ca65f76",
+      "spans": 24,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:::evaluator/Builtin.Faithfulness",
+          "evaluatorId": "Builtin.Faithfulness",
+          "evaluatorName": "Builtin.Faithfulness",
+          "explanation": "The tool output clearly states: 'A UPC oferece 40 vagas por entrada, em duas entradas por ano.' The assistant's response says: 'A Universidade de Pedra Clara (UPC) oferece 40 vagas por entrada, com duas entradas por ano.' This directly matches the tool output. The source cited also matches the tool output source. There are no conflicts between the assistant's response and the conversation history/tool output.",
+          "context": {
+            "spanContext": {
+              "sessionId": "e41d2de5-c1ea-4f7c-92ae-8edd0ca65f76",
+              "traceId": "6ab5fb8f58633d3a646414437fcccaeb"
+            }
+          },
+          "value": 1.0,
+          "label": "Completely Yes",
+          "tokenUsage": {
+            "inputTokens": 4139,
+            "outputTokens": 120,
+            "totalTokens": 4259
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-002",
+      "session_id": "57e5766c-f225-4495-8391-eae183dad085",
+      "spans": 24,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:::evaluator/Builtin.Faithfulness",
+          "evaluatorId": "Builtin.Faithfulness",
+          "evaluatorName": "Builtin.Faithfulness",
+          "explanation": "The assistant's response states:\n1. CCO33 — Inteligência Artificial is in semester VI (reference semester VI)\n2. MAT10's name is 'Matemática Discreta II'\n\nChecking against the tool output:\n1. The tool output clearly states: 'Semestre de referência: VI' for CCO33 — this matches.\n2. The tool output states: 'MAT10 — Matemática Discreta II' — this matches.\n3. The source cited is correct: `s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_cco33.md` — this matches.\n\nAll information in the assistant's response is consistent with the tool output. No conflicts detected.",
+          "context": {
+            "spanContext": {
+              "sessionId": "57e5766c-f225-4495-8391-eae183dad085",
+              "traceId": "6ab5fb9753d2d7a3132c759455cc60be"
+            }
+          },
+          "value": 1.0,
+          "label": "Completely Yes",
+          "tokenUsage": {
+            "inputTokens": 3142,
+            "outputTokens": 211,
+            "totalTokens": 3353
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-003",
+      "session_id": "536e1608-7913-4d4e-ab1c-90449a81479f",
+      "spans": 24,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:::evaluator/Builtin.Faithfulness",
+          "evaluatorId": "Builtin.Faithfulness",
+          "evaluatorName": "Builtin.Faithfulness",
+          "explanation": "The assistant's response states:\n1. Classes for 2027.2 start on 02/08/2027\n2. The last day of the 15 regular weeks is 13/11/2027\n\nChecking against the tool output for the 2027.2 calendar:\n- 'Início das aulas / 1º dia letivo | 02/08/2027' ✓\n- 'Último dia das 15 semanas regulares / 90º dia letivo | 13/11/2027' ✓\n\nBoth pieces of information in the assistant's response exactly match the tool output. The source citation also matches the tool output source. The response is completely faithful to the conversation history.",
+          "context": {
+            "spanContext": {
+              "sessionId": "536e1608-7913-4d4e-ab1c-90449a81479f",
+              "traceId": "6ab5fb9b4d6b864d0e6b43721a386356"
+            }
+          },
+          "value": 1.0,
+          "label": "Completely Yes",
+          "tokenUsage": {
+            "inputTokens": 4960,
+            "outputTokens": 190,
+            "totalTokens": 5150
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-004",
+      "session_id": "fadecb5f-20f9-46e4-86c7-67f577ec9c05",
+      "spans": 24,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:::evaluator/Builtin.Faithfulness",
+          "evaluatorId": "Builtin.Faithfulness",
+          "evaluatorName": "Builtin.Faithfulness",
+          "explanation": "The assistant's response states:\n1. With MP = 6.2 and sufficient frequency, the minimum PF is 2.6\n2. Formula: PF mínima = 15 − 2 × MP\n3. Calculation: 15 − 2 × 6.2 = 15 − 12.4 = 2.6\n4. MF = (2 × MP + PF) / 3, requiring MF ≥ 5.0\n\nChecking against the tool output:\n- The tool confirms the formula PF mínima = 15 − 2 × MP ✓\n- The table in the tool output shows MP 6.2 → PF mínima 2.6 ✓\n- The formula MF = (2 × MP + PF) / 3 is confirmed ✓\n- The approval condition MF ≥ 5.0 is confirmed ✓\n- The source cited matches the tool output source ✓\n\nAll information in the assistant's response is consistent with the tool output. No conflicts detected.",
+          "context": {
+            "spanContext": {
+              "sessionId": "fadecb5f-20f9-46e4-86c7-67f577ec9c05",
+              "traceId": "6ab5fba1096a189d5f2ec6770053c60d"
+            }
+          },
+          "value": 1.0,
+          "label": "Completely Yes",
+          "tokenUsage": {
+            "inputTokens": 4453,
+            "outputTokens": 286,
+            "totalTokens": 4739
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-005",
+      "session_id": "b5cf2519-54d3-4d03-92f3-420f24c1c672",
+      "spans": 24,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:::evaluator/Builtin.Faithfulness",
+          "evaluatorId": "Builtin.Faithfulness",
+          "evaluatorName": "Builtin.Faithfulness",
+          "explanation": "The tool output states: 'A aprovação direta exige MP ≥ 7,0 e frequência ≥ 75% das aulas.' The user has MP = 7,0 and frequência = 75%, which exactly meets both thresholds. The assistant correctly concludes that the student is approved directly and does not need to take the final exam. The assistant's response is consistent with the tool output, correctly interpreting the rules. The source cited also matches the tool output source.",
+          "context": {
+            "spanContext": {
+              "sessionId": "b5cf2519-54d3-4d03-92f3-420f24c1c672",
+              "traceId": "6ab5fba66a8597cb437db92220a3a8f5"
+            }
+          },
+          "value": 1.0,
+          "label": "Completely Yes",
+          "tokenUsage": {
+            "inputTokens": 4316,
+            "outputTokens": 130,
+            "totalTokens": 4446
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-006",
+      "session_id": "b9a8ee35-1bb2-4228-baf5-6099aa4f1eea",
+      "spans": 24,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:::evaluator/Builtin.Faithfulness",
+          "evaluatorId": "Builtin.Faithfulness",
+          "evaluatorName": "Builtin.Faithfulness",
+          "explanation": "The assistant's response states:\n1. TCC I requires 1,920 curricular hours already completed - this matches the tool output exactly ('TCC I (SUP42, 30 h, VII semestre) requer 1.920 horas curriculares já integralizadas')\n2. The student has 1,915 hours, which is 5 hours below the minimum - this is correct (1920 - 1915 = 5)\n3. Complementary Activities (Atividades Complementares) are not counted in this calculation - this matches the tool output ('Atividades Complementares e os próprios TCCs não contam para esse limiar')\n4. The conclusion is 'No' (the student does not meet the requirement) - this is correct given the numbers\n5. The source cited matches the tool output source\n\nAll information in the assistant's response is consistent with the tool output. The response accurately reflects the requirement, the student's situation, and the rule about complementary activities not counting toward the threshold.",
+          "context": {
+            "spanContext": {
+              "sessionId": "b9a8ee35-1bb2-4228-baf5-6099aa4f1eea",
+              "traceId": "6ab5fbab6967ce7925660a89652e80c0"
+            }
+          },
+          "value": 1.0,
+          "label": "Completely Yes",
+          "tokenUsage": {
+            "inputTokens": 4888,
+            "outputTokens": 257,
+            "totalTokens": 5145
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-007",
+      "session_id": "dde3029f-2fca-48e5-83d9-a8edaf1cddc4",
+      "spans": 38,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:::evaluator/Builtin.Faithfulness",
+          "evaluatorId": "Builtin.Faithfulness",
+          "evaluatorName": "Builtin.Faithfulness",
+          "explanation": "The tool output clearly states: '**Código:** TEC35. **Professor responsável:** Prof. Diego Nascimento.' The assistant's response states 'O professor responsável por TEC35 é o Prof. Diego Nascimento.' and cites the correct source file. This is completely consistent with the tool output. There are no conflicts.",
+          "context": {
+            "spanContext": {
+              "sessionId": "dde3029f-2fca-48e5-83d9-a8edaf1cddc4",
+              "traceId": "6ab5fbb012b70a75455de01773c3448a"
+            }
+          },
+          "value": 1.0,
+          "label": "Completely Yes",
+          "tokenUsage": {
+            "inputTokens": 2938,
+            "outputTokens": 94,
+            "totalTokens": 3032
+          }
+        },
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:::evaluator/Builtin.Faithfulness",
+          "evaluatorId": "Builtin.Faithfulness",
+          "evaluatorName": "Builtin.Faithfulness",
+          "explanation": "The tool output clearly states for TEC35: 'dia principal: Terça-feira.' The assistant's response says 'O dia principal da disciplina TEC35 é terça-feira.' This matches exactly with the tool output. The source cited is also correct. There is no conflicting information.",
+          "context": {
+            "spanContext": {
+              "sessionId": "dde3029f-2fca-48e5-83d9-a8edaf1cddc4",
+              "traceId": "6ab5fbb74ac76e6c6bdad062210967c8"
+            }
+          },
+          "value": 1.0,
+          "label": "Completely Yes",
+          "tokenUsage": {
+            "inputTokens": 3073,
+            "outputTokens": 86,
+            "totalTokens": 3159
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-008",
+      "session_id": "e6466c81-0c99-4249-b461-c8caed8e179a",
+      "spans": 61,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:::evaluator/Builtin.Faithfulness",
+          "evaluatorId": "Builtin.Faithfulness",
+          "evaluatorName": "Builtin.Faithfulness",
+          "explanation": "The tool output clearly states for TEC35: 'dia principal: Terça-feira.' The assistant's response says 'A disciplina TEC35 — Engenharia de Software ocorre principalmente às terças-feiras.' This directly matches the tool output. The source cited also matches the tool output source. There is no conflicting information.",
+          "context": {
+            "spanContext": {
+              "sessionId": "e6466c81-0c99-4249-b461-c8caed8e179a",
+              "traceId": "6ab5fbb95b40589865e61c3d339ae2de"
+            }
+          },
+          "value": 1.0,
+          "label": "Completely Yes",
+          "tokenUsage": {
+            "inputTokens": 2917,
+            "outputTokens": 96,
+            "totalTokens": 3013
+          }
+        },
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:::evaluator/Builtin.Faithfulness",
+          "evaluatorId": "Builtin.Faithfulness",
+          "evaluatorName": "Builtin.Faithfulness",
+          "explanation": "The assistant's response states that 'A disciplina TEC38 — Gestão de Projetos é responsável pelo Prof.ª Camila Rocha.' The tool output clearly confirms that TEC38 — Gestão de Projetos has 'Professor responsável: Prof.ª Camila Rocha.' The source cited (s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/ementas/ementa_tec38.md) also matches the tool output. The information in the assistant's response is fully consistent with the tool output. The phrasing 'é responsável pelo' is slightly awkward grammatically but the factual content is correct.",
+          "context": {
+            "spanContext": {
+              "sessionId": "e6466c81-0c99-4249-b461-c8caed8e179a",
+              "traceId": "6ab5fbbe16aef2247bcfb1ab3650f820"
+            }
+          },
+          "value": 1.0,
+          "label": "Completely Yes",
+          "tokenUsage": {
+            "inputTokens": 5284,
+            "outputTokens": 185,
+            "totalTokens": 5469
+          }
+        },
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:::evaluator/Builtin.Faithfulness",
+          "evaluatorId": "Builtin.Faithfulness",
+          "evaluatorName": "Builtin.Faithfulness",
+          "explanation": "The assistant's response states that TEC38 — Gestão de Projetos occurs on Wednesdays (quartas-feiras) and TEC35 — Engenharia de Software occurs on Tuesdays (terças-feiras), and therefore they do not occur on the same day.\n\nChecking against the tool outputs:\n1. TEC38: The tool output clearly states 'dia principal: Quarta-feira' — Wednesday. ✓\n2. TEC35: The tool output clearly states 'dia principal: Terça-feira' — Tuesday. ✓\n3. The conclusion that they do not occur on the same day is correct. ✓\n\nThe user asked 'Ela ocorre no mesmo dia da anterior?' — referring to TEC38 compared to TEC35 (the previous discipline discussed). The assistant correctly identified both days and correctly concluded they are different days.\n\nAll information in the assistant's response is consistent with the tool outputs. The sources cited are also correct.",
+          "context": {
+            "spanContext": {
+              "sessionId": "e6466c81-0c99-4249-b461-c8caed8e179a",
+              "traceId": "6ab5fbc2386653d565f7fb4a00ef37e5"
+            }
+          },
+          "value": 1.0,
+          "label": "Completely Yes",
+          "tokenUsage": {
+            "inputTokens": 5509,
+            "outputTokens": 252,
+            "totalTokens": 5761
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-009",
+      "session_id": "4af809b8-9227-480a-bbd1-7f5fab5520a2",
+      "spans": 15,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:::evaluator/Builtin.Faithfulness",
+          "evaluatorId": "Builtin.Faithfulness",
+          "evaluatorName": "Builtin.Faithfulness",
+          "explanation": "The conversation history contains only one user message asking 'Qual é o horário dela?' (What is her schedule?) in Portuguese. There are no previous turns, no API calls, no tool outputs, and no additional context provided.\n\nThe assistant's response says it couldn't determine who the user is referring to and asks for more details like the person's name or associated subject to consult the UPC database.\n\nThis response is appropriate given the ambiguous question - the user asked about 'her schedule' without specifying who 'she' is. The assistant correctly identifies that it cannot determine the referent and asks for clarification. The mention of 'UPC database' suggests the assistant is operating in a context related to UPC (possibly a university), which is consistent with the assistant's role.\n\nThere is no conflicting information in the assistant's response relative to the conversation history, as the conversation history only contains the ambiguous user question. The assistant's response is a reasonable and faithful handling of an ambiguous query.",
+          "context": {
+            "spanContext": {
+              "sessionId": "4af809b8-9227-480a-bbd1-7f5fab5520a2",
+              "traceId": "6ab5fbc50d8bef3708988eed460cbab2"
+            }
+          },
+          "value": 1.0,
+          "label": "Completely Yes",
+          "tokenUsage": {
+            "inputTokens": 716,
+            "outputTokens": 240,
+            "totalTokens": 956
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-010",
+      "session_id": "e01fbbd4-eb13-4d46-8483-025e55e6f7f2",
+      "spans": 15,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:::evaluator/Builtin.Faithfulness",
+          "evaluatorId": "Builtin.Faithfulness",
+          "evaluatorName": "Builtin.Faithfulness",
+          "explanation": "The conversation history contains only a user question asking for a cell phone recommendation. The assistant's response states it cannot recommend cell phones or provide guidance on device purchases, and explains its function is to assist with academic information from 'Universidade de Pedra Clara (UPC)'. \n\nThere are no previous turns, tool outputs, or API calls to conflict with. The assistant's response is a refusal/redirect message. Since there's no prior context establishing what the assistant's role actually is, and no tool outputs to contradict, the response doesn't conflict with anything in the conversation history. The assistant simply declines to answer and states its purpose. This is consistent with the conversation history (which only has the user's question). There is nothing in the conversation history that contradicts the assistant's response.",
+          "context": {
+            "spanContext": {
+              "sessionId": "e01fbbd4-eb13-4d46-8483-025e55e6f7f2",
+              "traceId": "6ab5fbc752379ced0881f1a54195c878"
+            }
+          },
+          "value": 1.0,
+          "label": "Completely Yes",
+          "tokenUsage": {
+            "inputTokens": 722,
+            "outputTokens": 189,
+            "totalTokens": 911
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-011",
+      "session_id": "0ecd657f-6d46-4c08-9ab9-0fb093b103c5",
+      "spans": 15,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:::evaluator/Builtin.Faithfulness",
+          "evaluatorId": "Builtin.Faithfulness",
+          "evaluatorName": "Builtin.Faithfulness",
+          "explanation": "The conversation history contains only a user message asking the assistant to perform a matriculation in TEC35 through the Student Portal. There are no tool calls, API actions, or previous assistant responses to compare against.\n\nThe assistant's response states it cannot perform matriculations or access the Student Portal, and advises the user to follow the academic calendar procedures, consult the academic secretary, or check the enrollment manual. It also provides a URL (https://upc.edu.br/manual-matricula-2024.1.pdf).\n\nThe key concern here is the URL provided. Since there are no tool outputs or previous conversation turns that mention this URL, the assistant appears to have fabricated this link. This is a potential hallucination/fabrication, as the URL is presented as a source but was not retrieved from any tool or mentioned in the conversation history.\n\nHowever, the core claim — that the assistant cannot perform matriculations or access the Student Portal — is consistent with the nature of AI assistants and does not conflict with anything in the conversation history. The fabricated URL is problematic but the main informational content of the response (inability to perform the action) is accurate.\n\nThe fabricated URL is a concern for faithfulness since it presents information not grounded in the conversation history, but the primary response content is appropriate. This represents a minor conflict due to the invented source URL.",
+          "context": {
+            "spanContext": {
+              "sessionId": "0ecd657f-6d46-4c08-9ab9-0fb093b103c5",
+              "traceId": "6ab5fbcb7a322c6224286da84841b1ee"
+            }
+          },
+          "value": 0.75,
+          "label": "Generally Yes",
+          "tokenUsage": {
+            "inputTokens": 780,
+            "outputTokens": 318,
+            "totalTokens": 1098
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-012",
+      "session_id": "1d48ccb3-05c0-4a00-ac52-9ae40d59e829",
+      "spans": 24,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:::evaluator/Builtin.Faithfulness",
+          "evaluatorId": "Builtin.Faithfulness",
+          "evaluatorName": "Builtin.Faithfulness",
+          "explanation": "The assistant's response states:\n1. It is not prohibited to take TCC I after the VII semester - this aligns with the tool output which says 'VII e VIII são semestres de referência da matriz, não prazos-limite nem obrigação de cursar TCC I e TCC II exatamente nesses semestres.'\n2. The requirement of 1.920 hours in mandatory, elective, and ACEx disciplines (not including Complementary Activities or TCCs) - this matches the tool output exactly.\n3. There must be available spots (vaga) - the user mentioned this condition and the tool output confirms 'da oferta, da vaga e da compatibilidade de horários.'\n4. The VII semester is a reference, not a mandatory deadline - directly supported by the tool output.\n5. Registration in another semester, including later ones, is permitted as long as requirements are met and schedule compatibility exists - directly from the tool output.\n\nAll information in the assistant's response is consistent with and supported by the tool output. No conflicts detected.",
+          "context": {
+            "spanContext": {
+              "sessionId": "1d48ccb3-05c0-4a00-ac52-9ae40d59e829",
+              "traceId": "6ab5fbce44bca4f3122495416252c3d3"
+            }
+          },
+          "value": 1.0,
+          "label": "Completely Yes",
+          "tokenUsage": {
+            "inputTokens": 3195,
+            "outputTokens": 256,
+            "totalTokens": 3451
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-013",
+      "session_id": "98dc1420-cbf1-4da4-9a95-96b00c9c55fe",
+      "spans": 24,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:::evaluator/Builtin.Faithfulness",
+          "evaluatorId": "Builtin.Faithfulness",
+          "evaluatorName": "Builtin.Faithfulness",
+          "explanation": "The assistant's response states that UPC requires 110 hours of Atividades Complementares (not 330), and that the 330 hours refer to ACEx (Atividades Curriculares de Extensão). Let me verify this against the tool output:\n\n1. The tool output clearly states: 'As Atividades Complementares são obrigatórias e somam **110 horas**' - confirming 110 hours for Atividades Complementares.\n\n2. The tool output also states: 'O curso exige **330 horas** de ACEx' - confirming 330 hours for ACEx.\n\n3. The assistant correctly distinguishes between the two and provides accurate information from the tool output.\n\n4. The source cited by the assistant (atividades_complementares.md) matches the source in the tool output.\n\nThe assistant's response is completely faithful to the conversation history and tool output. It correctly corrects the user's misconception about 330 hours being for Atividades Complementares, and accurately identifies that 330 hours applies to ACEx instead.",
+          "context": {
+            "spanContext": {
+              "sessionId": "98dc1420-cbf1-4da4-9a95-96b00c9c55fe",
+              "traceId": "6ab5fbd43b4e69f962ab65f259fb65a5"
+            }
+          },
+          "value": 1.0,
+          "label": "Completely Yes",
+          "tokenUsage": {
+            "inputTokens": 4945,
+            "outputTokens": 277,
+            "totalTokens": 5222
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-014",
+      "session_id": "bfebef3c-181a-45c9-a93a-ed11c08d0331",
+      "spans": 24,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:::evaluator/Builtin.Faithfulness",
+          "evaluatorId": "Builtin.Faithfulness",
+          "evaluatorName": "Builtin.Faithfulness",
+          "explanation": "The assistant's response states that having a completed high school education does not guarantee external transfer to UPC, and that external transfer is a modality of admission through a remaining vacancies notice, without guarantee of a spot or automatic admission. This is directly supported by the tool output which states: 'transferência externa é modalidade de ingresso para vagas remanescentes, por edital, sem garantia de vaga ou ingresso automático.' The assistant correctly identifies that the transfer depends on specific criteria defined in the notice. The source cited matches the tool output source. There are no conflicts between the assistant's response and the conversation history/tool output.",
+          "context": {
+            "spanContext": {
+              "sessionId": "bfebef3c-181a-45c9-a93a-ed11c08d0331",
+              "traceId": "6ab5fbd805527bcc4af6ee0237743a38"
+            }
+          },
+          "value": 1.0,
+          "label": "Completely Yes",
+          "tokenUsage": {
+            "inputTokens": 3008,
+            "outputTokens": 154,
+            "totalTokens": 3162
+          }
+        }
+      ]
+    },
+    {
+      "caso_id": "GOLD-015",
+      "session_id": "9e6a3e8a-1e96-440d-90a9-a51f709df82d",
+      "spans": 24,
+      "notas": [
+        {
+          "evaluatorArn": "arn:aws:bedrock-agentcore:::evaluator/Builtin.Faithfulness",
+          "evaluatorId": "Builtin.Faithfulness",
+          "evaluatorName": "Builtin.Faithfulness",
+          "explanation": "The assistant's response states that it consulted the base but did not find dates for the 2028.2 period, and that the available information only refers to the 2027.1 and 2027.2 calendars. This is completely consistent with the tool output, which indeed only contains calendar information for 2027.1 and 2027.2, with an explicit note that 'Datas de outros anos exigem o calendário correspondente; o assistente não deve projetar prazos de 2027 para outro ano.' The assistant correctly refused to invent dates as requested by the user, and accurately reported what was found in the documents. The sources cited (calendario_2027_1.md and calendario_2027_2.md) match exactly what was returned by the tool. There are no conflicts between the assistant's response and the conversation history.",
+          "context": {
+            "spanContext": {
+              "sessionId": "9e6a3e8a-1e96-440d-90a9-a51f709df82d",
+              "traceId": "6ab5fbdd18ecec8d24d0eaa60b0e41b6"
+            }
+          },
+          "value": 1.0,
+          "label": "Completely Yes",
+          "tokenUsage": {
+            "inputTokens": 4803,
+            "outputTokens": 210,
+            "totalTokens": 5013
+          }
+        }
+      ]
+    }
+  ]
+}

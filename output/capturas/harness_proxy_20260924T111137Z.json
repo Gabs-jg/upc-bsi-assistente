@@ -1,0 +1,85 @@
+{
+  "tipo": "harness_capture_real",
+  "fonte": "proxy_http",
+  "tipo_dataset": "golden_independente_sem_respostas_do_agente",
+  "capturado_em_utc": "2026-09-24T11:11:37.350202+00:00",
+  "dataset_sha256": "3c5d32a317450369f9ac7a8c600ff5f4423a4765debac056615b9f9f9d66d1a8",
+  "proxy_url": "https://***/perguntar",
+  "modelo_agente": "qwen.qwen3-next-80b-a3b",
+  "estado": "concluido",
+  "total_casos_dataset": 15,
+  "casos_selecionados": [
+    "GOLD-001"
+  ],
+  "casos": [
+    {
+      "id": "GOLD-001",
+      "categoria": "consulta_direta",
+      "session_id": "8e021a1a-e6df-4103-b283-bb4a1896a7ed",
+      "turnos": [
+        {
+          "pergunta": "Quantas vagas a UPC oferece por entrada e quantas entradas há por ano?",
+          "busca_esperada": true,
+          "resposta": "A Universidade de Pedra Clara (UPC) oferece 40 vagas por entrada e possui duas entradas por ano no curso de Bacharelado em Sistemas de Informação.",
+          "busca_obrigatoria_atendida": true,
+          "chamada_observada": true,
+          "resultado_observado": true,
+          "fontes_proxy": [
+            "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/curso/curso_ingresso.md",
+            "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/optativas/optativas_regras.md",
+            "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/apoio/apoio_procedimentos.md",
+            "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/optativas/optativas_grupo_4.md",
+            "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/optativas/optativas_grupo_3.md"
+          ],
+          "trechos_recuperados": [
+            {
+              "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/curso/curso_ingresso.md",
+              "texto": ""
+            },
+            {
+              "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/optativas/optativas_regras.md",
+              "texto": ""
+            },
+            {
+              "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/apoio/apoio_procedimentos.md",
+              "texto": ""
+            },
+            {
+              "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/optativas/optativas_grupo_4.md",
+              "texto": ""
+            },
+            {
+              "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/optativas/optativas_grupo_3.md",
+              "texto": ""
+            }
+          ]
+        }
+      ],
+      "resposta_final": "A Universidade de Pedra Clara (UPC) oferece 40 vagas por entrada e possui duas entradas por ano no curso de Bacharelado em Sistemas de Informação.",
+      "trechos_recuperados": [
+        {
+          "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/curso/curso_ingresso.md",
+          "texto": ""
+        },
+        {
+          "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/optativas/optativas_regras.md",
+          "texto": ""
+        },
+        {
+          "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/apoio/apoio_procedimentos.md",
+          "texto": ""
+        },
+        {
+          "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/optativas/optativas_grupo_4.md",
+          "texto": ""
+        },
+        {
+          "fonte": "s3://upc-bsi-rag-v13-2026-c7a42f1d/documentos/optativas/optativas_grupo_3.md",
+          "texto": ""
+        }
+      ],
+      "busca_obrigatoria_atendida": true
+    }
+  ],
+  "aviso": "Captura via proxy HTTP. Os trechos_recuperados contêm apenas as fontes retornadas pelo proxy, sem o texto completo dos chunks da KB. Faithfulness e Contextual Relevancy serão ignoradas pelo avaliador quando texto estiver vazio."
+}

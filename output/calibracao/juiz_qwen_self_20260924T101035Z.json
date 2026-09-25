@@ -1,0 +1,197 @@
+{
+  "tipo": "calibracao_juiz_qwen_self",
+  "aviso_viés": "Juiz homogêneo: mesmo modelo Qwen3 usado como agente e juiz. Auto-avaliação pode favorecer respostas no estilo do modelo. Declare esta limitação no relatório final.",
+  "modelo_juiz": "qwen.qwen3-next-80b-a3b",
+  "modelo_agente_declarado": "qwen.qwen3-next-80b-a3b",
+  "executado_em_utc": "2026-09-24T10:10:35.711766+00:00",
+  "aprovada": true,
+  "acertos": 14,
+  "total": 14,
+  "tokens_entrada": 4536,
+  "tokens_saida": 660,
+  "custo_estimado_usd": 0.001472,
+  "resultados": [
+    {
+      "caso": "correta_prova_final",
+      "rodada": 1,
+      "esperado": 1,
+      "observado": 1.0,
+      "correto": true,
+      "resposta_bruta": "{\"nota\": 1, \"motivo\": \"A resposta está correta, sustenta-se na evidência e não há incerteza a ser expressada, pois a fórmula e o cálculo são fornecidos diretamente.\"}",
+      "uso": {
+        "inputTokens": 312,
+        "outputTokens": 54,
+        "totalTokens": 366
+      }
+    },
+    {
+      "caso": "data_inventada_2028",
+      "rodada": 1,
+      "esperado": 0,
+      "observado": 0.0,
+      "correto": true,
+      "resposta_bruta": "{\"nota\": 0, \"motivo\": \"Inventa uma data para 2028.1 sem evidência, além de aplicar incorretamente uma regra geral a um período não documentado.\"}",
+      "uso": {
+        "inputTokens": 346,
+        "outputTokens": 47,
+        "totalTokens": 393
+      }
+    },
+    {
+      "caso": "fonte_inventada",
+      "rodada": 1,
+      "esperado": 0,
+      "observado": 0.0,
+      "correto": true,
+      "resposta_bruta": "{\"nota\": 0, \"motivo\": \"Inventa uma fonte não fornecida na evidência.\"}",
+      "uso": {
+        "inputTokens": 303,
+        "outputTokens": 26,
+        "totalTokens": 329
+      }
+    },
+    {
+      "caso": "abstencao_correta",
+      "rodada": 1,
+      "esperado": 1,
+      "observado": 1.0,
+      "correto": true,
+      "resposta_bruta": "{\"nota\": 1, \"motivo\": \"A resposta atende à pergunta, sustenta os fatos na evidência e expressa corretamente a incerteza ao afirmar que não há dados sobre 2028.1 e orienta a consulta ao calendário correspondente.\"}",
+      "uso": {
+        "inputTokens": 367,
+        "outputTokens": 65,
+        "totalTokens": 432
+      }
+    },
+    {
+      "caso": "resposta_incompleta",
+      "rodada": 1,
+      "esperado": 0.5,
+      "observado": 0.5,
+      "correto": true,
+      "resposta_bruta": "{\"nota\": 0.5, \"motivo\": \"A resposta omite o dia da semana em que a disciplina ocorre, que é uma parte relevante da pergunta.\"}",
+      "uso": {
+        "inputTokens": 293,
+        "outputTokens": 41,
+        "totalTokens": 334
+      }
+    },
+    {
+      "caso": "tcc_semestre_inventado",
+      "rodada": 1,
+      "esperado": 0,
+      "observado": 0.0,
+      "correto": true,
+      "resposta_bruta": "{\"nota\": 0, \"motivo\": \"A resposta contradiz a evidência, que afirma que a matrícula posterior ao VII semestre é possível, desde que atendidos os requisitos.\"}",
+      "uso": {
+        "inputTokens": 298,
+        "outputTokens": 47,
+        "totalTokens": 345
+      }
+    },
+    {
+      "caso": "data_2027_confirmada",
+      "rodada": 1,
+      "esperado": 1,
+      "observado": 1.0,
+      "correto": true,
+      "resposta_bruta": "{\"nota\": 1, \"motivo\": \"A resposta atende à pergunta, sustenta os fatos na evidência e inclui a informação sobre a análise do pedido, sem inventar ou omitir dados relevantes.\"}",
+      "uso": {
+        "inputTokens": 349,
+        "outputTokens": 50,
+        "totalTokens": 399
+      }
+    },
+    {
+      "caso": "correta_prova_final",
+      "rodada": 2,
+      "esperado": 1,
+      "observado": 1.0,
+      "correto": true,
+      "resposta_bruta": "{\"nota\": 1, \"motivo\": \"A resposta está correta, sustenta-se na evidência e não há incerteza a ser expressada, pois a fórmula e o cálculo são fornecidos diretamente.\"}",
+      "uso": {
+        "inputTokens": 312,
+        "outputTokens": 54,
+        "totalTokens": 366
+      }
+    },
+    {
+      "caso": "data_inventada_2028",
+      "rodada": 2,
+      "esperado": 0,
+      "observado": 0.0,
+      "correto": true,
+      "resposta_bruta": "{\"nota\": 0, \"motivo\": \"Inventa uma data para 2028.1 sem evidência, além de aplicar incorretamente uma regra geral a um período não documentado.\"}",
+      "uso": {
+        "inputTokens": 346,
+        "outputTokens": 47,
+        "totalTokens": 393
+      }
+    },
+    {
+      "caso": "fonte_inventada",
+      "rodada": 2,
+      "esperado": 0,
+      "observado": 0.0,
+      "correto": true,
+      "resposta_bruta": "{\"nota\": 0, \"motivo\": \"Inventa uma fonte não fornecida na evidência.\"}",
+      "uso": {
+        "inputTokens": 303,
+        "outputTokens": 26,
+        "totalTokens": 329
+      }
+    },
+    {
+      "caso": "abstencao_correta",
+      "rodada": 2,
+      "esperado": 1,
+      "observado": 1.0,
+      "correto": true,
+      "resposta_bruta": "{\"nota\": 1, \"motivo\": \"A resposta atende à pergunta, sustenta os fatos na evidência e expressa corretamente a incerteza ao afirmar que não há dados sobre 2028.1 e orienta a consulta ao calendário correspondente.\"}",
+      "uso": {
+        "inputTokens": 367,
+        "outputTokens": 65,
+        "totalTokens": 432
+      }
+    },
+    {
+      "caso": "resposta_incompleta",
+      "rodada": 2,
+      "esperado": 0.5,
+      "observado": 0.5,
+      "correto": true,
+      "resposta_bruta": "{\"nota\": 0.5, \"motivo\": \"A resposta omite o dia da semana em que a disciplina ocorre, que é uma parte relevante da pergunta.\"}",
+      "uso": {
+        "inputTokens": 293,
+        "outputTokens": 41,
+        "totalTokens": 334
+      }
+    },
+    {
+      "caso": "tcc_semestre_inventado",
+      "rodada": 2,
+      "esperado": 0,
+      "observado": 0.0,
+      "correto": true,
+      "resposta_bruta": "{\"nota\": 0, \"motivo\": \"A resposta contradiz a evidência, que afirma que a matrícula posterior ao VII semestre é possível, desde que atendidos os requisitos.\"}",
+      "uso": {
+        "inputTokens": 298,
+        "outputTokens": 47,
+        "totalTokens": 345
+      }
+    },
+    {
+      "caso": "data_2027_confirmada",
+      "rodada": 2,
+      "esperado": 1,
+      "observado": 1.0,
+      "correto": true,
+      "resposta_bruta": "{\"nota\": 1, \"motivo\": \"A resposta atende à pergunta, sustenta os fatos na evidência e inclui a informação sobre a análise do pedido, sem inventar ou omitir dados relevantes.\"}",
+      "uso": {
+        "inputTokens": 349,
+        "outputTokens": 50,
+        "totalTokens": 399
+      }
+    }
+  ]
+}

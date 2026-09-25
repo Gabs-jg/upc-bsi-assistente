@@ -1,0 +1,11 @@
+{
+  "version": "2.0",
+  "routeKey": "POST /perguntar",
+  "rawPath": "/perguntar",
+  "requestContext": {
+    "http": {"method": "POST", "path": "/perguntar"},
+    "authorizer": {"jwt": {"claims": {"sub": "aluno-demo-upc"}}}
+  },
+  "body": "{\"pergunta\":\"Se eu cursar TCC I depois do VII semestre, com 1.920 horas curriculares e vaga, isso é proibido?\"}",
+  "isBase64Encoded": false
+}

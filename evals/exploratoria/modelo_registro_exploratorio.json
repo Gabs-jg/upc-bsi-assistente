@@ -1,0 +1,37 @@
+{
+  "sessao": {
+    "inicio": null,
+    "fim": null,
+    "duracao_minutos": null,
+    "harness": "upc_bsi_assistente_v13",
+    "modelo": null,
+    "base_conhecimento": "UPC v1.3",
+    "versao_prompt": null,
+    "gateway": "upc-bsi-gateway-v13-g73ieotdvq",
+    "ultima_sincronizacao": null
+  },
+  "testes": [
+    {
+      "id": null,
+      "categoria": null,
+      "conversa": null,
+      "turno": null,
+      "horario": null,
+      "pergunta": null,
+      "comportamento_esperado": null,
+      "resposta": null,
+      "busca": {
+        "esperada": true,
+        "executada": null,
+        "consulta_enviada": null,
+        "trechos_recuperados": []
+      },
+      "fontes_citadas": [],
+      "resultado": "pendente",
+      "gravidade": null,
+      "problemas": [],
+      "observacao": null,
+      "evidencia_rastreamento": null
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-"""Entrada implantável do assistente UPC: Lambda -> KB Lambda -> Harness Gemma 3 4B.
+"""Protótipo externo: Lambda -> Lambda de busca -> Harness.
 
 Evento: {"pergunta": "...", "session_id": "..." (opcional)}.
 Retorna session_id para ser reutilizado na próxima pergunta da mesma conversa.
@@ -17,7 +17,6 @@ HARNESS_ARN = (
     "arn:aws:bedrock-agentcore:us-east-2:276996007591:"
     "harness/upc_bsi_assistente_v13-xWH7Nkzzk1"
 )
-MODELO = "google.gemma-4-e2b"
 
 PERIODO = re.compile(r"\b(20\d{2})\.([12])\b")
 DATA = re.compile(r"\b\d{1,2}/\d{1,2}/20\d{2}\b")
@@ -79,6 +78,30 @@ def conferir_datas(resposta, resultados):
             "Não consegui confirmar toda a resposta nos documentos recuperados. "
             "Reformule a pergunta ou consulte a Coordenação."
         )
+    return resposta
+
+
+def apresentar_resposta(pergunta, resposta, resultados):
+    """Expande índices de fonte e explicita a condição de frequência documentada."""
+    def expandir_fonte(correspondencia):
+        indice = int(correspondencia.group(1)) - 1
+        if 0 <= indice < len(resultados):
+            fonte = str(resultados[indice].get("fonte", ""))
+            if fonte:
+                return fonte
+        return correspondencia.group(0)
+
+    resposta = re.sub(r"\[(\d+)\]", expandir_fonte, resposta)
+    if (
+        "prova final" in pergunta.lower()
+        and "frequ" not in resposta.lower()
+        and any(
+            "frequência mínima de 75%" in str(item.get("texto", "")).lower()
+            or "frequência ≥ 75%" in str(item.get("texto", "")).lower()
+            for item in resultados
+        )
+    ):
+        resposta = resposta.rstrip() + "\n\nA realização da prova final exige frequência mínima de 75%."
     return resposta
 
 
@@ -253,6 +276,7 @@ def lambda_handler(event, context):
                             "resposta_original": resposta_bruta,
                             "resposta_segura": resposta,
                         }, ensure_ascii=False))
+        resposta = apresentar_resposta(pergunta, resposta, resultados)
         fontes = [str(item.get("fonte", "")) for item in resultados]
         print(json.dumps({
             "evento": "consulta_upc",
@@ -267,7 +291,6 @@ def lambda_handler(event, context):
             "resposta": resposta,
             "fontes_recuperadas": fontes,
             "ferramenta_executada": BUSCA_LAMBDA,
-            "modelo": MODELO,
         }
     except Exception as erro:
         print(json.dumps({"evento": "erro_upc", "session_id": sessao, "erro": str(erro)}, ensure_ascii=False))
