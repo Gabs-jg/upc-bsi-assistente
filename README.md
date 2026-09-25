@@ -52,4 +52,4 @@ As capturas GOLD v22 e red team v21 são a linha de base histórica; a v39 é a 
 
 ## Agradecimentos
 
-Agradeço a todos os colegas, especialmente Camille, Fernanda (do meu squad) e Mary, pelas experiências compartilhadas e pela ajuda ao longo do projeto.
+Agradeço a todos os colegas, especialmente Camille (https://github.com/camimcl), Fernanda (https://github.com/codebyfernanda) (do meu squad) e Mary (https://github.com/marynmendes), pelas experiências compartilhadas e pela ajuda ao longo do projeto.
