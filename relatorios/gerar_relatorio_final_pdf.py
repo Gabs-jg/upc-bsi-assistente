@@ -26,7 +26,7 @@ from reportlab.platypus import (
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "Relatorio_Final.md"
-OUTPUT = ROOT / "output" / "pdf" / "Relatorio_Final_UPC.pdf"
+OUTPUT = ROOT / "Relatorio_Final_UPC.pdf"
 
 NAVY = colors.HexColor("#173447")
 ACCENT = colors.HexColor("#087A92")
