@@ -3,6 +3,22 @@ import argparse, json, re, time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+CHAVES_SENSIVEIS = frozenset({
+    'aws.auth.account.access_key',
+    'aws.auth.account.secret_key',
+    'aws.auth.account.session_token',
+})
+
+
+def sanitizar_registro(valor):
+    """Remove identificadores de autenticação antes de persistir telemetria."""
+    if isinstance(valor, dict):
+        return {chave: sanitizar_registro(item) for chave, item in valor.items()
+                if chave not in CHAVES_SENSIVEIS}
+    if isinstance(valor, list):
+        return [sanitizar_registro(item) for item in valor]
+    return valor
+
 def ler_sessoes_capturadas(caminho):
     """Lê os IDs da captura sem enviar perguntas ou respostas ao CloudWatch."""
     captura = json.loads(caminho.read_text(encoding='utf-8-sig'))
@@ -73,7 +89,7 @@ def main():
                         atributos = item.get('attributes', {})
                         sessao_encontrada = atributos.get('session.id') or atributos.get('gen_ai.conversation.id') or atributos.get('session', {}).get('id')
                         if sessao_encontrada == session:
-                            spans.append(item)
+                            spans.append(sanitizar_registro(item))
         quantidade = len(spans) - total_anterior
         print(f'Sessão {numero}/{len(a.session_id)}: {quantidade} spans.', flush=True)
         if quantidade == 0:

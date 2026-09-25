@@ -2,7 +2,7 @@
 
 Este diretório contém a suíte de avaliação automatizada, o juiz customizado e os testes de conformidade para a **Frente B** do Desafio 2, utilizando o framework **DeepEval v4.2.3** acoplado ao modelo juiz no Amazon Bedrock.
 
-**Estado da avaliação:** os resultados anteriores de 15/15 foram produzidos com G-Evals personalizados apresentados como Answer Relevancy e Faithfulness. A suíte atual usa as classes nativas `AnswerRelevancyMetric` e `FaithfulnessMetric`, além do G-Eval de conformidade. Ela ainda não tem uma rodada final com essas métricas e com as verificações objetivas por turno; não apresente o 15/15 histórico como resultado desta configuração.
+**Estado da avaliação:** a suíte com as classes nativas `AnswerRelevancyMetric` e `FaithfulnessMetric`, além do G-Eval de conformidade, foi executada sobre a captura GOLD v39. O resultado automático foi **7/15**; a revisão humana aprovou **14/15**, mantendo GOLD-011 como falha real. Os resultados anteriores de 15/15 usaram G-Evals personalizados apresentados com os nomes das métricas nativas e não representam esta configuração.
 
 ---
 
@@ -28,7 +28,8 @@ A Frente B submete as capturas reais do agente ao escrutínio minucioso do **Gol
                                               │                                        │
                                               └───────────────────┬────────────────────┘
                                                                   ▼
-                                                  RESULTADO FINAL: PENDENTE
+                                        RESULTADO v39: 7/15 NA SUÍTE
+                                        REVISÃO HUMANA: 14/15
 ```
 
 ---
@@ -51,7 +52,7 @@ Rubrica com 7 passos analíticos rigorosos para validar regras da universidade (
 #### 4. Verificações Determinísticas em Python
 * **Busca exigida:** compara cada turno com `busca_esperada` no dataset, inclusive fora de escopo e adversarial. GOLD-011 não fez a busca prevista.
 * **Contexto recuperado:** exige ao menos um trecho quando o caso define `documentos_esperados`.
-* **Fonte citada:** confere cada arquivo `.md` citado com as URIs e fontes canônicas dos trechos retornados. Uma mera referência a outro arquivo dentro do texto não equivale a recuperá-lo. GOLD-014 cita `01_curso_e_ingresso.md` sem recuperar esse arquivo como fonte.
+* **Fonte citada:** confere cada arquivo `.md` citado com as URIs e fontes canônicas dos trechos retornados. Uma mera referência a outro arquivo dentro do texto não equivale a recuperá-lo. Na captura v39, GOLD-011 citou um PDF sem fonte recuperada.
 
 ---
 
@@ -68,23 +69,23 @@ $env:ALLOW_SAME_JUDGE = "true"
 
 .\.venv\Scripts\deepeval.exe test run evals\frente_b_deepeval\test_deepeval_suite.py
 ```
-Esta execução chama o juiz na AWS e gera custo. O tempo e o resultado da configuração atual ainda precisam ser medidos. Guarde a captura e o JSON de cada rodada para interpretar eventuais discordâncias do juiz.
+Esta execução chama o juiz na AWS e gera custo. A rodada preservada da v39 levou 500,81 segundos e está em [`output/avaliacoes/deepeval_suite_20260925T130537Z_944cc9f2.json`](../../output/avaliacoes/deepeval_suite_20260925T130537Z_944cc9f2.json). Uma nova execução pode variar porque o juiz é probabilístico; guarde sua captura e o JSON correspondente.
 No comando `deepeval test run`, a opção `-s` significa *skip on missing parameters*; não a use para tentar exibir `print`. Para verificações locais sem custo, use o comando abaixo.
 
 #### Execução de Validação sem Custo de API (`--validate-only`)
 Permite checar a integridade da captura e as asserções determinísticas sem acionar chamadas ao juiz Bedrock:
 ```powershell
 .\.venv\Scripts\python.exe evals\frente_b_deepeval\run_deepeval_evaluations.py `
-  --capture output\capturas\harness_20260924T211251Z_7ddd9cd3.json `
+  --capture output\capturas\harness_20260925T044149Z_c989107c.json `
   --calibration output\calibracao\juiz_qwen_self_20260924T101035Z.json `
   --allow-same-judge --validate-only
 ```
-O comando confere a captura e as condições objetivas sem chamar o modelo. Ele termina com código de falha quando há casos a revisar; na captura acima, são GOLD-011, GOLD-014 e GOLD-015.
+O comando confere a captura e as condições objetivas sem chamar o modelo. Na v39, GOLD-011 não cumpriu a busca exigida e citou uma fonte não recuperada.
 
 #### Execução Pontual de um Caso Específico
 ```powershell
 .\.venv\Scripts\python.exe evals\frente_b_deepeval\run_deepeval_evaluations.py `
-  --capture output\capturas\harness_20260924T211251Z_7ddd9cd3.json `
+  --capture output\capturas\harness_20260925T044149Z_c989107c.json `
   --calibration output\calibracao\juiz_qwen_self_20260924T101035Z.json `
   --allow-same-judge --case GOLD-004
 ```

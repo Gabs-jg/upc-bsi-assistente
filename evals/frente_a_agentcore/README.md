@@ -59,7 +59,7 @@ Conecta-se ao grupo de logs do runtime e minera os eventos estruturados de telem
   --region us-east-2 --profile upc-estagio --horas 24 `
   --saida output\spans_agentcore_20260925T044149Z.json
 ```
-*Resultado homologado:* **384 spans OpenTelemetry exportados** com `traceId` e `spanId` válidos (arquivo de 2.19 MB).
+*Resultado registrado na captura v39:* **384 spans OpenTelemetry exportados** com `traceId` e `spanId` válidos (arquivo de 2,19 MB). Isso comprova a execução das sessões, não a aprovação de todas as respostas.
 
 #### Passo 3: Avaliação em Lote com o Avaliador Customizado
 Confere se os spans pertencem à captura atual antes de chamar a AWS:

@@ -11,6 +11,22 @@ import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+CHAVES_SENSIVEIS = frozenset({
+    "aws.auth.account.access_key",
+    "aws.auth.account.secret_key",
+    "aws.auth.account.session_token",
+})
+
+
+def sanitizar_registro(valor):
+    """Remove identificadores de autenticação antes de persistir telemetria."""
+    if isinstance(valor, dict):
+        return {chave: sanitizar_registro(item) for chave, item in valor.items()
+                if chave not in CHAVES_SENSIVEIS}
+    if isinstance(valor, list):
+        return [sanitizar_registro(item) for item in valor]
+    return valor
+
 
 ROOT = Path(__file__).resolve().parents[2]
 RUNTIME_LOG_GROUP = (
@@ -76,7 +92,7 @@ def extract_spans(rows):
             except json.JSONDecodeError:
                 continue
             if isinstance(record, dict):
-                spans.append(record)
+                spans.append(sanitizar_registro(record))
     return spans
 
 
